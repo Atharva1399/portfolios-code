@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { ChevronDown } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 
 const Hero = () => {
   return (
@@ -28,23 +27,6 @@ const Hero = () => {
               Building intelligent solutions at the intersection of AI and Web3. 
               I specialize in Python development, machine learning, and blockchain technologies.
             </p>
-            
-            <div className="flex flex-wrap gap-4 pt-2">
-              <Button 
-                size="lg" 
-                className="bg-tech-blue hover:bg-tech-blue/90 text-white rounded-md"
-              >
-                View My Work
-              </Button>
-              
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="border-tech-blue text-tech-blue hover:bg-tech-blue/10"
-              >
-                Get in Touch
-              </Button>
-            </div>
           </div>
           
           <div className="lg:w-2/5 relative">
