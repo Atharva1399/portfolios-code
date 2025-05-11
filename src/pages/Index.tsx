@@ -26,7 +26,7 @@ const Index = () => {
     };
     
     // Run once after initial render
-    animateOnScroll();
+    setTimeout(animateOnScroll, 300);
     
     // Add scroll event listener
     window.addEventListener('scroll', animateOnScroll);
@@ -40,10 +40,10 @@ const Index = () => {
     <div className="min-h-screen">
       <Navbar />
       <Hero />
-      <About />
-      <Skills />
       <Projects />
+      <About />
       <Services />
+      <Skills />
       <Contact />
       <Footer />
     </div>

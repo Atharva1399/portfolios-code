@@ -1,142 +1,111 @@
 
 import React from 'react';
-import { Brain, Code, Users, Database } from 'lucide-react';
+import { Code, Database, Smartphone, Briefcase } from 'lucide-react';
 
 interface ServiceCardProps {
-  icon: React.ReactNode;
+  number: string;
   title: string;
   description: string;
+  icon: React.ReactNode;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description }) => {
+const ServiceCard: React.FC<ServiceCardProps> = ({ number, title, description, icon }) => {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-md">
-      <div className="w-14 h-14 flex items-center justify-center bg-tech-blue/10 text-tech-blue rounded-lg mb-6">
-        {icon}
-      </div>
-      
-      <h3 className="text-xl font-semibold text-tech-navy mb-3">
-        {title}
-      </h3>
-      
-      <p className="text-gray-600">
-        {description}
-      </p>
+    <div className="bg-white p-6 border-t-2 border-tech-navy hover:shadow-lg transition-shadow">
+      <div className="mb-4 text-lg text-gray-400">{number}</div>
+      <div className="text-tech-blue mb-4">{icon}</div>
+      <h3 className="text-xl font-semibold mb-3">{title}</h3>
+      <p className="text-gray-600">{description}</p>
     </div>
   );
 };
 
 const Services = () => {
+  const services = [
+    {
+      id: 1,
+      number: "01.",
+      title: "AI Development",
+      description: "Custom AI agents and machine learning models for solving complex business problems.",
+      icon: <Code size={32} />
+    },
+    {
+      id: 2,
+      number: "02.",
+      title: "Web3 Solutions",
+      description: "Blockchain applications and smart contracts for the decentralized ecosystem.",
+      icon: <Database size={32} />
+    },
+    {
+      id: 3, 
+      number: "03.",
+      title: "Mobile App Development",
+      description: "Cross-platform mobile experiences for smartphones and tablets with AI integration.",
+      icon: <Smartphone size={32} />
+    },
+    {
+      id: 4,
+      number: "04.",
+      title: "Developer Relations",
+      description: "Technical advocacy, community building, and developer experience optimization.",
+      icon: <Briefcase size={32} />
+    }
+  ];
+
   return (
-    <section id="services" className="section-padding bg-gray-50">
+    <section id="services" className="section-padding bg-white">
       <div className="container mx-auto">
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-tech-navy mb-4">
-            Services Offered
+        <h2 className="text-4xl md:text-5xl font-bold text-tech-navy mb-4">
+          I CAN HELP YOU WITH
+        </h2>
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+          {services.map(service => (
+            <ServiceCard
+              key={service.id}
+              number={service.number}
+              title={service.title} 
+              description={service.description}
+              icon={service.icon}
+            />
+          ))}
+        </div>
+        
+        <div className="mt-20">
+          <h2 className="text-4xl md:text-5xl font-bold text-tech-navy mb-12">
+            TURNING MY VISION
           </h2>
-          <div className="w-20 h-1 bg-tech-teal mx-auto mb-6"></div>
-          <p className="text-gray-600">
-            Professional services leveraging my expertise in AI, development, and technical community building.
-          </p>
-        </div>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <ServiceCard 
-            icon={<Brain size={28} />}
-            title="AI Agent Development"
-            description="Custom AI agents designed for specific use cases and business needs. From concept to implementation and training."
-          />
           
-          <ServiceCard 
-            icon={<Users size={28} />}
-            title="Developer Relations"
-            description="Strategic consulting to help bridge the gap between your tech products and developer communities."
-          />
-          
-          <ServiceCard 
-            icon={<Code size={28} />}
-            title="Machine Learning Solutions"
-            description="End-to-end ML solutions from model design to deployment, focusing on computer vision and predictive analytics."
-          />
-          
-          <ServiceCard 
-            icon={<Database size={28} />}
-            title="Web3 Integration"
-            description="Implementation of blockchain technologies into existing platforms or building new blockchain-based applications."
-          />
-        </div>
-        
-        <div className="mt-16 bg-white p-8 rounded-lg shadow-sm border border-gray-100">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-2xl font-semibold text-tech-navy mb-4">
-                My Approach
-              </h3>
-              
-              <p className="text-gray-600 mb-4">
-                I believe in creating solutions that are not just technically sound but also practical and forward-thinking. My process typically involves:
+              <p className="text-lg mb-6">
+                Crafting bespoke solutions for each project I work on.
               </p>
               
-              <ul className="space-y-3">
-                <li className="flex items-start">
-                  <div className="w-6 h-6 bg-tech-blue text-white rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">1</div>
-                  <p className="text-gray-700">In-depth consultation to understand your specific needs and goals</p>
-                </li>
-                
-                <li className="flex items-start">
-                  <div className="w-6 h-6 bg-tech-blue text-white rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">2</div>
-                  <p className="text-gray-700">Research and strategic planning to determine the most effective solution</p>
-                </li>
-                
-                <li className="flex items-start">
-                  <div className="w-6 h-6 bg-tech-blue text-white rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">3</div>
-                  <p className="text-gray-700">Iterative development with continuous feedback and improvements</p>
-                </li>
-                
-                <li className="flex items-start">
-                  <div className="w-6 h-6 bg-tech-blue text-white rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">4</div>
-                  <p className="text-gray-700">Thorough testing and deployment with comprehensive documentation</p>
-                </li>
-              </ul>
+              <div className="grid grid-cols-2 gap-8">
+                <div>
+                  <span className="text-4xl font-bold text-tech-navy">64+</span>
+                  <p className="text-gray-600 mt-2">Satisfied clients</p>
+                </div>
+                <div>
+                  <span className="text-4xl font-bold text-tech-navy">89+</span>
+                  <p className="text-gray-600 mt-2">Completed projects</p>
+                </div>
+                <div>
+                  <span className="text-4xl font-bold text-tech-navy">12+</span>
+                  <p className="text-gray-600 mt-2">Years experience</p>
+                </div>
+                <div>
+                  <span className="text-4xl font-bold text-tech-navy">18+</span>
+                  <p className="text-gray-600 mt-2">Different countries</p>
+                </div>
+              </div>
             </div>
             
-            <div className="space-y-6 md:pl-8">
-              <h4 className="text-xl font-semibold text-tech-navy">Why Work With Me?</h4>
-              
-              <div className="flex gap-4 items-start">
-                <div className="w-10 h-10 flex-shrink-0 bg-tech-teal/10 text-tech-teal rounded flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </div>
-                <div>
-                  <h5 className="font-medium text-tech-navy">Technical Expertise</h5>
-                  <p className="text-sm text-gray-600">Deep knowledge in cutting-edge technologies</p>
-                </div>
-              </div>
-              
-              <div className="flex gap-4 items-start">
-                <div className="w-10 h-10 flex-shrink-0 bg-tech-blue/10 text-tech-blue rounded flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </div>
-                <div>
-                  <h5 className="font-medium text-tech-navy">Problem Solver</h5>
-                  <p className="text-sm text-gray-600">Focus on providing practical, efficient solutions</p>
-                </div>
-              </div>
-              
-              <div className="flex gap-4 items-start">
-                <div className="w-10 h-10 flex-shrink-0 bg-tech-orange/10 text-tech-orange rounded flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </div>
-                <div>
-                  <h5 className="font-medium text-tech-navy">Collaborative Approach</h5>
-                  <p className="text-sm text-gray-600">Transparent communication throughout the process</p>
-                </div>
+            <div className="bg-tech-gray aspect-[4/3]">
+              {/* Workspace image would go here */}
+              <div className="w-full h-full flex items-center justify-center text-gray-400">
+                Workspace Image
               </div>
             </div>
           </div>

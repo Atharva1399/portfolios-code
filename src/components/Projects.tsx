@@ -1,180 +1,85 @@
 
-import React, { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { ExternalLink, Github, Code } from 'lucide-react';
+import React from 'react';
+import { ChevronRight } from 'lucide-react';
 
-interface Project {
-  id: number;
+interface ProjectCardProps {
   title: string;
-  description: string;
-  tags: string[];
+  categories: string[];
   image: string;
-  demoLink?: string;
-  githubLink?: string;
+  alt: string;
 }
 
-const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ title, categories, image, alt }) => {
   return (
-    <div className="bg-white rounded-lg overflow-hidden shadow-md transition-transform duration-300 hover:-translate-y-2">
-      <div className="h-48 bg-tech-gray flex items-center justify-center">
-        {project.image ? (
-          <img 
-            src={project.image} 
-            alt={project.title} 
-            className="w-full h-full object-cover"
-          />
-        ) : (
-          <div className="text-tech-dark-gray">Project Image</div>
-        )}
+    <div className="group bg-white">
+      <div className="overflow-hidden mb-4">
+        <div 
+          className="w-full aspect-[4/3] bg-tech-gray bg-cover bg-center transform transition-transform duration-500 group-hover:scale-105"
+          style={{ backgroundImage: `url(${image})` }}
+          aria-label={alt}
+        />
       </div>
-      
-      <div className="p-6">
-        <h4 className="text-xl font-semibold text-tech-navy mb-2">
-          {project.title}
-        </h4>
-        
-        <p className="text-gray-600 mb-4">
-          {project.description}
-        </p>
-        
-        <div className="flex flex-wrap gap-2 mb-6">
-          {project.tags.map((tag, index) => (
-            <span 
-              key={index}
-              className="px-2 py-1 bg-tech-gray text-sm rounded text-tech-dark-gray"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-        
-        <div className="flex flex-wrap gap-3">
-          {project.demoLink && (
-            <a 
-              href={project.demoLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1 text-sm text-tech-blue hover:underline"
-            >
-              <ExternalLink size={14} />
-              Live Demo
-            </a>
-          )}
-          
-          {project.githubLink && (
-            <a 
-              href={project.githubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1 text-sm text-tech-navy hover:underline"
-            >
-              <Github size={14} />
-              View Code
-            </a>
-          )}
-        </div>
+      <h3 className="text-xl font-semibold text-tech-navy">{title}</h3>
+      <div className="flex flex-wrap gap-2 mt-2">
+        {categories.map((category, index) => (
+          <span key={index} className="text-sm text-gray-600">
+            {category}{index < categories.length - 1 && ','}
+          </span>
+        ))}
       </div>
+      <a 
+        href="#" 
+        className="inline-flex items-center mt-3 text-sm font-medium text-tech-navy hover:text-tech-blue"
+      >
+        View Project
+        <ChevronRight size={16} className="ml-1"/>
+      </a>
     </div>
   );
 };
 
 const Projects = () => {
-  const [filter, setFilter] = useState('all');
-  
-  const projects: Project[] = [
+  const projects = [
     {
       id: 1,
       title: "Brain Tumor Detection Model",
-      description: "AI-powered model that uses computer vision to detect brain tumors in MRI scans with high accuracy.",
-      tags: ["Python", "TensorFlow", "Computer Vision", "Healthcare"],
-      image: "",
-      demoLink: "#",
-      githubLink: "#"
+      categories: ["AI", "Computer Vision"],
+      image: "/placeholder.svg",
+      alt: "Brain tumor detection model screenshot"
     },
     {
       id: 2,
       title: "Hyperjin Web3 Framework",
-      description: "Open-source framework for building enterprise blockchain applications similar to Hyperledger.",
-      tags: ["Blockchain", "Web3", "Solidity", "JavaScript"],
-      image: "",
-      demoLink: "#",
-      githubLink: "#"
+      categories: ["Blockchain", "Web3"],
+      image: "/placeholder.svg",
+      alt: "Hyperjin framework dashboard" 
     },
     {
       id: 3,
       title: "WeConn Community Platform",
-      description: "A digital platform connecting tech professionals and fostering collaboration in the tech ecosystem.",
-      tags: ["React", "Node.js", "Community", "Platform"],
-      image: "",
-      githubLink: "#"
+      categories: ["Community", "Platform"],
+      image: "/placeholder.svg",
+      alt: "WeConn platform interface"
     }
   ];
-  
-  const filteredProjects = filter === 'all' 
-    ? projects 
-    : projects.filter(project => 
-        project.tags.some(tag => tag.toLowerCase() === filter.toLowerCase())
-      );
-  
+
   return (
-    <section id="projects" className="section-padding bg-white">
+    <section id="projects" className="section-padding bg-gray-50">
       <div className="container mx-auto">
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-tech-navy mb-4">
-            Featured Projects
-          </h2>
-          <div className="w-20 h-1 bg-tech-teal mx-auto mb-6"></div>
-          <p className="text-gray-600">
-            Innovative solutions I've built at the intersection of AI and blockchain technology.
-          </p>
-        </div>
-        
-        <div className="flex flex-wrap justify-center gap-3 mb-10">
-          <Button 
-            onClick={() => setFilter('all')}
-            variant={filter === 'all' ? 'default' : 'outline'}
-            size="sm"
-            className={filter === 'all' ? 'bg-tech-blue' : 'text-tech-navy'}
-          >
-            All Projects
-          </Button>
-          <Button 
-            onClick={() => setFilter('python')}
-            variant={filter === 'python' ? 'default' : 'outline'}
-            size="sm"
-            className={filter === 'python' ? 'bg-tech-blue' : 'text-tech-navy'}
-          >
-            Python
-          </Button>
-          <Button 
-            onClick={() => setFilter('blockchain')}
-            variant={filter === 'blockchain' ? 'default' : 'outline'}
-            size="sm"
-            className={filter === 'blockchain' ? 'bg-tech-blue' : 'text-tech-navy'}
-          >
-            Blockchain
-          </Button>
-          <Button 
-            onClick={() => setFilter('react')}
-            variant={filter === 'react' ? 'default' : 'outline'}
-            size="sm"
-            className={filter === 'react' ? 'bg-tech-blue' : 'text-tech-navy'}
-          >
-            React
-          </Button>
-        </div>
+        <h2 className="text-4xl md:text-5xl font-bold text-tech-navy mb-12">
+          RECENT PROJECTS
+        </h2>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map(project => (
-            <ProjectCard key={project.id} project={project} />
+          {projects.map(project => (
+            <ProjectCard 
+              key={project.id}
+              title={project.title}
+              categories={project.categories}
+              image={project.image}
+              alt={project.alt}
+            />
           ))}
-        </div>
-        
-        <div className="text-center mt-12">
-          <Button className="bg-tech-navy hover:bg-tech-navy/90 inline-flex items-center gap-2">
-            <Code size={16} />
-            View All Projects
-          </Button>
         </div>
       </div>
     </section>
