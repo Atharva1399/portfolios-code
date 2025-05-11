@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Button } from '@/components/ui/button';
 import { ChevronRight } from 'lucide-react';
 
 const Hero = () => {
@@ -35,24 +34,6 @@ const Hero = () => {
                   Specialized in AI Development, Web3 Technologies, and Machine Learning Solutions
                 </p>
               </div>
-            </div>
-            
-            <div className="flex flex-wrap gap-4 pt-6">
-              <Button 
-                size="lg" 
-                className="bg-tech-navy hover:bg-tech-navy/90 text-white rounded-none px-6 group"
-              >
-                View My Work
-                <ChevronRight className="ml-1 group-hover:translate-x-1 transition-transform"/>
-              </Button>
-              
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="border-tech-navy text-tech-navy hover:bg-tech-navy/5 rounded-none px-6"
-              >
-                Get in Touch
-              </Button>
             </div>
           </div>
           
