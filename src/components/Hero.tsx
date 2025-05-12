@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { ChevronDown } from 'lucide-react';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 const Hero = () => {
   return (
@@ -31,10 +32,11 @@ const Hero = () => {
           
           <div className="lg:w-2/5 relative animate-[fade-in_0.6s_ease-out_0.3s_forwards] opacity-0">
             <div className="w-[280px] h-[280px] md:w-[320px] md:h-[320px] rounded-2xl bg-gradient-to-br from-tech-blue to-tech-teal overflow-hidden mx-auto shadow-lg relative">
-              {/* Placeholder for profile image - to be replaced */}
-              <div className="w-full h-full flex items-center justify-center text-white text-lg font-medium">
-                Profile Image
-              </div>
+              <img 
+                src="https://i.postimg.cc/fbD2sVSy/cpm35-2025-04-06-233600-523.jpg" 
+                alt="Atharva's profile" 
+                className="w-full h-full object-cover"
+              />
               
               {/* Decorative elements */}
               <div className="absolute -z-10 w-[280px] h-[280px] md:w-[320px] md:h-[320px] rounded-2xl bg-tech-navy/20 -top-3 -left-3"></div>
