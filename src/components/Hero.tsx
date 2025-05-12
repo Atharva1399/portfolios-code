@@ -2,6 +2,8 @@
 import React from 'react';
 import { ChevronDown } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+import { HoverCard, HoverCardTrigger, HoverCardContent } from '@/components/ui/hover-card';
+import { Card, CardContent } from '@/components/ui/card';
 
 const Hero = () => {
   return (
@@ -12,7 +14,10 @@ const Hero = () => {
       <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           <div className="lg:w-1/2 space-y-8 animate-fade-in">
-            <div className="inline-block px-4 py-2 bg-tech-blue/10 text-tech-blue rounded-full text-sm font-medium mb-2 backdrop-blur-sm shadow-sm">
+            <div 
+              className="inline-block px-4 py-2 bg-tech-blue/10 text-tech-blue rounded-full text-sm font-medium mb-2 backdrop-blur-sm shadow-sm 
+                        hover:bg-tech-blue/20 hover:shadow-md transition-all duration-300 cursor-pointer"
+            >
               Available for projects
             </div>
             
@@ -31,24 +36,41 @@ const Hero = () => {
           </div>
           
           <div className="lg:w-2/5 relative animate-[fade-in_0.6s_ease-out_0.3s_forwards] opacity-0">
-            <div className="w-[280px] h-[280px] md:w-[320px] md:h-[320px] rounded-2xl bg-gradient-to-br from-tech-blue to-tech-teal overflow-hidden mx-auto shadow-lg relative">
-              <img 
-                src="https://i.postimg.cc/pLw95jJV/IMG-20250223-142157.jpg" 
-                alt="Atharva's profile" 
-                className="w-full h-full object-cover"
-              />
-              
-              {/* Decorative elements */}
-              <div className="absolute -z-10 w-[280px] h-[280px] md:w-[320px] md:h-[320px] rounded-2xl bg-tech-navy/20 -top-3 -left-3"></div>
-              <div className="absolute -z-10 w-20 h-20 rounded-full bg-tech-orange/20 -bottom-6 -right-6"></div>
-            </div>
-            
-            <div className="absolute -bottom-6 md:bottom-0 -right-6 md:right-0 bg-white rounded-xl shadow-lg p-5 backdrop-blur-sm bg-white/80 animate-[fade-in_0.6s_ease-out_0.6s_forwards] opacity-0 border border-gray-100">
-              <div className="text-sm text-gray-500 mb-1">Specialized in</div>
-              <div className="font-medium text-tech-navy">
-                AI & Web3 Development
+            <div className="parallax-element" data-depth="0.2">
+              <div className="w-[280px] h-[280px] md:w-[320px] md:h-[320px] rounded-2xl bg-gradient-to-br from-tech-blue to-tech-teal overflow-hidden mx-auto shadow-lg relative 
+                          hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
+                <img 
+                  src="https://i.postimg.cc/pLw95jJV/IMG-20250223-142157.jpg" 
+                  alt="Atharva's profile" 
+                  className="w-full h-full object-cover"
+                />
+                
+                {/* Decorative elements with parallax effect */}
+                <div className="absolute -z-10 w-[280px] h-[280px] md:w-[320px] md:h-[320px] rounded-2xl bg-tech-navy/20 -top-3 -left-3 parallax-element" data-depth="0.4"></div>
+                <div className="absolute -z-10 w-20 h-20 rounded-full bg-tech-orange/20 -bottom-6 -right-6 parallax-element" data-depth="0.6"></div>
               </div>
             </div>
+            
+            <HoverCard>
+              <HoverCardTrigger asChild>
+                <div className="absolute -bottom-6 md:bottom-0 -right-6 md:right-0 bg-white rounded-xl shadow-lg p-5 backdrop-blur-sm bg-white/80 
+                              animate-[fade-in_0.6s_ease-out_0.6s_forwards] opacity-0 border border-gray-100
+                              hover:bg-white hover:shadow-xl transition-all duration-300 cursor-pointer">
+                  <div className="text-sm text-gray-500 mb-1">Specialized in</div>
+                  <div className="font-medium text-tech-navy">
+                    AI & Web3 Development
+                  </div>
+                </div>
+              </HoverCardTrigger>
+              <HoverCardContent className="w-80">
+                <div className="space-y-2">
+                  <h4 className="text-sm font-semibold">Expert in AI Solutions</h4>
+                  <p className="text-sm text-muted-foreground">
+                    With extensive experience in Python, TensorFlow, PyTorch, and blockchain technologies.
+                  </p>
+                </div>
+              </HoverCardContent>
+            </HoverCard>
           </div>
         </div>
         
@@ -57,8 +79,8 @@ const Hero = () => {
             href="#about" 
             className="flex flex-col items-center text-tech-blue hover:text-tech-navy transition-colors group"
           >
-            <span className="text-sm mb-2 font-medium">Explore More</span>
-            <ChevronDown className="animate-bounce group-hover:animate-none" />
+            <span className="text-sm mb-2 font-medium group-hover:translate-y-1 transition-transform">Explore More</span>
+            <ChevronDown className="animate-bounce group-hover:animate-none group-hover:scale-110 transition-all" />
           </a>
         </div>
       </div>

@@ -25,14 +25,31 @@ const Index = () => {
       });
     };
     
+    // Implement parallax effect
+    const handleParallax = (event: MouseEvent) => {
+      const parallaxElements = document.querySelectorAll('.parallax-element');
+      
+      parallaxElements.forEach(element => {
+        const depth = (element as HTMLElement).getAttribute('data-depth') || '0.1';
+        const moveX = (event.clientX - window.innerWidth / 2) * parseFloat(depth);
+        const moveY = (event.clientY - window.innerHeight / 2) * parseFloat(depth);
+        
+        (element as HTMLElement).style.transform = `translate(${moveX}px, ${moveY}px)`;
+      });
+    };
+    
     // Run once after initial render
     animateOnScroll();
     
     // Add scroll event listener
     window.addEventListener('scroll', animateOnScroll);
     
+    // Add mousemove event listener for parallax
+    window.addEventListener('mousemove', handleParallax);
+    
     return () => {
       window.removeEventListener('scroll', animateOnScroll);
+      window.removeEventListener('mousemove', handleParallax);
     };
   }, []);
 
