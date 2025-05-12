@@ -33,7 +33,7 @@ const Hero = () => {
           <div className="lg:w-2/5 relative animate-[fade-in_0.6s_ease-out_0.3s_forwards] opacity-0">
             <div className="w-[280px] h-[280px] md:w-[320px] md:h-[320px] rounded-2xl bg-gradient-to-br from-tech-blue to-tech-teal overflow-hidden mx-auto shadow-lg relative">
               <img 
-                src="https://i.postimg.cc/fbD2sVSy/cpm35-2025-04-06-233600-523.jpg" 
+                src="https://i.postimg.cc/pLw95jJV/IMG-20250223-142157.jpg" 
                 alt="Atharva's profile" 
                 className="w-full h-full object-cover"
               />
