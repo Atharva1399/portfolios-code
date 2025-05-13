@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, Github, Code } from 'lucide-react';
+import { Github, Code } from 'lucide-react';
 
 interface Project {
   id: number;
@@ -9,7 +9,6 @@ interface Project {
   description: string;
   tags: string[];
   image: string;
-  demoLink?: string;
   githubLink?: string;
 }
 
@@ -49,18 +48,6 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
         </div>
         
         <div className="flex flex-wrap gap-3">
-          {project.demoLink && (
-            <a 
-              href={project.demoLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1 text-sm text-tech-blue hover:underline"
-            >
-              <ExternalLink size={14} />
-              Live Demo
-            </a>
-          )}
-          
           {project.githubLink && (
             <a 
               href={project.githubLink}
@@ -87,25 +74,7 @@ const Projects = () => {
       title: "Brain Tumor Detection Model",
       description: "AI-powered model that uses computer vision to detect brain tumors in MRI scans with high accuracy.",
       tags: ["Python", "TensorFlow", "Computer Vision", "Healthcare"],
-      image: "",
-      demoLink: "#",
-      githubLink: "#"
-    },
-    {
-      id: 2,
-      title: "Hyperjin Web3 Framework",
-      description: "Open-source framework for building enterprise blockchain applications similar to Hyperledger.",
-      tags: ["Blockchain", "Web3", "Solidity", "JavaScript"],
-      image: "",
-      demoLink: "#",
-      githubLink: "#"
-    },
-    {
-      id: 3,
-      title: "WeConn Community Platform",
-      description: "A digital platform connecting tech professionals and fostering collaboration in the tech ecosystem.",
-      tags: ["React", "Node.js", "Community", "Platform"],
-      image: "",
+      image: "https://i.postimg.cc/Pfv23pqY/Screenshot-2025-04-18-011015.png",
       githubLink: "#"
     }
   ];
@@ -125,7 +94,7 @@ const Projects = () => {
           </h2>
           <div className="w-20 h-1 bg-tech-teal mx-auto mb-6"></div>
           <p className="text-gray-600">
-            Innovative solutions I've built at the intersection of AI and blockchain technology.
+            Innovative solutions I've built at the intersection of AI and healthcare technology.
           </p>
         </div>
         
@@ -147,20 +116,20 @@ const Projects = () => {
             Python
           </Button>
           <Button 
-            onClick={() => setFilter('blockchain')}
-            variant={filter === 'blockchain' ? 'default' : 'outline'}
+            onClick={() => setFilter('healthcare')}
+            variant={filter === 'healthcare' ? 'default' : 'outline'}
             size="sm"
-            className={filter === 'blockchain' ? 'bg-tech-blue' : 'text-tech-navy'}
+            className={filter === 'healthcare' ? 'bg-tech-blue' : 'text-tech-navy'}
           >
-            Blockchain
+            Healthcare
           </Button>
           <Button 
-            onClick={() => setFilter('react')}
-            variant={filter === 'react' ? 'default' : 'outline'}
+            onClick={() => setFilter('tensorflow')}
+            variant={filter === 'tensorflow' ? 'default' : 'outline'}
             size="sm"
-            className={filter === 'react' ? 'bg-tech-blue' : 'text-tech-navy'}
+            className={filter === 'tensorflow' ? 'bg-tech-blue' : 'text-tech-navy'}
           >
-            React
+            TensorFlow
           </Button>
         </div>
         
