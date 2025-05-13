@@ -25,14 +25,15 @@ const Index = () => {
       });
     };
     
-    // Implement parallax effect
+    // Implement parallax effect with reduced movement
     const handleParallax = (event: MouseEvent) => {
       const parallaxElements = document.querySelectorAll('.parallax-element');
       
       parallaxElements.forEach(element => {
-        const depth = (element as HTMLElement).getAttribute('data-depth') || '0.1';
-        const moveX = (event.clientX - window.innerWidth / 2) * parseFloat(depth);
-        const moveY = (event.clientY - window.innerHeight / 2) * parseFloat(depth);
+        const depth = (element as HTMLElement).getAttribute('data-depth') || '0.05';
+        // Reduce movement by dividing by 2 for a more subtle effect
+        const moveX = (event.clientX - window.innerWidth / 2) * parseFloat(depth) / 2;
+        const moveY = (event.clientY - window.innerHeight / 2) * parseFloat(depth) / 2;
         
         (element as HTMLElement).style.transform = `translate(${moveX}px, ${moveY}px)`;
       });

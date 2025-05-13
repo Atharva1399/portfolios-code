@@ -36,7 +36,7 @@ const Hero = () => {
           </div>
           
           <div className="lg:w-2/5 relative animate-[fade-in_0.6s_ease-out_0.3s_forwards] opacity-0">
-            <div className="parallax-element" data-depth="0.2">
+            <div className="parallax-element" data-depth="0.05">
               <div className="w-[280px] h-[280px] md:w-[320px] md:h-[320px] rounded-2xl bg-gradient-to-br from-tech-blue to-tech-teal overflow-hidden mx-auto shadow-lg relative 
                           hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
                 <img 
@@ -46,8 +46,8 @@ const Hero = () => {
                 />
                 
                 {/* Decorative elements with parallax effect */}
-                <div className="absolute -z-10 w-[280px] h-[280px] md:w-[320px] md:h-[320px] rounded-2xl bg-tech-navy/20 -top-3 -left-3 parallax-element" data-depth="0.4"></div>
-                <div className="absolute -z-10 w-20 h-20 rounded-full bg-tech-orange/20 -bottom-6 -right-6 parallax-element" data-depth="0.6"></div>
+                <div className="absolute -z-10 w-[280px] h-[280px] md:w-[320px] md:h-[320px] rounded-2xl bg-tech-navy/20 -top-3 -left-3 parallax-element" data-depth="0.1"></div>
+                <div className="absolute -z-10 w-20 h-20 rounded-full bg-tech-orange/20 -bottom-6 -right-6 parallax-element" data-depth="0.15"></div>
               </div>
             </div>
             
