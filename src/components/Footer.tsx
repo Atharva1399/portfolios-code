@@ -26,21 +26,25 @@ const Footer = () => {
           <div className="flex flex-col items-center md:items-end">
             <div className="flex gap-4 mb-4">
               <a 
-                href="#" 
+                href="https://github.com/Atharva1399" 
                 className="w-10 h-10 rounded-full flex items-center justify-center bg-white/10 hover:bg-white/20 transition-colors"
                 aria-label="GitHub"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <Github size={18} />
               </a>
               <a 
-                href="#" 
+                href="https://www.linkedin.com/in/atharva-gaikwad-72ba25295/" 
                 className="w-10 h-10 rounded-full flex items-center justify-center bg-white/10 hover:bg-white/20 transition-colors"
                 aria-label="LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <Linkedin size={18} />
               </a>
               <a 
-                href="mailto:contact@atharvagaikwad.com" 
+                href="mailto:atharvaagaikwad04@gmail.com" 
                 className="w-10 h-10 rounded-full flex items-center justify-center bg-white/10 hover:bg-white/20 transition-colors"
                 aria-label="Email"
               >

@@ -75,7 +75,7 @@ const Projects = () => {
       description: "AI-powered model that uses computer vision to detect brain tumors in MRI scans with high accuracy.",
       tags: ["Python", "TensorFlow", "Computer Vision", "Healthcare"],
       image: "https://i.postimg.cc/Pfv23pqY/Screenshot-2025-04-18-011015.png",
-      githubLink: "#"
+      githubLink: "https://github.com/Atharva1399/brain-tumor-detector"
     }
   ];
   
