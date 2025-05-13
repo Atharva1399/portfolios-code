@@ -94,8 +94,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-gray-500">Email</p>
-                  <a href="mailto:contact@atharvagaikwad.com" className="text-tech-navy hover:text-tech-blue transition-colors">
-                    contact@atharvagaikwad.com
+                  <a href="mailto:atharvaagaikwad04@gmail.com" className="text-tech-navy hover:text-tech-blue transition-colors">
+                    atharvaagaikwad04@gmail.com
                   </a>
                 </div>
               </div>
@@ -106,7 +106,12 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-gray-500">LinkedIn</p>
-                  <a href="#" className="text-tech-navy hover:text-tech-blue transition-colors flex items-center gap-1">
+                  <a 
+                    href="https://www.linkedin.com/in/atharva-gaikwad-72ba25295/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-tech-navy hover:text-tech-blue transition-colors flex items-center gap-1"
+                  >
                     Atharva Gaikwad
                     <ExternalLink size={14} />
                   </a>
@@ -119,7 +124,12 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-gray-500">GitHub</p>
-                  <a href="#" className="text-tech-navy hover:text-tech-blue transition-colors flex items-center gap-1">
+                  <a 
+                    href="https://github.com/Atharva1399" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-tech-navy hover:text-tech-blue transition-colors flex items-center gap-1"
+                  >
                     atharva-gaikwad
                     <ExternalLink size={14} />
                   </a>

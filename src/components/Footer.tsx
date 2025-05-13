@@ -29,8 +29,6 @@ const Footer = () => {
                 href="https://github.com/Atharva1399" 
                 className="w-10 h-10 rounded-full flex items-center justify-center bg-white/10 hover:bg-white/20 transition-colors"
                 aria-label="GitHub"
-                target="_blank"
-                rel="noopener noreferrer"
               >
                 <Github size={18} />
               </a>
@@ -38,8 +36,6 @@ const Footer = () => {
                 href="https://www.linkedin.com/in/atharva-gaikwad-72ba25295/" 
                 className="w-10 h-10 rounded-full flex items-center justify-center bg-white/10 hover:bg-white/20 transition-colors"
                 aria-label="LinkedIn"
-                target="_blank"
-                rel="noopener noreferrer"
               >
                 <Linkedin size={18} />
               </a>
