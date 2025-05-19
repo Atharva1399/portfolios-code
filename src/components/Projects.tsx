@@ -82,7 +82,7 @@ const Projects = () => {
       title: "Fundora",
       description: "Fundora empowers small and medium-sized enterprises (SMEs) to turn unpaid invoices into instant liquidity. By leveraging blockchain technology, we tokenize invoices as NFTs and connect them to DeFi liquidity pools, enabling fast, transparent, and cost-effective financing — all on the Base network.",
       tags: ["Blockchain", "DeFi", "Web3", "Finance"],
-      image: "",
+      image: "https://i.postimg.cc/N0s9hFgc/Screenshot-2025-05-19-200205.png",
       githubLink: "https://github.com/FundoraInvoice/Fundora-Invoices"
     }
   ];
