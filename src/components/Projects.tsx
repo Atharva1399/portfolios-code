@@ -76,6 +76,14 @@ const Projects = () => {
       tags: ["Python", "TensorFlow", "Computer Vision", "Healthcare"],
       image: "https://i.postimg.cc/Pfv23pqY/Screenshot-2025-04-18-011015.png",
       githubLink: "https://github.com/Atharva1399/brain-tumor-detector"
+    },
+    {
+      id: 2,
+      title: "Fundora",
+      description: "Fundora empowers small and medium-sized enterprises (SMEs) to turn unpaid invoices into instant liquidity. By leveraging blockchain technology, we tokenize invoices as NFTs and connect them to DeFi liquidity pools, enabling fast, transparent, and cost-effective financing — all on the Base network.",
+      tags: ["Blockchain", "DeFi", "Web3", "Finance"],
+      image: "",
+      githubLink: "https://github.com/FundoraInvoice/Fundora-Invoices"
     }
   ];
   
@@ -130,6 +138,14 @@ const Projects = () => {
             className={filter === 'tensorflow' ? 'bg-tech-blue' : 'text-tech-navy'}
           >
             TensorFlow
+          </Button>
+          <Button 
+            onClick={() => setFilter('blockchain')}
+            variant={filter === 'blockchain' ? 'default' : 'outline'}
+            size="sm"
+            className={filter === 'blockchain' ? 'bg-tech-blue' : 'text-tech-navy'}
+          >
+            Blockchain
           </Button>
         </div>
         
