@@ -92,6 +92,14 @@ const Projects = () => {
       tags: ["Python", "Package", "Dependencies", "DevTools"],
       image: "",
       githubLink: "https://github.com/Atharva1399/autoviron"
+    },
+    {
+      id: 4,
+      title: "DaClean",
+      description: "DaClean is an intelligent, extensible, and user-friendly Python package designed to automate and supercharge your data cleaning workflows. Whether you're a data scientist, analyst, or developer, DaClean helps you prepare high-quality data with confidence and transparency.",
+      tags: ["Python", "Data Science", "Machine Learning", "Package"],
+      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
+      githubLink: "https://github.com/Atharva1399/DaClean"
     }
   ];
   
