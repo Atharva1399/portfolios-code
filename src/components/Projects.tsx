@@ -84,6 +84,14 @@ const Projects = () => {
       tags: ["Blockchain", "DeFi", "Web3", "Finance"],
       image: "https://i.postimg.cc/N0s9hFgc/Screenshot-2025-05-19-200205.png",
       githubLink: "https://github.com/FundoraInvoice/Fundora-Invoices"
+    },
+    {
+      id: 3,
+      title: "Autoviron",
+      description: "A Python package that automatically detects dependencies and creates a virtual environment for it, streamlining the development setup process.",
+      tags: ["Python", "Package", "Dependencies", "DevTools"],
+      image: "",
+      githubLink: "https://github.com/Atharva1399/autoviron"
     }
   ];
   
