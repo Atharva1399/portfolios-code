@@ -102,8 +102,8 @@ export default {
 				'fade-out': 'fade-out 0.5s ease-out forwards'
 			},
 			fontFamily: {
-				montserrat: ['Montserrat', 'sans-serif'],
-				inter: ['Inter', 'sans-serif']
+				mono: ['JetBrains Mono', 'monospace'],
+				sans: ['Inter', 'sans-serif']
 			}
 		}
 	},
