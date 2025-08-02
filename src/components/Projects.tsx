@@ -14,8 +14,8 @@ interface Project {
 
 const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
   return (
-    <div className="bg-white rounded-lg overflow-hidden shadow-md transition-transform duration-300 hover:-translate-y-2">
-      <div className="h-48 bg-tech-gray flex items-center justify-center">
+    <div className="bg-card rounded-lg overflow-hidden border border-border transition-transform duration-300 hover:-translate-y-2">
+      <div className="h-48 bg-muted flex items-center justify-center">
         {project.image ? (
           <img 
             src={project.image} 
@@ -23,16 +23,16 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
             className="w-full h-full object-cover"
           />
         ) : (
-          <div className="text-tech-dark-gray">Project Image</div>
+          <div className="text-muted-foreground">Project Image</div>
         )}
       </div>
       
       <div className="p-6">
-        <h4 className="text-xl font-semibold text-tech-navy mb-2">
+        <h4 className="text-xl font-semibold text-card-foreground mb-2">
           {project.title}
         </h4>
         
-        <p className="text-gray-600 mb-4">
+        <p className="text-muted-foreground mb-4">
           {project.description}
         </p>
         
@@ -40,7 +40,7 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
           {project.tags.map((tag, index) => (
             <span 
               key={index}
-              className="px-2 py-1 bg-tech-gray text-sm rounded text-tech-dark-gray"
+              className="px-2 py-1 bg-secondary text-sm rounded text-secondary-foreground"
             >
               {tag}
             </span>
@@ -110,14 +110,14 @@ const Projects = () => {
       );
   
   return (
-    <section id="projects" className="section-padding bg-white">
+    <section id="projects" className="section-padding bg-background">
       <div className="container mx-auto">
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-tech-navy mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Featured Projects
           </h2>
-          <div className="w-20 h-1 bg-tech-teal mx-auto mb-6"></div>
-          <p className="text-gray-600">
+          <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
+          <p className="text-muted-foreground">
             Innovative solutions I've built at the intersection of AI and healthcare technology.
           </p>
         </div>

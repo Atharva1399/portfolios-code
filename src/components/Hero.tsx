@@ -9,27 +9,27 @@ const Hero = () => {
   return (
     <section 
       id="home" 
-      className="min-h-screen flex items-center pt-16 bg-gradient-to-br from-tech-blue/10 to-tech-gray/30"
+      className="min-h-screen flex items-center pt-16 bg-background"
     >
       <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           <div className="lg:w-1/2 space-y-8 animate-fade-in">
             <div 
-              className="inline-block px-4 py-2 bg-tech-blue/10 text-tech-blue rounded-full text-sm font-medium mb-2 backdrop-blur-sm shadow-sm 
-                        hover:bg-tech-blue/20 hover:shadow-md transition-all duration-300 cursor-pointer"
+              className="inline-block px-4 py-2 bg-secondary text-secondary-foreground rounded-full text-sm font-medium mb-2 
+                        hover:bg-accent hover:text-accent-foreground transition-all duration-300 cursor-pointer"
             >
               Available for projects
             </div>
             
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-montserrat font-bold text-tech-navy leading-tight">
-              Hey, I'm <span className="text-tech-blue bg-gradient-to-r from-tech-blue to-tech-teal bg-clip-text text-transparent">Atharva</span>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-mono font-bold text-foreground leading-tight">
+              Hey, I'm <span className="text-primary">Atharva</span>
             </h1>
             
-            <h2 className="text-2xl md:text-3xl font-light text-tech-dark-gray">
+            <h2 className="text-2xl md:text-3xl font-light text-muted-foreground">
               Tech Entrepreneur & AI Developer
             </h2>
             
-            <p className="text-gray-600 text-lg max-w-xl leading-relaxed">
+            <p className="text-foreground text-lg max-w-xl leading-relaxed">
               Building intelligent solutions at the intersection of AI and Web3. 
               I specialize in Python development, machine learning, and blockchain technologies.
             </p>

@@ -69,21 +69,21 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="section-padding bg-white">
+    <section id="contact" className="section-padding bg-background">
       <div className="container mx-auto">
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-tech-navy mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Get In Touch
           </h2>
-          <div className="w-20 h-1 bg-tech-teal mx-auto mb-6"></div>
-          <p className="text-gray-600">
+          <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
+          <p className="text-muted-foreground">
             Interested in working together? Feel free to reach out for collaborations or just a friendly chat.
           </p>
         </div>
         
         <div className="grid md:grid-cols-2 gap-12">
           <div>
-            <h3 className="text-2xl font-semibold text-tech-navy mb-6">
+            <h3 className="text-2xl font-semibold text-foreground mb-6">
               Contact Information
             </h3>
             

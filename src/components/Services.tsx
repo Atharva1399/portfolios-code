@@ -10,16 +10,16 @@ interface ServiceCardProps {
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description }) => {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-md">
-      <div className="w-14 h-14 flex items-center justify-center bg-tech-blue/10 text-tech-blue rounded-lg mb-6">
+    <div className="bg-card p-6 rounded-lg border border-border transition-all duration-300 hover:shadow-md">
+      <div className="w-14 h-14 flex items-center justify-center bg-secondary text-secondary-foreground rounded-lg mb-6">
         {icon}
       </div>
       
-      <h3 className="text-xl font-semibold text-tech-navy mb-3">
+      <h3 className="text-xl font-semibold text-card-foreground mb-3">
         {title}
       </h3>
       
-      <p className="text-gray-600">
+      <p className="text-muted-foreground">
         {description}
       </p>
     </div>
@@ -28,14 +28,14 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description }) =
 
 const Services = () => {
   return (
-    <section id="services" className="section-padding bg-gray-50">
+    <section id="services" className="section-padding bg-background">
       <div className="container mx-auto">
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-tech-navy mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Services Offered
           </h2>
-          <div className="w-20 h-1 bg-tech-teal mx-auto mb-6"></div>
-          <p className="text-gray-600">
+          <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
+          <p className="text-muted-foreground">
             Professional services leveraging my expertise in AI, development, and technical community building.
           </p>
         </div>
