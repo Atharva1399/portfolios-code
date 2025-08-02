@@ -1,64 +1,123 @@
 
 import React from 'react';
-import { Award, BookOpen, Code } from 'lucide-react';
+import { GraduationCap, Code, Briefcase, Trophy, Lightbulb, Rocket } from 'lucide-react';
 
 const About = () => {
+  const roadmapSteps = [
+    {
+      icon: <GraduationCap className="w-8 h-8" />,
+      title: "Computer Science Foundation",
+      year: "2021-Present",
+      description: "Started BS in Computer Science at MIT ADT, building strong fundamentals in algorithms, data structures, and software engineering.",
+      tech: ["Java", "C++", "DSA", "Database Design"]
+    },
+    {
+      icon: <Code className="w-8 h-8" />,
+      title: "Full-Stack Development",
+      year: "2022",
+      description: "Mastered modern web technologies and frameworks to build scalable applications with beautiful user interfaces.",
+      tech: ["React", "Node.js", "TypeScript", "MongoDB"]
+    },
+    {
+      icon: <Lightbulb className="w-8 h-8" />,
+      title: "AI & Machine Learning",
+      year: "2023",
+      description: "Dove deep into artificial intelligence, implementing ML models and exploring the potential of neural networks.",
+      tech: ["Python", "TensorFlow", "PyTorch", "Scikit-learn"]
+    },
+    {
+      icon: <Briefcase className="w-8 h-8" />,
+      title: "Professional Experience",
+      year: "2023-Present",
+      description: "Working as Developer Relations professional, bridging the gap between complex technologies and developer communities.",
+      tech: ["DevRel", "Community Building", "Technical Writing"]
+    },
+    {
+      icon: <Trophy className="w-8 h-8" />,
+      title: "Entrepreneurship",
+      year: "2024",
+      description: "Co-founded WeConn, creating a thriving community platform for tech professionals to collaborate and grow.",
+      tech: ["Startup", "Leadership", "Product Development"]
+    },
+    {
+      icon: <Rocket className="w-8 h-8" />,
+      title: "Future Innovations",
+      year: "2025+",
+      description: "Focusing on blockchain technologies and advanced AI applications to shape the future of technology.",
+      tech: ["Blockchain", "Web3", "Advanced AI", "Innovation"]
+    }
+  ];
+
   return (
-    <section id="about" className="section-padding bg-white">
+    <section id="about" className="section-padding bg-background">
       <div className="container mx-auto">
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-tech-navy mb-4">
-            About Me
+        <div className="max-w-4xl mx-auto text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-mono font-bold text-foreground mb-6">
+            My Learning Journey
           </h2>
-          <div className="w-20 h-1 bg-tech-teal mx-auto mb-6"></div>
-          <p className="text-gray-600">
-            I'm a tech enthusiast, entrepreneur, and computer science student passionate about building innovative solutions.
+          <div className="w-24 h-1 bg-gradient-to-r from-accent via-primary to-accent mx-auto mb-8 rounded-full shadow-lg shadow-accent/50"></div>
+          <p className="text-lg text-muted-foreground font-medium">
+            From curious student to tech entrepreneur - here's how I've evolved through code, innovation, and community building.
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
-            <h3 className="text-2xl font-semibold text-tech-navy">
-              My Journey
-            </h3>
-            
-            <p className="text-gray-600">
-              As a forward-thinking computer science student at MIT ADT, I've always been fascinated by how technology can solve real-world problems. My journey began with programming experiments that quickly evolved into a passion for building AI-powered solutions.
-            </p>
-            
-            <p className="text-gray-600">
-              I co-founded WeConn, a thriving community for tech professionals that aims to bridge knowledge gaps and foster collaboration in the tech ecosystem. As a Developer Relations professional, I help connect innovative technologies with the developers who can leverage them.
-            </p>
-            
-            <p className="text-gray-600">
-              My focus areas include artificial intelligence, machine learning models, and blockchain frameworks - tools that I believe will shape the future of how we interact with technology.
-            </p>
-          </div>
+        <div className="relative">
+          {/* Central Timeline Line */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-accent via-primary to-accent h-full rounded-full shadow-lg shadow-accent/30"></div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-tech-gray p-6 rounded-lg shadow-sm">
-              <BookOpen className="w-10 h-10 text-tech-teal mb-4" />
-              <h4 className="text-xl font-semibold text-tech-navy mb-2">Education</h4>
-              <p className="text-gray-600">
-                Pursuing BS in Computer Science at MIT ADT with focus on artificial intelligence and distributed systems.
-              </p>
-            </div>
-            
-            <div className="bg-tech-gray p-6 rounded-lg shadow-sm">
-              <Code className="w-10 h-10 text-tech-orange mb-4" />
-              <h4 className="text-xl font-semibold text-tech-navy mb-2">Development</h4>
-              <p className="text-gray-600">
-                Specializing in Python, ML frameworks, and blockchain technologies with a focus on practical applications.
-              </p>
-            </div>
-            
-            <div className="bg-tech-gray p-6 rounded-lg shadow-sm md:col-span-2">
-              <Award className="w-10 h-10 text-tech-blue mb-4" />
-              <h4 className="text-xl font-semibold text-tech-navy mb-2">Entrepreneur</h4>
-              <p className="text-gray-600">
-                Co-founder of WeConn, bringing together tech professionals and fostering innovation in the developer community.
-              </p>
-            </div>
+          {/* Roadmap Steps */}
+          <div className="space-y-16">
+            {roadmapSteps.map((step, index) => (
+              <div 
+                key={index}
+                className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} group`}
+              >
+                <div className={`w-5/12 ${index % 2 === 0 ? 'text-right pr-8' : 'text-left pl-8'}`}>
+                  <div className="bg-card border border-border rounded-xl p-6 shadow-lg hover:shadow-xl hover:shadow-accent/20 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
+                    <div className={`flex items-center gap-3 mb-4 ${index % 2 === 0 ? 'justify-end' : 'justify-start'}`}>
+                      <div className="p-3 bg-gradient-to-br from-accent to-primary rounded-lg text-background shadow-lg shadow-accent/30 transform transition-transform duration-300 group-hover:rotate-12">
+                        {step.icon}
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-mono font-bold text-foreground">{step.title}</h3>
+                        <span className="text-sm font-semibold text-accent bg-accent/10 px-3 py-1 rounded-full border border-accent/20">
+                          {step.year}
+                        </span>
+                      </div>
+                    </div>
+                    
+                    <p className="text-muted-foreground mb-4 leading-relaxed">
+                      {step.description}
+                    </p>
+                    
+                    <div className={`flex flex-wrap gap-2 ${index % 2 === 0 ? 'justify-end' : 'justify-start'}`}>
+                      {step.tech.map((tech, techIndex) => (
+                        <span 
+                          key={techIndex}
+                          className="px-3 py-1 text-xs font-mono font-bold bg-gradient-to-r from-primary/20 to-accent/20 text-foreground rounded-full border border-primary/30 shadow-sm hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 transform hover:scale-110"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Timeline Node */}
+                <div className="relative w-2/12 flex justify-center">
+                  <div className="w-6 h-6 bg-gradient-to-br from-accent to-primary rounded-full border-4 border-background shadow-lg shadow-accent/50 transform transition-all duration-500 group-hover:scale-150 group-hover:shadow-2xl group-hover:shadow-accent/60 z-10">
+                    <div className="absolute inset-1 bg-gradient-to-br from-background to-card rounded-full animate-pulse"></div>
+                  </div>
+                  
+                  {/* 3D Floating Animation */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-12 h-12 bg-gradient-to-br from-accent/20 to-primary/20 rounded-full blur-sm animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  </div>
+                </div>
+                
+                <div className="w-5/12"></div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

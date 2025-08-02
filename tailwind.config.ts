@@ -101,6 +101,14 @@ export default {
 				'scroll-right': {
 					'0%': { transform: 'translateX(-50%)' },
 					'100%': { transform: 'translateX(0)' }
+				},
+				'shimmer': {
+					'0%': { backgroundPosition: '-1000px 0' },
+					'100%': { backgroundPosition: '1000px 0' }
+				},
+				'glow-pulse': {
+					'0%, 100%': { boxShadow: '0 0 20px hsl(var(--accent))' },
+					'50%': { boxShadow: '0 0 40px hsl(var(--accent)), 0 0 60px hsl(var(--primary))' }
 				}
 			},
 			animation: {
@@ -109,7 +117,9 @@ export default {
 				'fade-in': 'fade-in 0.5s ease-out forwards',
 				'fade-out': 'fade-out 0.5s ease-out forwards',
 				'scroll-left': 'scroll-left 20s linear infinite',
-				'scroll-right': 'scroll-right 20s linear infinite'
+				'scroll-right': 'scroll-right 20s linear infinite',
+				'shimmer': 'shimmer 2s infinite linear',
+				'glow-pulse': 'glow-pulse 2s ease-in-out infinite alternate'
 			},
 			fontFamily: {
 				mono: ['JetBrains Mono', 'monospace'],
