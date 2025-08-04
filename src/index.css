@@ -19,8 +19,8 @@
     --primary: 0 0% 100%;
     --primary-foreground: 0 0% 0%;
 
-    --secondary: 0 0% 8%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 180 100% 50%;
+    --secondary-foreground: 0 0% 0%;
 
     --muted: 0 0% 8%;
     --muted-foreground: 0 0% 70%;
@@ -36,6 +36,11 @@
     --ring: 0 0% 100%;
 
     --radius: 0rem;
+
+    /* Neon Turquoise Accents */
+    --neon-turquoise: 180 100% 50%;
+    --neon-turquoise-glow: 180 100% 60%;
+    --neon-turquoise-dark: 180 80% 40%;
 
     --sidebar-background: 0 0% 0%;
     --sidebar-foreground: 0 0% 100%;

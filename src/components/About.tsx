@@ -40,6 +40,13 @@ const About = () => {
       tech: ["Startup", "Leadership", "Product Development"]
     },
     {
+      icon: <Briefcase className="w-8 h-8" />,
+      title: "Gen AI Developer Intern",
+      year: "June 2025 - July 2025",
+      description: "Interned at TATA Communications as a Generative AI Developer, working on cutting-edge AI solutions and contributing to enterprise-level AI implementations.",
+      tech: ["Generative AI", "Enterprise AI", "LLMs", "AI Integration"]
+    },
+    {
       icon: <Rocket className="w-8 h-8" />,
       title: "Future Innovations",
       year: "2025+",
@@ -55,7 +62,7 @@ const About = () => {
           <h2 className="text-4xl md:text-5xl font-mono font-bold text-foreground mb-6">
             My Learning Journey
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-accent via-primary to-accent mx-auto mb-8 rounded-full shadow-lg shadow-accent/50"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-accent via-neon-turquoise to-accent mx-auto mb-8 rounded-full shadow-lg shadow-neon-turquoise/50 animate-neon-glow"></div>
           <p className="text-lg text-muted-foreground font-medium">
             From curious student to tech entrepreneur - here's how I've evolved through code, innovation, and community building.
           </p>
@@ -63,7 +70,7 @@ const About = () => {
         
         <div className="relative">
           {/* Central Timeline Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-accent via-primary to-accent h-full rounded-full shadow-lg shadow-accent/30"></div>
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-accent via-neon-turquoise to-accent h-full rounded-full shadow-lg shadow-neon-turquoise/50 animate-neon-glow"></div>
           
           {/* Roadmap Steps */}
           <div className="space-y-16">
@@ -73,14 +80,14 @@ const About = () => {
                 className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} group`}
               >
                 <div className={`w-5/12 ${index % 2 === 0 ? 'text-right pr-8' : 'text-left pl-8'}`}>
-                  <div className="bg-card border border-border rounded-xl p-6 shadow-lg hover:shadow-xl hover:shadow-accent/20 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
+                  <div className="bg-card border border-border rounded-xl p-6 shadow-lg hover:shadow-xl hover:shadow-neon-turquoise/30 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 animate-float">
                     <div className={`flex items-center gap-3 mb-4 ${index % 2 === 0 ? 'justify-end' : 'justify-start'}`}>
-                      <div className="p-3 bg-gradient-to-br from-accent to-primary rounded-lg text-background shadow-lg shadow-accent/30 transform transition-transform duration-300 group-hover:rotate-12">
+                      <div className="p-3 bg-gradient-to-br from-neon-turquoise to-primary rounded-lg text-background shadow-lg shadow-neon-turquoise/50 transform transition-transform duration-300 group-hover:rotate-12 animate-neon-glow">
                         {step.icon}
                       </div>
                       <div>
                         <h3 className="text-xl font-mono font-bold text-foreground">{step.title}</h3>
-                        <span className="text-sm font-semibold text-accent bg-accent/10 px-3 py-1 rounded-full border border-accent/20">
+                        <span className="text-sm font-semibold text-neon-turquoise bg-neon-turquoise/10 px-3 py-1 rounded-full border border-neon-turquoise/30 animate-neon-glow">
                           {step.year}
                         </span>
                       </div>
@@ -105,13 +112,13 @@ const About = () => {
                 
                 {/* Timeline Node */}
                 <div className="relative w-2/12 flex justify-center">
-                  <div className="w-6 h-6 bg-gradient-to-br from-accent to-primary rounded-full border-4 border-background shadow-lg shadow-accent/50 transform transition-all duration-500 group-hover:scale-150 group-hover:shadow-2xl group-hover:shadow-accent/60 z-10">
+                  <div className="w-6 h-6 bg-gradient-to-br from-neon-turquoise to-primary rounded-full border-4 border-background shadow-lg shadow-neon-turquoise/50 transform transition-all duration-500 group-hover:scale-150 group-hover:shadow-2xl group-hover:shadow-neon-turquoise/80 z-10 animate-neon-glow">
                     <div className="absolute inset-1 bg-gradient-to-br from-background to-card rounded-full animate-pulse"></div>
                   </div>
                   
                   {/* 3D Floating Animation */}
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-accent/20 to-primary/20 rounded-full blur-sm animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="w-12 h-12 bg-gradient-to-br from-neon-turquoise/30 to-primary/20 rounded-full blur-sm animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   </div>
                 </div>
                 
