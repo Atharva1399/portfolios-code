@@ -7,87 +7,90 @@
 
 @layer base {
   :root {
-    --background: 0 0% 0%;
+    /* Retro minimal: dark blue background and white foreground */
+    --background: 232 70% 8%;
     --foreground: 0 0% 100%;
 
-    --card: 0 0% 3%;
+    --card: 232 60% 10%;
     --card-foreground: 0 0% 100%;
 
-    --popover: 0 0% 3%;
+    --popover: 232 60% 10%;
     --popover-foreground: 0 0% 100%;
 
     --primary: 0 0% 100%;
-    --primary-foreground: 0 0% 0%;
+    --primary-foreground: 232 70% 8%;
 
-    --secondary: 180 100% 50%;
-    --secondary-foreground: 0 0% 0%;
+    --secondary: 232 30% 18%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 8%;
-    --muted-foreground: 0 0% 70%;
+    --muted: 232 30% 18%;
+    --muted-foreground: 220 15% 75%;
 
-    --accent: 0 0% 15%;
+    --accent: 232 25% 16%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 15%;
-    --input: 0 0% 8%;
+    --border: 232 30% 22%;
+    --input: 232 30% 18%;
     --ring: 0 0% 100%;
 
     --radius: 0rem;
 
-    /* Neon Turquoise Accents */
+    /* Legacy Neon Turquoise (kept for compatibility but not primary) */
     --neon-turquoise: 180 100% 50%;
     --neon-turquoise-glow: 180 100% 60%;
     --neon-turquoise-dark: 180 80% 40%;
 
-    --sidebar-background: 0 0% 0%;
+    /* Sidebar tokens aligned with retro theme */
+    --sidebar-background: 232 70% 8%;
     --sidebar-foreground: 0 0% 100%;
     --sidebar-primary: 0 0% 100%;
-    --sidebar-primary-foreground: 0 0% 0%;
-    --sidebar-accent: 0 0% 8%;
+    --sidebar-primary-foreground: 232 70% 8%;
+    --sidebar-accent: 232 30% 18%;
     --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 0 0% 15%;
+    --sidebar-border: 232 30% 22%;
     --sidebar-ring: 0 0% 100%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 232 70% 8%;
+    --foreground: 0 0% 100%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 232 60% 10%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 232 60% 10%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 232 70% 8%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 232 30% 18%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 232 30% 18%;
+    --muted-foreground: 220 15% 75%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 232 25% 16%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 224.3% 76.3% 48%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 232 30% 22%;
+    --input: 232 30% 18%;
+    --ring: 0 0% 100%;
+
+    --sidebar-background: 232 70% 8%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 232 70% 8%;
+    --sidebar-accent: 232 30% 18%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 232 30% 22%;
+    --sidebar-ring: 0 0% 100%;
   }
 }
 
@@ -101,11 +104,11 @@
   }
 
   body {
-    @apply bg-background text-foreground font-mono font-medium;
+    @apply bg-background text-foreground font-pixel;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-mono font-bold;
+    @apply font-pixel font-bold;
   }
 
   .section-padding {
