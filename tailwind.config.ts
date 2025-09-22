@@ -64,9 +64,8 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				tech: {
-					blue: '#0C66E4',
-					navy: '#1A2B4D',
-					teal: '#16B9B3',
+					blue: '#1034A6', // Egyptian blue
+					navy: '#1034A6', // Egyptian blue
 					orange: '#FF7A59',
 					gray: '#F5F7FA',
 					'dark-gray': '#343A40',
