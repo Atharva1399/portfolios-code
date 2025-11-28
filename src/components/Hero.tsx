@@ -6,7 +6,7 @@ const Hero = () => {
     <HeroGeometric 
       badge="Available for projects"
       title1="Hey, I'm Atharva"
-      title2="Tech Entrepreneur & AI Developer"
+      title2="your friendly neighborhood tech guy"
     />
   );
 };
