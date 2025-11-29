@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Github, Code } from 'lucide-react';
+import { GlowingEffect } from '@/components/ui/glowing-effect';
 
 interface Project {
   id: number;
@@ -14,51 +15,61 @@ interface Project {
 
 const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
   return (
-    <div className="bg-card rounded-lg overflow-hidden border border-border transition-transform duration-300 hover:-translate-y-2">
-      <div className="h-48 bg-muted flex items-center justify-center">
-        {project.image ? (
-          <img 
-            src={project.image} 
-            alt={project.title} 
-            className="w-full h-full object-cover"
-          />
-        ) : (
-          <div className="text-muted-foreground">Project Image</div>
-        )}
-      </div>
-      
-      <div className="p-6">
-        <h4 className="text-xl font-semibold text-card-foreground mb-2">
-          {project.title}
-        </h4>
-        
-        <p className="text-muted-foreground mb-4">
-          {project.description}
-        </p>
-        
-        <div className="flex flex-wrap gap-2 mb-6">
-          {project.tags.map((tag, index) => (
-            <span 
-              key={index}
-              className="px-2 py-1 bg-secondary text-sm rounded text-secondary-foreground"
-            >
-              {tag}
-            </span>
-          ))}
+    <div className="relative">
+      <GlowingEffect
+        spread={40}
+        glow={true}
+        disabled={false}
+        proximity={64}
+        inactiveZone={0.01}
+        borderWidth={2}
+      />
+      <div className="bg-card rounded-lg overflow-hidden border border-border transition-transform duration-300 hover:-translate-y-2">
+        <div className="h-48 bg-muted flex items-center justify-center">
+          {project.image ? (
+            <img 
+              src={project.image} 
+              alt={project.title} 
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <div className="text-muted-foreground">Project Image</div>
+          )}
         </div>
         
-        <div className="flex flex-wrap gap-3">
-          {project.githubLink && (
-            <a 
-              href={project.githubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1 text-sm text-tech-navy hover:underline"
-            >
-              <Github size={14} />
-              View Code
-            </a>
-          )}
+        <div className="p-6">
+          <h4 className="text-xl font-semibold text-card-foreground mb-2">
+            {project.title}
+          </h4>
+          
+          <p className="text-muted-foreground mb-4">
+            {project.description}
+          </p>
+          
+          <div className="flex flex-wrap gap-2 mb-6">
+            {project.tags.map((tag, index) => (
+              <span 
+                key={index}
+                className="px-2 py-1 bg-secondary text-sm rounded text-secondary-foreground"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+          
+          <div className="flex flex-wrap gap-3">
+            {project.githubLink && (
+              <a 
+                href={project.githubLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 text-sm text-tech-navy hover:underline"
+              >
+                <Github size={14} />
+                View Code
+              </a>
+            )}
+          </div>
         </div>
       </div>
     </div>

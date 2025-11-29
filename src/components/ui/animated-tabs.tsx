@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 interface Tab {
   id: string;
@@ -118,30 +119,40 @@ const AnimatedTabs = ({
         ))}
       </div>
 
-      <div className="p-4 bg-[#11111198] shadow-[0_0_20px_rgba(0,0,0,0.2)] text-white bg-opacity-50 backdrop-blur-sm rounded-xl border min-h-60 h-full">
-        {tabs.map(
-          (tab) =>
-            activeTab === tab.id && (
-              <motion.div
-                key={tab.id}
-                initial={{
-                  opacity: 0,
-                  scale: 0.95,
-                  x: -10,
-                  filter: "blur(10px)",
-                }}
-                animate={{ opacity: 1, scale: 1, x: 0, filter: "blur(0px)" }}
-                exit={{ opacity: 0, scale: 0.95, x: -10, filter: "blur(10px)" }}
-                transition={{
-                  duration: 0.5,
-                  ease: "circInOut",
-                  type: "spring",
-                }}
-              >
-                {tab.content}
-              </motion.div>
-            )
-        )}
+      <div className="relative">
+        <GlowingEffect
+          spread={40}
+          glow={true}
+          disabled={false}
+          proximity={64}
+          inactiveZone={0.01}
+          borderWidth={2}
+        />
+        <div className="p-4 bg-[#11111198] shadow-[0_0_20px_rgba(0,0,0,0.2)] text-white bg-opacity-50 backdrop-blur-sm rounded-xl border min-h-60 h-full">
+          {tabs.map(
+            (tab) =>
+              activeTab === tab.id && (
+                <motion.div
+                  key={tab.id}
+                  initial={{
+                    opacity: 0,
+                    scale: 0.95,
+                    x: -10,
+                    filter: "blur(10px)",
+                  }}
+                  animate={{ opacity: 1, scale: 1, x: 0, filter: "blur(0px)" }}
+                  exit={{ opacity: 0, scale: 0.95, x: -10, filter: "blur(10px)" }}
+                  transition={{
+                    duration: 0.5,
+                    ease: "circInOut",
+                    type: "spring",
+                  }}
+                >
+                  {tab.content}
+                </motion.div>
+              )
+          )}
+        </div>
       </div>
     </div>
   );

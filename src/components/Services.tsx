@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Brain, Code, Users, Database } from 'lucide-react';
+import { GlowingEffect } from '@/components/ui/glowing-effect';
 
 interface ServiceCardProps {
   icon: React.ReactNode;
@@ -10,18 +11,28 @@ interface ServiceCardProps {
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description }) => {
   return (
-    <div className="bg-card p-4 sm:p-6 rounded-lg border border-border">
-      <div className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center bg-neon-turquoise text-background rounded-lg mb-4 sm:mb-6">
-        {icon}
+    <div className="relative">
+      <GlowingEffect
+        spread={40}
+        glow={true}
+        disabled={false}
+        proximity={64}
+        inactiveZone={0.01}
+        borderWidth={2}
+      />
+      <div className="bg-card p-4 sm:p-6 rounded-lg border border-border">
+        <div className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center bg-neon-turquoise text-background rounded-lg mb-4 sm:mb-6">
+          {icon}
+        </div>
+        
+        <h3 className="text-xl font-semibold text-card-foreground mb-3">
+          {title}
+        </h3>
+        
+        <p className="text-muted-foreground">
+          {description}
+        </p>
       </div>
-      
-      <h3 className="text-xl font-semibold text-card-foreground mb-3">
-        {title}
-      </h3>
-      
-      <p className="text-muted-foreground">
-        {description}
-      </p>
     </div>
   );
 };
