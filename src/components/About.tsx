@@ -1,5 +1,6 @@
 import React from 'react';
 import { AnimatedTabs } from '@/components/ui/animated-tabs';
+import { ContainerScroll } from '@/components/ui/container-scroll-animation';
 
 // Minimal retro data model
 interface Step {
@@ -93,21 +94,23 @@ const About = () => {
   }));
 
   return (
-    <section id="about" className="section-padding bg-background">
-      <div className="container mx-auto">
-        <header className="max-w-5xl mx-auto text-center mb-8 md:mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-            My Learning Journey
-          </h2>
-          <p className="text-muted-foreground mt-2">
-            A timeline of my growth and achievements
-          </p>
-        </header>
-
-        <div className="max-w-5xl mx-auto flex justify-center">
+    <section id="about" className="bg-background">
+      <ContainerScroll
+        titleComponent={
+          <>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+              My Learning Journey
+            </h2>
+            <p className="text-muted-foreground mt-2">
+              A timeline of my growth and achievements
+            </p>
+          </>
+        }
+      >
+        <div className="h-full w-full flex items-center justify-center p-4">
           <AnimatedTabs tabs={tabs} className="max-w-4xl w-full" />
         </div>
-      </div>
+      </ContainerScroll>
     </section>
   );
 };
