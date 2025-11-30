@@ -72,17 +72,17 @@ const About = () => {
     content: (
       <div className="flex flex-col gap-4 w-full h-full">
         <div className="flex flex-col gap-y-2">
-          <h3 className="text-2xl font-bold mb-0 text-white mt-0">
+          <h3 className="text-2xl font-bold mb-0 text-foreground mt-0">
             {step.title}
           </h3>
-          <p className="text-sm text-gray-200 mt-2">
+          <p className="text-sm text-muted-foreground mt-2">
             {step.description}
           </p>
           <div className="flex flex-wrap gap-2 pt-2">
             {step.tech.map((t) => (
               <span
                 key={t}
-                className="px-3 py-1 text-xs rounded-full bg-white/10 text-white/90 border border-white/20"
+                className="px-3 py-1 text-xs rounded-full bg-primary/10 text-primary border border-primary/20"
               >
                 {t}
               </span>
