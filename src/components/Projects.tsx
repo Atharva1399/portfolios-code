@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Github, Code } from 'lucide-react';
 import { GlowingEffect } from '@/components/ui/glowing-effect';
+import { FramerCarousel } from '@/components/ui/framer-carousel';
 
 interface Project {
   id: number;
@@ -120,6 +121,11 @@ const Projects = () => {
         project.tags.some(tag => tag.toLowerCase() === filter.toLowerCase())
       );
   
+  const carouselItems = filteredProjects.map(project => ({
+    id: project.id,
+    content: <ProjectCard project={project} />
+  }));
+  
   return (
     <section id="projects" className="section-padding bg-background">
       <div className="container mx-auto">
@@ -138,7 +144,6 @@ const Projects = () => {
             onClick={() => setFilter('all')}
             variant={filter === 'all' ? 'default' : 'outline'}
             size="sm"
-            className={filter === 'all' ? 'bg-tech-blue' : 'text-tech-navy'}
           >
             All Projects
           </Button>
@@ -146,7 +151,6 @@ const Projects = () => {
             onClick={() => setFilter('python')}
             variant={filter === 'python' ? 'default' : 'outline'}
             size="sm"
-            className={filter === 'python' ? 'bg-tech-blue' : 'text-tech-navy'}
           >
             Python
           </Button>
@@ -154,7 +158,6 @@ const Projects = () => {
             onClick={() => setFilter('healthcare')}
             variant={filter === 'healthcare' ? 'default' : 'outline'}
             size="sm"
-            className={filter === 'healthcare' ? 'bg-tech-blue' : 'text-tech-navy'}
           >
             Healthcare
           </Button>
@@ -162,7 +165,6 @@ const Projects = () => {
             onClick={() => setFilter('tensorflow')}
             variant={filter === 'tensorflow' ? 'default' : 'outline'}
             size="sm"
-            className={filter === 'tensorflow' ? 'bg-tech-blue' : 'text-tech-navy'}
           >
             TensorFlow
           </Button>
@@ -170,20 +172,15 @@ const Projects = () => {
             onClick={() => setFilter('blockchain')}
             variant={filter === 'blockchain' ? 'default' : 'outline'}
             size="sm"
-            className={filter === 'blockchain' ? 'bg-tech-blue' : 'text-tech-navy'}
           >
             Blockchain
           </Button>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map(project => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
-        </div>
+        <FramerCarousel items={carouselItems} />
         
         <div className="text-center mt-12">
-          <Button className="bg-tech-navy hover:bg-tech-navy/90 inline-flex items-center gap-2">
+          <Button className="inline-flex items-center gap-2">
             <Code size={16} />
             View All Projects
           </Button>

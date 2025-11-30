@@ -98,19 +98,19 @@ const AnimatedTabs = ({
 
   return (
     <div className={cn("w-full max-w-lg flex flex-col gap-y-1", className)}>
-      <div className="flex gap-2 flex-wrap bg-[#11111198] bg-opacity-50 backdrop-blur-sm p-1 rounded-xl">
+      <div className="flex gap-2 flex-wrap bg-card/50 backdrop-blur-sm p-1 rounded-xl border border-border/50">
         {tabs.map((tab) => (
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
             className={cn(
-              "relative px-3 py-1.5 text-sm font-medium rounded-lg text-white outline-none transition-colors"
+              "relative px-3 py-1.5 text-sm font-medium rounded-lg text-foreground outline-none transition-colors"
             )}
           >
             {activeTab === tab.id && (
               <motion.div
                 layoutId="active-tab"
-                className="absolute inset-0 bg-[#111111d1] bg-opacity-50 shadow-[0_0_20px_rgba(0,0,0,0.2)] backdrop-blur-sm !rounded-lg"
+                className="absolute inset-0 bg-primary/20 backdrop-blur-sm !rounded-lg border border-primary/30"
                 transition={{ type: "spring", duration: 0.6 }}
               />
             )}
@@ -128,7 +128,7 @@ const AnimatedTabs = ({
           inactiveZone={0.01}
           borderWidth={2}
         />
-        <div className="p-4 bg-[#11111198] shadow-[0_0_20px_rgba(0,0,0,0.2)] text-white bg-opacity-50 backdrop-blur-sm rounded-xl border min-h-60 h-full">
+        <div className="p-4 bg-card/50 backdrop-blur-sm text-foreground rounded-xl border border-border/50 min-h-60 h-full">
           {tabs.map(
             (tab) =>
               activeTab === tab.id && (
