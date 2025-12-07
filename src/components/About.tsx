@@ -1,85 +1,18 @@
 import React from 'react';
-import { AnimatedTabs } from '@/components/ui/animated-tabs';
-import { ContainerScroll } from '@/components/ui/container-scroll-animation';
-
-// Minimal retro data model
-interface Step {
-  year: string;
-  title: string;
-  description: string;
-  tech: string[];
-}
-
-const steps: Step[] = [
-  {
-    title: "Computer Science Foundation",
-    year: "2021 – Present",
-    description:
-      "Started BS in Computer Science at MIT ADT; core focus on algorithms, data structures, and software engineering.",
-    tech: ["Java", "C++", "DSA", "Database Design"],
-  },
-  {
-    title: "Full‑Stack Development",
-    year: "2022",
-    description:
-      "Built scalable apps with modern web technologies and clean UI patterns.",
-    tech: ["React", "Node.js", "TypeScript", "MongoDB"],
-  },
-  {
-    title: "AI & Machine Learning",
-    year: "2023",
-    description:
-      "Implemented ML models and explored neural networks for real‑world problems.",
-    tech: ["Python", "TensorFlow", "PyTorch", "Scikit‑learn"],
-  },
-  {
-    title: "Professional Experience (DevRel)",
-    year: "2023 – Present",
-    description:
-      "Developer Relations: connecting products with communities through content and advocacy.",
-    tech: ["DevRel", "Community", "Technical Writing"],
-  },
-  {
-    title: "Entrepreneurship",
-    year: "2024",
-    description:
-      "Co‑founded WeConn – a community platform for tech professionals to collaborate and grow.",
-    tech: ["Startup", "Leadership", "Product"],
-  },
-  {
-    title: "Gen AI Developer Intern · TATA Communications",
-    year: "Jun 2025 – Jul 2025",
-    description:
-      "Worked on enterprise Generative AI solutions and integrations across internal platforms.",
-    tech: ["Generative AI", "LLMs", "AI Integration"],
-  },
-  {
-    title: "Future Innovations",
-    year: "2025+",
-    description:
-      "Expanding into blockchain and advanced AI applications.",
-    tech: ["Blockchain", "Web3", "Advanced AI"],
-  },
-];
+import { Timeline } from '@/components/ui/timeline';
 
 const About = () => {
-  // Show most recent first
-  const rows = [...steps].reverse();
-
-  const tabs = rows.map((step, idx) => ({
-    id: `step-${idx}`,
-    label: step.year,
-    content: (
-      <div className="flex flex-col gap-4 w-full h-full">
-        <div className="flex flex-col gap-y-2">
-          <h3 className="text-2xl font-bold mb-0 text-foreground mt-0">
-            {step.title}
-          </h3>
-          <p className="text-sm text-muted-foreground mt-2">
-            {step.description}
+  const timelineData = [
+    {
+      title: "2025+",
+      content: (
+        <div>
+          <h4 className="text-foreground font-semibold text-lg mb-2">Future Innovations</h4>
+          <p className="text-muted-foreground text-xs md:text-sm font-normal mb-4">
+            Expanding into blockchain and advanced AI applications.
           </p>
-          <div className="flex flex-wrap gap-2 pt-2">
-            {step.tech.map((t) => (
+          <div className="flex flex-wrap gap-2">
+            {["Blockchain", "Web3", "Advanced AI"].map((t) => (
               <span
                 key={t}
                 className="px-3 py-1 text-xs rounded-full bg-primary/10 text-primary border border-primary/20"
@@ -89,28 +22,139 @@ const About = () => {
             ))}
           </div>
         </div>
-      </div>
-    ),
-  }));
+      ),
+    },
+    {
+      title: "Jun–Jul 2025",
+      content: (
+        <div>
+          <h4 className="text-foreground font-semibold text-lg mb-2">Gen AI Developer Intern · TATA Communications</h4>
+          <p className="text-muted-foreground text-xs md:text-sm font-normal mb-4">
+            Worked on enterprise Generative AI solutions and integrations across internal platforms.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {["Generative AI", "LLMs", "AI Integration"].map((t) => (
+              <span
+                key={t}
+                className="px-3 py-1 text-xs rounded-full bg-primary/10 text-primary border border-primary/20"
+              >
+                {t}
+              </span>
+            ))}
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "2024",
+      content: (
+        <div>
+          <h4 className="text-foreground font-semibold text-lg mb-2">Entrepreneurship</h4>
+          <p className="text-muted-foreground text-xs md:text-sm font-normal mb-4">
+            Co‑founded WeConn – a community platform for tech professionals to collaborate and grow.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {["Startup", "Leadership", "Product"].map((t) => (
+              <span
+                key={t}
+                className="px-3 py-1 text-xs rounded-full bg-primary/10 text-primary border border-primary/20"
+              >
+                {t}
+              </span>
+            ))}
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "2023–Present",
+      content: (
+        <div>
+          <h4 className="text-foreground font-semibold text-lg mb-2">Professional Experience (DevRel)</h4>
+          <p className="text-muted-foreground text-xs md:text-sm font-normal mb-4">
+            Developer Relations: connecting products with communities through content and advocacy.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {["DevRel", "Community", "Technical Writing"].map((t) => (
+              <span
+                key={t}
+                className="px-3 py-1 text-xs rounded-full bg-primary/10 text-primary border border-primary/20"
+              >
+                {t}
+              </span>
+            ))}
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "2023",
+      content: (
+        <div>
+          <h4 className="text-foreground font-semibold text-lg mb-2">AI & Machine Learning</h4>
+          <p className="text-muted-foreground text-xs md:text-sm font-normal mb-4">
+            Implemented ML models and explored neural networks for real‑world problems.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {["Python", "TensorFlow", "PyTorch", "Scikit‑learn"].map((t) => (
+              <span
+                key={t}
+                className="px-3 py-1 text-xs rounded-full bg-primary/10 text-primary border border-primary/20"
+              >
+                {t}
+              </span>
+            ))}
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "2022",
+      content: (
+        <div>
+          <h4 className="text-foreground font-semibold text-lg mb-2">Full‑Stack Development</h4>
+          <p className="text-muted-foreground text-xs md:text-sm font-normal mb-4">
+            Built scalable apps with modern web technologies and clean UI patterns.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {["React", "Node.js", "TypeScript", "MongoDB"].map((t) => (
+              <span
+                key={t}
+                className="px-3 py-1 text-xs rounded-full bg-primary/10 text-primary border border-primary/20"
+              >
+                {t}
+              </span>
+            ))}
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "2021–Present",
+      content: (
+        <div>
+          <h4 className="text-foreground font-semibold text-lg mb-2">Computer Science Foundation</h4>
+          <p className="text-muted-foreground text-xs md:text-sm font-normal mb-4">
+            Started BS in Computer Science at MIT ADT; core focus on algorithms, data structures, and software engineering.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {["Java", "C++", "DSA", "Database Design"].map((t) => (
+              <span
+                key={t}
+                className="px-3 py-1 text-xs rounded-full bg-primary/10 text-primary border border-primary/20"
+              >
+                {t}
+              </span>
+            ))}
+          </div>
+        </div>
+      ),
+    },
+  ];
 
   return (
     <section id="about" className="bg-background">
-      <ContainerScroll
-        titleComponent={
-          <>
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-              My Learning Journey
-            </h2>
-            <p className="text-muted-foreground mt-2">
-              A timeline of my growth and achievements
-            </p>
-          </>
-        }
-      >
-        <div className="h-full w-full flex items-center justify-center p-4">
-          <AnimatedTabs tabs={tabs} className="max-w-4xl w-full" />
-        </div>
-      </ContainerScroll>
+      <Timeline data={timelineData} />
     </section>
   );
 };
