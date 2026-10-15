@@ -8,7 +8,7 @@ web
 
 ## Users
 
-The primary audience is the developer community: engineers, builders and the DevRel audience who find Atharva through GitHub, LinkedIn, talks or posts. They arrive curious, often from a link, and want to know quickly what he builds, whether it's real, and where to follow or reach him. Recruiters and potential clients may also visit, but the site is not optimised for them.
+The primary audience is the developer community: engineers, builders and the DevRel audience who find Atharva through GitHub, LinkedIn, talks or posts. They arrive curious, often from a link, and want to know quickly what Atharva builds, whether it's real, and where to follow or reach them. Recruiters and potential clients may also visit, but the site is not optimised for them.
 
 ## Product Purpose
 
@@ -16,7 +16,7 @@ A personal portfolio for Atharva Gaikwad. It exists to establish credibility wit
 
 ## Positioning
 
-**An AI engineer first.** Generative AI, LLMs and AI agents lead the story. DevRel (community, content, advocacy) and full-stack development are supporting range, not equal headlines. Web3/blockchain is **dropped from positioning**; Fundora can remain as a project entry, but Web3 is not presented as a skill pillar or service.
+**An AI engineer first.** Generative AI, LLMs, RAG and multi-agent systems lead the story. Full-stack, DevRel and **Web3 are clearly secondary range** (confirmed Oct 2026: Web3 projects and skills appear, but never as a co-headline).
 
 ## Operating Context
 
@@ -26,23 +26,29 @@ A personal portfolio for Atharva Gaikwad. It exists to establish credibility wit
 
 ## Capabilities and Constraints
 
-- Stack: Vite + React 18 + TypeScript + Tailwind + shadcn/ui, with framer-motion and react-three-fiber available. Scaffolded with Lovable. Dev server on port 8080.
-- Sections today: Hero, About (timeline), Skills, Projects, Services, Contact, Footer. A `Navbar` component exists but isn't mounted.
+- Stack: Vite + React 18 + TypeScript + Tailwind + shadcn/ui, with framer-motion. Scaffolded with Lovable. Dev server on port 8080.
+- Content lives in `src/data/portfolio.ts`. Sections: Hero, About, Work (AI projects plus a secondary Web3/side-builds row), Stack, Journey (experience, achievements, certifications), Contact.
 - Contact form sends through EmailJS (service, template and public key are hard-coded in `src/components/Contact.tsx`).
-- **Open: content is stale.** The timeline ends at a Jun–Jul 2025 internship plus a speculative "2025+ Future" entry. Current role, recent projects and education status need to be supplied by Atharva before content work; do not invent them.
-- **Open: Services section.** It pitches freelance services to clients, which doesn't match the developer-community audience. Its fate is undecided.
+- The Services/freelance section was dropped (Oct 2026).
+- Public contact (confirmed Oct 2026): email, GitHub, LinkedIn, and Medium once its URL is supplied (`profile.medium`). The phone number stays off the site.
+- **Open:** Medium URL; repo URLs for AI Support Desk, Email Analyzer, EkMat, VestaFi and Herb Traceability (these link to the GitHub profile until supplied).
 
 ## Brand Commitments
 
-- Name: Atharva Gaikwad; footer wordmark "Atharva.dev".
+- Name: Atharva Gaikwad, with the "AG" monogram in the header. The "Atharva.dev" wordmark was removed at Atharva's request (Oct 2026); do not reintroduce it.
 - Hero voice: "Hey, I'm Atharva, your friendly neighborhood tech guy." Friendly, informal and first-person.
 
 ## Evidence on Hand
 
-- Timeline facts (as of the current site): BS Computer Science at MIT ADT (from 2021); full-stack work (2022); AI/ML work (2023); DevRel (2023 onward); co-founded WeConn, a community platform for tech professionals (2024); Gen AI Developer Intern at TATA Communications (Jun–Jul 2025).
-- Projects with public repos: Brain Tumor Detection Model (github.com/Atharva1399/brain-tumor-detector), Fundora (github.com/FundoraInvoice/Fundora-Invoices), Autoviron (github.com/Atharva1399/autoviron), DaClean (github.com/Atharva1399/DaClean).
+- Source of truth: Atharva's resume (Oct 2026), which supersedes the older site timeline.
+- Education: B.Tech CSE, MIT ADT University, Pune (Aug 2023 – Jul 2027), CGPA 8.13.
+- Experience: GenAI Intern, Tata Communications (May – Jun 2025); Co-founder & DevRel, WeConn (Mar – Nov 2025).
+- AI projects: AI Support Desk (multi-agent RAG), Email Analyzer & Report Generator, Brain Tumor Detection with YOLOv8 (github.com/Atharva1399/brain-tumor-detector), DaClean (github.com/Atharva1399/DaClean), AutoViron (github.com/Atharva1399/autoviron), AI agent-based learning environment.
+- Web3 projects: EkMat (ZK-SNARK voting), Fundora (github.com/FundoraInvoice/Fundora-Invoices), VestaFi, Ayurvedic Herb Traceability (Polygon + IPFS).
+- Achievements: Top 50 grand finalist, VOIS 2026 Innovation Hackathon; led teams to Smart India Hackathon Round 2 twice. Certifications from Meta, Reliance, Microsoft and Cisco. Clubs: Mirage AR/VR, AWS Cloud Club.
+- Photo: `src/assets/atharva.jpg` (supplied by Atharva) and its keyed cutout `src/assets/atharva-cutout.png`.
 - Links: GitHub github.com/Atharva1399, LinkedIn linkedin.com/in/atharva-gaikwad-72ba25295, email atharvaagaikwad04@gmail.com.
-- **Absent:** no photos, testimonials, talks, writing samples, metrics, star counts or press. Do not fabricate any. The "high accuracy" claim for the tumor model has no stated figure.
+- **Absent:** testimonials, metrics, star counts, press, project screenshots. Do not fabricate any.
 
 ## Product Principles
 

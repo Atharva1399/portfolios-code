@@ -1,100 +1,85 @@
+import { useEffect, useState } from 'react';
+import { cn } from '@/lib/utils';
 
-import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+const tabs = [
+  { id: 'about', label: 'About' },
+  { id: 'work', label: 'Work' },
+  { id: 'stack', label: 'Stack' },
+  { id: 'journey', label: 'Journey' },
+  { id: 'contact', label: 'Contact' },
+];
 
+/** Folder-tab row that rides on top of the binder. */
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [active, setActive] = useState<string>('');
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => e.isIntersecting && setActive(e.target.id === 'top' ? '' : e.target.id));
+      },
+      { rootMargin: '-45% 0px -50% 0px' },
+    );
+    ['top', ...tabs.map((t) => t.id)].forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      observer.disconnect();
+    };
   }, []);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Services', href: '#services' },
-    { name: 'Contact', href: '#contact' },
-  ];
+  // Keep the active tab visible when the tab row scrolls on phones.
+  useEffect(() => {
+    if (!active) return;
+    document.querySelector(`header a[href="#${active}"]`)?.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+  }, [active]);
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/90 backdrop-blur-md shadow-md' : 'bg-transparent'
-      }`}
+    <header
+      className={cn(
+        'fixed inset-x-0 top-0 z-50 transition-colors duration-300',
+        scrolled ? 'bg-blue' : 'bg-transparent',
+      )}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Removed the inner wrapper per request */}
-        <div className="flex-shrink-0">
-          <a 
-            href="#home" 
-            className="text-tech-navy font-montserrat font-bold text-xl hover:text-tech-blue transition-colors duration-300"
-          >
-            Atharva<span className="text-tech-blue">.</span><span className="text-tech-teal hover:text-tech-blue transition-colors duration-300">dev</span>
-          </a>
-        </div>
-        
-        <nav className="hidden md:block">
-          <ul className="flex space-x-8">
-            {navLinks.map((link) => (
-              <li key={link.name}>
-                <a
-                  href={link.href}
-                  className="font-medium text-gray-700 hover:text-tech-blue transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-tech-blue after:transition-all after:duration-300 hover:after:w-full"
-                >
-                  {link.name}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-        
-        <div className="md:hidden">
-          <button
-            onClick={toggleMenu}
-            className="text-gray-700 hover:text-tech-blue focus:outline-none transition-colors duration-300"
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-      </div>
-      
-      {/* Mobile menu */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-white border-t">
-          <div className="container mx-auto px-4 py-4">
-            <ul className="space-y-3">
-              {navLinks.map((link) => (
-                <li key={link.name}>
+      <div className="on-blue mx-auto flex h-14 max-w-[1400px] items-end justify-between gap-4 px-4 sm:px-6 lg:px-10">
+        <a
+          href="#top"
+          className="mb-3 shrink-0 font-display text-lg font-black uppercase leading-none text-white [font-stretch:125%]"
+        >
+          <span aria-hidden>AG</span>
+          <span className="sr-only">Atharva Gaikwad, back to top</span>
+        </a>
+
+        <nav aria-label="Sections" className="-mb-px min-w-0 overflow-x-auto [scrollbar-width:none]">
+          <ul className="flex items-end gap-0.5 sm:gap-1">
+            {tabs.map((t) => {
+              const isActive = active === t.id;
+              return (
+                <li key={t.id}>
                   <a
-                    href={link.href}
-                    className="block font-medium text-gray-700 hover:text-tech-blue hover:translate-x-1 transition-all duration-300"
-                    onClick={() => setIsMenuOpen(false)}
+                    href={`#${t.id}`}
+                    aria-current={isActive ? 'true' : undefined}
+                    className={cn(
+                      'folder-tab block whitespace-nowrap px-2.5 pb-2 pt-2.5 font-type text-xs sm:px-5 sm:text-sm transition-[background-color,color,padding] duration-200 sm:px-5',
+                      isActive ? 'bg-paper pt-3 text-blue' : 'bg-white/15 text-white hover:bg-white/30',
+                    )}
                   >
-                    {link.name}
+                    {t.label}
                   </a>
                 </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      )}
+              );
+            })}
+          </ul>
+        </nav>
+      </div>
     </header>
   );
 };

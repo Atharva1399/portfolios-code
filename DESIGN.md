@@ -1,249 +1,301 @@
 ---
-name: Atharva.dev
-description: Personal portfolio of an AI engineer: a dark void with frosted glass shapes and quiet monochrome UI.
+name: Atharva Gaikwad
+description: Portfolio of a GenAI engineer, built as a committed-blue project binder on grid paper.
 colors:
-  void: "#030303"
-  ink: "#FFFFFF"
-  surface: "#0D0D0D"
-  surface-raised: "#1A1A1A"
-  hairline: "#262626"
-  ash: "#999999"
-  hero-indigo: "#A5B4FC"
-  hero-rose: "#FDA4AF"
-  signal-red: "#EF4343"
+  binder-blue: "#0052FE"
+  binder-blue-deep: "#0035B8"
+  blue-wash: "#E0EAFF"
+  grid-paper: "#F3F5F9"
+  sheet-white: "#FFFFFF"
+  navy-ink: "#0A1033"
+  slate-ink: "#48506F"
+  rule-line: "#CAD0E2"
+  field-stroke: "#BDC4DB"
+  alert-red: "#D11A1A"
 typography:
   display:
-    fontFamily: "Inter, sans-serif"
-    fontSize: "clamp(2.25rem, 8vw, 6rem)"
-    fontWeight: 700
-    lineHeight: 1
-    letterSpacing: "-0.025em"
+    fontFamily: "Archivo, Arial Narrow, sans-serif"
+    fontSize: "clamp(3.25rem, 13.2vw, 7rem)"
+    fontWeight: 900
+    lineHeight: 0.88
+    letterSpacing: "-0.02em"
+    fontVariation: "'wdth' 125"
   headline:
-    fontFamily: "Inter, sans-serif"
-    fontSize: "2.25rem"
-    fontWeight: 700
-    lineHeight: 1.11
-  timeline-year:
-    fontFamily: "Inter, sans-serif"
-    fontSize: "3rem"
-    fontWeight: 700
-    lineHeight: 1
+    fontFamily: "Archivo, Arial Narrow, sans-serif"
+    fontSize: "clamp(2.75rem, 9vw, 7.5rem)"
+    fontWeight: 900
+    lineHeight: 0.88
+    letterSpacing: "-0.02em"
+    fontVariation: "'wdth' 125"
   title:
-    fontFamily: "Inter, sans-serif"
-    fontSize: "1.25rem"
-    fontWeight: 600
-    lineHeight: 1.4
+    fontFamily: "Archivo, Arial Narrow, sans-serif"
+    fontSize: "clamp(1.5rem, 3vw, 2.25rem)"
+    fontWeight: 900
+    lineHeight: 0.95
+    fontVariation: "'wdth' 115"
+  lead:
+    fontFamily: "Archivo, system-ui, sans-serif"
+    fontSize: "1.5rem"
+    fontWeight: 500
+    lineHeight: 1.375
   body:
-    fontFamily: "Inter, sans-serif"
-    fontSize: "1rem"
+    fontFamily: "Archivo, system-ui, sans-serif"
+    fontSize: "1.125rem"
     fontWeight: 400
-    lineHeight: 1.5
-  body-small:
-    fontFamily: "Inter, sans-serif"
+    lineHeight: 1.625
+  label:
+    fontFamily: "Courier Prime, Courier New, monospace"
     fontSize: "0.875rem"
     fontWeight: 400
-    lineHeight: 1.43
-  label-mono:
-    fontFamily: "JetBrains Mono, monospace"
+    lineHeight: 1.25rem
+    letterSpacing: "0.02em"
+  tape:
+    fontFamily: "Archivo, Arial Narrow, sans-serif"
     fontSize: "1rem"
-    fontWeight: 500
+    fontWeight: 800
     lineHeight: 1.5
-  chip:
-    fontFamily: "Inter, sans-serif"
-    fontSize: "0.75rem"
-    fontWeight: 400
-    lineHeight: 1.33
+    fontVariation: "'wdth' 125"
 rounded:
-  sm: "4px"
-  md: "6px"
-  lg: "8px"
-  xl: "12px"
-  full: "9999px"
+  chip: "2px"
+  control: "4px"
+  badge-window: "6px"
+  sheet: "12px"
+  sticker: "16px"
 spacing:
-  gutter-mobile: "16px"
-  gutter-tablet: "24px"
-  gutter-desktop: "32px"
-  card-padding: "24px"
-  grid-gap: "32px"
-  section-mobile: "64px"
-  section-desktop: "96px"
+  tab-x: "20px"
+  gutter-sm: "16px"
+  gutter-md: "24px"
+  gutter-lg: "40px"
+  section-sm: "80px"
+  section-lg: "112px"
+  grid-cell: "28px"
 components:
-  button-primary:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.void}"
-    rounded: "{rounded.md}"
-    padding: "8px 16px"
-    height: "40px"
-  button-primary-hover:
-    backgroundColor: "#E6E6E6"
-  input:
-    backgroundColor: "{colors.void}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.md}"
-    padding: "8px 12px"
-    height: "40px"
-  card:
-    backgroundColor: "{colors.surface}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.lg}"
-    padding: "{spacing.card-padding}"
-  chip-tag:
-    backgroundColor: "rgba(255, 255, 255, 0.1)"
-    textColor: "{colors.ink}"
-    typography: "{typography.chip}"
-    rounded: "{rounded.full}"
-    padding: "4px 12px"
-  chip-skill:
-    backgroundColor: "{colors.surface}"
-    textColor: "{colors.ink}"
-    typography: "{typography.label-mono}"
-    rounded: "{rounded.sm}"
-    padding: "12px 24px"
-  badge-hero:
-    backgroundColor: "rgba(255, 255, 255, 0.03)"
-    textColor: "rgba(255, 255, 255, 0.6)"
-    rounded: "{rounded.full}"
-    padding: "4px 12px"
+  button-primary-on-blue:
+    backgroundColor: "{colors.sheet-white}"
+    textColor: "{colors.binder-blue}"
+    rounded: "{rounded.control}"
+    padding: "0 24px"
+    height: "48px"
+  button-outline-on-blue:
+    backgroundColor: "transparent"
+    textColor: "{colors.sheet-white}"
+    rounded: "{rounded.control}"
+    padding: "0 24px"
+    height: "48px"
+  button-outline-on-blue-hover:
+    backgroundColor: "{colors.sheet-white}"
+    textColor: "{colors.binder-blue}"
+  button-primary-on-white:
+    backgroundColor: "{colors.binder-blue}"
+    textColor: "{colors.sheet-white}"
+    rounded: "{rounded.control}"
+    padding: "14px 24px"
+  button-primary-on-white-hover:
+    backgroundColor: "{colors.binder-blue-deep}"
+  folder-tab-nav:
+    backgroundColor: "rgba(255,255,255,0.15)"
+    textColor: "{colors.sheet-white}"
+    typography: "{typography.label}"
+    padding: "10px 20px 8px"
+  folder-tab-nav-active:
+    backgroundColor: "{colors.grid-paper}"
+    textColor: "{colors.binder-blue}"
+    padding: "12px 20px 8px"
+  folder-tab-binder:
+    backgroundColor: "{colors.blue-wash}"
+    textColor: "{colors.binder-blue}"
+    typography: "{typography.label}"
+    padding: "10px 28px"
+  folder-tab-binder-active:
+    backgroundColor: "{colors.binder-blue}"
+    textColor: "{colors.sheet-white}"
+    padding: "16px 28px 12px"
+  binder-sheet:
+    backgroundColor: "{colors.binder-blue}"
+    textColor: "{colors.sheet-white}"
+    rounded: "{rounded.sheet}"
+    padding: "56px"
+  stack-chip-on-blue:
+    backgroundColor: "{colors.sheet-white}"
+    textColor: "{colors.binder-blue}"
+    typography: "{typography.label}"
+    rounded: "{rounded.chip}"
+    padding: "4px 10px"
+  skill-chip-outline:
+    backgroundColor: "transparent"
+    textColor: "{colors.sheet-white}"
+    typography: "{typography.label}"
+    rounded: "{rounded.chip}"
+    padding: "8px 14px"
+  award-sticker:
+    backgroundColor: "{colors.sheet-white}"
+    textColor: "{colors.navy-ink}"
+    rounded: "{rounded.sticker}"
+    padding: "16px 20px"
+  clothesline-print:
+    backgroundColor: "{colors.sheet-white}"
+    textColor: "{colors.navy-ink}"
+    padding: "32px 20px 24px"
+  input-field:
+    backgroundColor: "{colors.grid-paper}"
+    textColor: "{colors.navy-ink}"
+    rounded: "{rounded.control}"
+    padding: "12px 16px"
 ---
 
-# Design System: Atharva.dev
+# Design System: Atharva Gaikwad
 
 ## Overview
 
-**Creative North Star: "Midnight Glass"**
+**Creative North Star: "The Blue Binder"**
 
-The page is a near-black void (#030303). Light catches on a few frosted, translucent shapes: long pill-shaped glass slabs tinted indigo, rose, violet, amber and cyan, which drift slowly through the hero like objects suspended in dark water. Everything else is monochrome. White type and hairline-bordered charcoal surfaces stay quiet so that the glass and the work are the only things that glow.
+The site is a physical project binder rendered flat. Committed binder blue owns the loud moments (the hero, the open binder sheet, the stack shelf, the close), and pale grid paper with faint blue rules lies between them like the pages the binder holds. Everything that organises content is a stationery object: folder tabs for navigation and project switching, an ID badge on a lanyard, die-cut stickers for awards, clips on a clothesline for side builds, binder spines on a shelf for skill groups, and printed tape strips that cross section seams.
 
-The UI is **quiet and receding**. Components use tonal steps (void → surface → surface-raised) and 1px hairlines rather than colour or shadow. White is both the text colour and the only action colour. The single sanctioned moment of chroma in the type is the hero headline's indigo-to-rose gradient; colour elsewhere is drift (see Do's and Don'ts). Density is generous: centred section headers, wide vertical rhythm, one idea per band.
+The palette is one hue at full commitment, fused from two references the user pinned: a blue folder, badge, tape, spine and clothesline system, and a sticker-cutout, grid-paper, tab-divider system. Blue sits against white, never against another accent. The portrait is a keyed cutout laid over the name like collage, its ground matching the blue exactly so the photo and the field read as one sheet. Type is loud and stamped: Archivo stretched to its widest and heaviest cut for display, plain Archivo for reading, Courier Prime typewriter for every label, as if typed onto an index card.
 
-Motion is slow and atmospheric rather than snappy. Hero shapes fall in over 2.4s and then bob on a 12s loop, headings fade up in a staggered sequence, the timeline's spine fills as you scroll, and skill chips flow in a continuous two-row marquee.
+The world is tactile and committed but strictly flat graphic. It rejects glass, blur, glow and gradients; the only linear-gradient in the system draws the grid-paper rules, and the lanyard stripe uses hard stops, which reads as print rather than a fade.
 
 **Key Characteristics:**
-- Near-black void canvas with white type; no light theme.
-- Frosted glass pills (translucent gradient fill, white/15 border, soft white glow) as the signature ornament, confined to the hero.
-- Tonal layering and hairlines for depth; essentially shadowless UI.
-- Inter for everything readable; JetBrains Mono only for skill labels.
-- Slow, eased, ambient motion.
+- Two grounds only: full-bleed binder blue and grid paper, alternating section by section.
+- White on blue and blue on white; outlines invert with the ground (white sticker edges on blue, blue keylines on paper).
+- Expanded black uppercase display, Courier Prime typewriter labels.
+- Stationery objects carry structure: folder tabs, spines, stickers, clips, tape, badge.
+- Slight hand-placed rotation (1.5 to 6 degrees) on stickers, prints, tapes and the badge; content sheets stay square.
 
 ## Colors
 
-A monochrome greyscale ladder on a near-black void, lit by a single pastel indigo-to-rose gradient in the hero.
+One committed blue with its deep and washed shades, white, cool paper, and navy ink in place of black.
 
 ### Primary
-- **Ink White** (`ink`): All primary text, headings, the primary button fill, and focus rings. It is the "accent" of the system; the shadcn `primary` and `accent` tokens both resolve to it.
-
-### Tertiary
-- **Pastel Indigo** (`hero-indigo`) and **Pastel Rose** (`hero-rose`): The two ends of the hero headline's second-line gradient (indigo → white/90 → rose). Used nowhere else.
-- **Glass tints** (indigo-500, rose-500, violet-500, amber-500, cyan-500, each at 15% opacity): The fills of the frosted hero shapes, fading to transparent. They are atmosphere, not UI colour; carried in the sidecar only.
+- **Binder Blue** (binder-blue): the world's ground. Full-bleed on the hero, stack shelf, contact close, footer and 404; fills the open binder sheet and active binder tab; carries display headings, keylines and labels on paper. Matches the hero photo ground exactly, so it must not drift.
+- **Binder Blue Deep** (binder-blue-deep): the shadow side of blue. Primary-button hover on white, the back tape strip, the inner pipeline stations and repo card on the binder sheet, the clip's printed lip, the form sheet's outer keyline ring.
+- **Blue Wash** (blue-wash): secondary text on blue (labels, captions) and the fill of resting binder tabs on paper.
 
 ### Neutral
-- **Midnight Void** (`void`): Page background and input fields. The hero sits on the same value.
-- **Charcoal Surface** (`surface`): Cards, the skill marquee's first row, popovers.
-- **Raised Graphite** (`surface-raised`): Secondary and muted surfaces, the second marquee row, input borders, the card-stack layout switcher.
-- **Hairline** (`hairline`): Every border and divider, applied globally to all elements.
-- **Ash** (`ash`): Muted body copy, section intros, timeline year labels.
-- **Signal Red** (`signal-red`): Destructive toasts and form validation only.
+- **Grid Paper** (grid-paper): the page ground between blue sections, ruled every 28px with blue at 7% opacity; also the active nav tab (the tab "becomes" the page below it) and form field fill.
+- **Sheet White** (sheet-white): stickers, prints, the fact table, the certifications card, the contact form sheet, tapes, and text on blue.
+- **Navy Ink** (navy-ink): body text on paper and white. Replaces black everywhere.
+- **Slate Ink** (slate-ink): secondary prose, organisations, notes and clubs on paper.
+- **Rule Line** (rule-line): hairline row dividers in tables and lists.
+- **Field Stroke** (field-stroke): the shadcn input stroke alias; the shipped form uses navy ink at 15% for its 2px resting stroke.
+- **Alert Red** (alert-red): form validation errors and the failure toast only.
 
 ### Named Rules
-**The White Is the Accent Rule.** Interactive emphasis is expressed with white: a white fill, a white focus ring, or white rising from 60% to 100% opacity. No hue may stand in for "primary".
+**The One Blue Rule.** Binder blue is the only chromatic hue. Depth comes from blue-deep and blue-wash, never from a second accent.
 
-**The Glass Stays in the Hero Rule.** The tinted glass palette is ornament for the first viewport. Below the fold, colour appears only as low-opacity white.
+**The Two Grounds Rule.** Every section sits on either full-bleed binder blue or grid paper. Blue sections take white text and white outlines; paper sections take blue display, navy body and blue keylines.
 
 ## Typography
 
-**Display Font:** Inter (with sans-serif)
-**Body Font:** Inter (with sans-serif)
-**Label/Mono Font:** JetBrains Mono (with monospace)
+**Display Font:** Archivo at width 125, weight 900 (with Arial Narrow, sans-serif)
+**Body Font:** Archivo at normal width (with system-ui, sans-serif)
+**Label/Mono Font:** Courier Prime (with Courier New, monospace)
 
-**Character:** A single neutral grotesque carries the whole page, so the hierarchy comes from scale and weight rather than family. Mono appears only on skill chips, as a quiet nod to code.
+**Character:** A stamped, poster-wide grotesk shouting in caps against a typewriter that annotates quietly, like a printed binder spine beside a typed index card.
 
 ### Hierarchy
-- **Display** (700, 36px → 60px at 640px → 96px at 768px, line-height 1, tracking −0.025em): The hero headline only. The first line is a white-to-white/80 vertical gradient; the second line uses the indigo-to-rose gradient.
-- **Headline** (700, 30px → 36px at 768px, line-height 40px): Centred section titles (Skills & Expertise, Featured Projects, Services Offered, Get In Touch), each followed by an 80×4px white rule.
-- **Timeline Year** (700, 48px on desktop, 24px stacked on mobile, Ash): Sticky year labels in the learning-journey timeline.
-- **Title** (600, 18–20px): Card and timeline-entry titles.
-- **Body** (400, 16px, line-height 1.5): Paragraphs; section intros are capped at about 48rem and centred.
-- **Body Small** (400, 14px): Card descriptions, form labels, footer links.
-- **Label Mono** (500, 16px, JetBrains Mono): Skill marquee chips.
-- **Chip** (400, 12px): Tech tags inside timeline entries.
+- **Display** (900, width 125, clamp(3.25rem, 13.2vw, 7rem), up to min(8.4vw, 10rem) on large screens, 0.88): the name in the hero and the 404 "Wrong tab". Uppercase, -0.02em.
+- **Headline** (900, width 125, clamp(2.75rem, 9vw, 7.5rem), 0.88): section titles ("The work", "The stack", "The journey"); the contact close runs larger, up to 9.5rem. Same uppercase cut; project sheet titles step down to clamp(2.25rem, 5.6vw, 4.75rem).
+- **Title** (900, width 115, clamp(1.5rem, 3vw, 2.25rem), 0.95): timeline roles; prints and stickers use the same 110 to 115 width at 1.125 to 1.3rem.
+- **Lead** (500, 1.25 to 1.5rem, 1.375): the hero introduction and contact invitation.
+- **Body** (400, 1.125rem, 1.625): paragraphs and bullet points, held to 56 to 60ch.
+- **Label** (400, 0.875rem, 0.02em): Courier Prime for every tab, chip, date, field key, caption and meta line. Sentence case, never uppercase.
+- **Tape** (800, width 125, 0.875 to 1rem): uppercase marquee words on tape strips.
 
 ### Named Rules
-**The One Family Rule.** Inter for every readable string. JetBrains Mono is reserved for skill and tech labels and never sets sentences.
+**The Stamp and Typewriter Rule.** Archivo Expanded Black is for names and headings only; Courier Prime is for labels only. Running prose stays in plain Archivo.
+
+**The Wide Means Wide Rule.** Display type always uses the variable width axis at 110 to 125. A normal-width heavy weight is not the display face.
 
 ## Layout
 
-- **Container:** Centred. Side padding is 16px, 24px from 640px, and 32px from 1024px; the maximum width is 1400px at 2xl. The timeline uses its own 80rem (7xl) frame.
-- **Section rhythm:** Each section is a full-width void band with 64px vertical padding (96px from 768px). Bands are separated by space alone; there are no dividers between sections, except the footer's top hairline.
-- **Section header pattern:** Every section opens with a centred column at most 48rem wide holding the headline, a short white rule, a muted intro and 48px of space before the content.
-- **Grids:** Service cards go from 1 column to 2 at 640px and 3 at 1024px, with a gap of 16px rising to 32px. Contact is a two-column split at 768px with a 48px gap. Timeline entries pair a sticky left year column with flowing content on the right from 768px; on mobile they stack, with the spine on the left.
-- **Hero:** Full viewport height, centred, with the headline column at most 48rem wide. Glass shapes are absolutely positioned and bleed off the edges.
+Full-bleed bands alternate between blue and grid paper; content sits in a centred container of 1300px (1400px for the nav and hero, 1200px for About) with side gutters of 16px, 24px from small screens and 40px from large. Sections breathe at 80px vertical padding, 112px from medium screens. The grid paper's 28px cell is the ambient rhythm.
+
+Desktop compositions are asymmetric two-column splits (1.35fr / 1fr on the binder sheet, 1.4fr / 1fr on the journey, 1fr / 1.15fr on contact). Below large, they stack in reading order. The fixed nav is a 56px row of folder tabs that turns solid blue once the page scrolls past 24px; the left slot is the "AG" monogram (there is no wordmark), and on phones the tab row scrolls horizontally, keeping the active tab in view. The skills shelf is a row of upright spines of varied height on desktop and a stack of full-width rows on mobile. Clothesline prints run five across on large, two on small, one on phones.
+
+Seams are crossed, not ruled: two counter-rotated tape strips overlap the hero's bottom edge and the next section.
 
 ## Elevation & Depth
 
-The UI is effectively flat. Depth comes from **tonal steps** (void #030303 → surface #0D0D0D → raised #1A1A1A) and 1px hairline borders, not shadows. The only light sources are atmospheric: the hero's glass shapes carry a soft white under-glow and a radial inner highlight, and the Services cards have a proximity-tracking glowing border that lights up in a multicolour conic gradient as the cursor approaches.
+Depth is physical and sparse: objects sitting on the page (stickers, prints, the badge, the cutout, tapes, the form sheet) cast soft, low, ink- or blue-tinted shadows with negative spread, as if lying a few millimetres above paper. Content surfaces (the binder sheet, tables, cards, buttons) are flat. Sticker edges are drawn with a solid spread ring, not a blur.
 
 ### Shadow Vocabulary
-- **Glass glow** (`box-shadow: 0 8px 32px 0 rgba(255,255,255,0.1)`): Hero glass shapes only.
+- **Sticker edge** (`0 0 0 5px #fff, 0 14px 28px -14px hsl(var(--ink) / 0.5)`): award stickers; white die-cut margin around a blue keyline.
+- **Form sheet edge** (`0 0 0 6px hsl(var(--blue-deep)), 0 24px 50px -20px rgba(0,0,0,0.5)`): the contact form lying on the blue close.
+- **Print drop** (`0 10px 24px -14px hsl(var(--ink) / 0.45)`): clothesline prints.
+- **Badge drop** (`0 18px 40px -12px hsl(var(--blue-deep) / 0.55)`): the lanyard ID badge.
+- **Tape lift** (`0 8px 18px -10px hsl(var(--ink) / 0.5)`): the front tape strip.
+- **Cutout drop** (`drop-shadow(0 24px 40px rgba(0,20,90,0.35))`): the hero portrait cutout.
+- **Clip lip** (`0 2px 0 hsl(var(--blue-deep))`): the printed underside of a clothesline clip.
 
 ### Named Rules
-**The Tonal Depth Rule.** To lift a surface, step it one tone up the ladder and give it a hairline. Never add a drop shadow to a card.
+**The Objects Lift, Sheets Lie Flat Rule.** Only loose stationery objects cast shadows. Containers that hold content stay flat.
 
 ## Shapes
 
-The form language is **soft rectangles with pill-shaped ornament**. UI containers use small, gentle radii: 4px for skill chips, 6px for buttons and inputs, 8px for cards, and 12px for large panels. Pills (9999px) are reserved for the hero glass, the hero badge, tech tags and timeline nodes, so roundness reads as "light/atmosphere" and squareness as "content". Every container has a 1px hairline border.
+Corners are small and practical: 2px on chips and the PASS tag, 4px on buttons, fields and pipeline stations, 12px on the binder sheet, badge and form sheet, 16px on die-cut stickers. The folder tab is the signature silhouette, a trapezoid lip cut with a 10px inward bevel at each top corner; the open binder sheet squares its top-left corner where the first tab joins it. Diamonds (squares rotated 45 degrees) serve as bullets, tape separators and timeline nodes. Strokes are heavy and deliberate: 2px outlines on chips, spines and fields, 3 to 4px keylines on stickers and the timeline rail.
 
 ## Components
 
 ### Buttons
-Quiet and receding: one solid white button per context, everything else is a text link.
-- **Shape:** Gently rounded (6px), 40px tall, 8px 16px padding, 14px medium Inter.
-- **Primary:** Ink White fill with Midnight Void text.
-- **Hover / Focus:** The fill drops to 90% white; focus shows a 2px white ring with a 2px void offset.
-- **Text link:** Ash text that turns white on hover (for example "View All Projects on GitHub" and the footer links).
+Solid, rectangular, plain-spoken.
+- **Shape:** gently squared (4px), 48px tall in the hero.
+- **Primary on blue:** sheet white with binder-blue semibold text, 24px side padding; lifts 2px on hover.
+- **Outline on blue:** 2px white border, white text; fills white with blue text on hover.
+- **Primary on white:** binder blue, white text, full width in the form; darkens to blue-deep on hover; 70% opacity with a wait cursor while sending.
+- **Text link:** semibold with a 2px underline bar (white on blue, blue on paper); the gap before the arrow widens on hover.
+- **Focus:** a 3px binder-blue outline at 3px offset, white inside blue sections.
 
 ### Chips
-- **Tech tag:** A white/10 fill, white/20 hairline, white 12px text, pill shape, 4px 12px padding. Used in timeline entries.
-- **Skill chip:** A Charcoal Surface fill (Raised Graphite on the second row), hairline border, 4px radius, JetBrains Mono 16px. Displayed in two marquee rows scrolling in opposite directions over 20s.
-- **Hero badge:** A white/3 fill, white/8 hairline, pill shape, 14px text at white/60, led by an 8px rose dot.
+- **Stack chip on blue:** white fill, blue Courier Prime, 2px corners.
+- **Skill chip:** 2px white outline on blue, Courier Prime at 1rem; fills white on hover.
 
 ### Cards / Containers
-- **Corner Style:** 8px (12px for large composite panels).
-- **Background:** Charcoal Surface.
-- **Shadow Strategy:** None; see Elevation & Depth.
-- **Border:** 1px Hairline.
-- **Internal Padding:** 24px (16px on mobile).
-- **Icon tile:** A 48–56px square with 8px radius, white/10 fill and a white icon (as in the project card stack).
+- **Binder sheet:** binder blue, 12px corners except the tab-joined top-left, 24 to 56px padding, min 34rem tall; flat.
+- **Fact table / certifications card:** white, 2px blue top rule or 2px blue border, hairline rule-line dividers, Courier Prime keys in blue.
+- **Pipeline stations:** a stepped column of 4px-cornered boxes; first and last stations white with blue text, middle stations blue-deep with a 70% white outline, joined by short white connectors.
 
 ### Inputs / Fields
-- **Style:** A Midnight Void fill, 1px Raised Graphite border, 6px radius, 40px tall, 8px 12px padding, 14px text, Ash placeholder.
-- **Focus:** 2px white ring with a 2px offset; no colour change.
-- **Error / Disabled:** Signal Red message below the field; disabled fields drop to 50% opacity.
+- **Style:** grid-paper fill, 2px navy-ink stroke at 15%, 4px corners, 12px by 16px padding; semibold label above.
+- **Focus:** stroke turns binder blue.
+- **Error:** stroke and message in alert red, message announced as an alert.
 
 ### Navigation
-There is no mounted top navigation; the page is one continuous scroll. Wayfinding is the footer's link row (About, Skills, Projects, Contact) and a "Back to Top" text button. The footer wordmark is "Atharva.dev" at 24px bold. Circular 40px social buttons use a white/10 fill, rising to white/20 on hover.
+A row of folder tabs riding the top edge, Courier Prime at 12 to 14px. Resting tabs are 15% white on blue (30% on hover); the active section's tab turns grid paper with blue text and grows 2px taller, as though it is the divider of the page beneath. Transparent over the hero, solid blue after scroll.
 
-### Glass Shape (signature)
-A long pill (from 150×40px up to 600×140px) with a left-to-right gradient from a 15% hue tint to transparent, a 2px white/15 border, a 2px backdrop blur, the glass glow and a radial white/20 inner highlight. Each shape enters from 150px above, rotated 15° extra, over 2.4s (`cubic-bezier(0.23, 0.86, 0.39, 0.96)`), then bobs ±15px on a 12s loop.
+### Folder-Tab Binder (signature)
+Project dividers: a row of trapezoid tabs over one blue sheet. Resting tabs are blue-wash with blue text, turning white on hover; the active tab is binder blue, taller, and continuous with the sheet. Arrow keys move between tabs. Sheets slide 40px with a fade on change.
 
-### Learning Timeline (signature)
-Sticky year labels on the left, entries on the right, and a 2px spine whose white gradient fill grows with scroll progress. Each node is a 16px muted circle on a 40px void disc.
+### Die-Cut Sticker
+White, 16px corners, a 3px blue keyline inside a 5px white margin, slight alternating rotation; a blue line icon beside an expanded black title and a typewriter result line.
 
-### Morphing Card Stack (signature)
-Project cards can switch between stack, grid and list layouts with a segmented control (Raised Graphite at 50% on an 8px track). Cards animate between layouts and support swipe navigation with dot pagination.
+### Clothesline Print
+White cards hung from a 4px navy line by a blue clip with a blue-deep lip, alternately tilted 1.5 degrees; every print straightens and rises 4px on hover, and the whole line swings up to 6 degrees against fast scrolling before settling.
+
+### Spine Shelf
+Upright 2px-outlined spines of varied height with vertical expanded titles and a typed index number, standing on a 4px white shelf line; the open spine turns white and rises 24px. Rows on mobile.
+
+### Tape Strip
+Full-bleed strips with 2px edges, rotated 2 to 3 degrees, scrolling expanded uppercase words separated by diamonds on a 40s linear loop: white tape with blue type in front, blue-deep tape with white type behind.
+
+### ID Badge
+A blue-and-blue-deep striped lanyard, a paper clip slot, then a blue card with a 4px white photo window, expanded name and typewriter role, hung at -4 degrees, swinging to 2 degrees on hover. It can be dragged and springs back on its lanyard, and it drifts against the scroll as a parallax layer.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** keep the canvas at Midnight Void (#030303) everywhere; sections are bands of space, not coloured panels.
-- **Do** express emphasis with white: a solid white fill for the single primary action, and white/60 → white for hover.
-- **Do** build depth with the tonal ladder (#030303 → #0D0D0D → #1A1A1A) plus a 1px #262626 hairline.
-- **Do** reserve pills for atmosphere and tags; use 4–8px radii for content containers.
-- **Do** keep motion slow and eased (0.6–2.4s, ease-out or the hero's custom curves), and keep marquees linear.
+- **Do** alternate full-bleed binder blue and grid paper sections, and invert text and outline colour with the ground.
+- **Do** keep binder blue exactly matched to the photo ground (#0052FE).
+- **Do** use Archivo at width 125, weight 900, uppercase, 0.88 line height for every display heading.
+- **Do** set every label, tab, chip, date and meta line in Courier Prime, sentence case.
+- **Do** carry structure with stationery objects: folder tabs, spines, stickers, clips, tapes, the badge.
+- **Do** ease motion with cubic-bezier(0.16, 1, 0.3, 1) and honour prefers-reduced-motion (parallax and drag switch off).
+- **Do** give every element a response: hover, press, drag or focus. Parallax is layered by depth: section headings drift sideways, loose objects (badge, stickers, hero photo and tag) drift vertically, and the hero photo leans toward the cursor.
 
 ### Don't:
-- **Don't** use `tech-blue` / `tech-navy` (#1034A6). This is known drift in Contact: blue links on near-black fail contrast, and the submit button sets near-black text on blue.
-- **Don't** use `neon-turquoise`. It is referenced in Services but never defined, so its icon tiles and numbered steps render invisible. Replace those with the white/10 icon tile.
-- **Don't** use light-theme greys (`text-gray-500/600/700`) or `bg-white` surfaces; they come from a removed light theme and break the void.
-- **Don't** let the hero's indigo/rose/glass tints spread into body sections or components.
-- **Don't** add drop shadows to cards; the glass glow belongs to the hero shapes alone.
-- **Don't** load or use VT323. The pixel font is still linked in `index.html`, and the "retro dark-blue" meta description is outdated; neither is part of the current system.
+- **Don't** use glass, backdrop blur, glow, or colour gradients; the grid-paper rules and hard-stop lanyard stripes are the only gradient-built textures.
+- **Don't** introduce a second accent hue; vary with blue-deep and blue-wash instead.
+- **Don't** use pure black; navy ink is the darkest value.
+- **Don't** set display type at normal width, or labels in uppercase.
+- **Don't** shadow content containers; only loose objects lift.
+- **Don't** bring back the "Atharva.dev" wordmark; the monogram "AG" and the full name are the only marks.
