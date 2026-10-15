@@ -21,7 +21,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description }) =
         borderWidth={2}
       />
       <div className="bg-card p-4 sm:p-6 rounded-lg border border-border">
-        <div className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center bg-neon-turquoise text-background rounded-lg mb-4 sm:mb-6">
+        <div className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center bg-primary/10 text-foreground rounded-lg mb-4 sm:mb-6">
           {icon}
         </div>
         
@@ -45,7 +45,7 @@ const Services = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Services Offered
           </h2>
-          <div className="w-20 h-1 bg-neon-turquoise mx-auto mb-6 rounded-full"></div>
+          <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
           <p className="text-muted-foreground">
             Professional services leveraging my expertise in AI, development, and technical community building.
           </p>
@@ -90,22 +90,22 @@ const Services = () => {
               
               <ul className="space-y-3 sm:space-y-4">
                 <li className="flex items-start">
-                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-neon-turquoise text-background rounded-full flex items-center justify-center mr-3 sm:mr-4 mt-0.5 flex-shrink-0 font-mono font-bold text-xs sm:text-sm">1</div>
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-primary/10 text-foreground rounded-full flex items-center justify-center mr-3 sm:mr-4 mt-0.5 flex-shrink-0 font-mono font-bold text-xs sm:text-sm">1</div>
                   <p className="text-foreground font-medium text-sm sm:text-base">In-depth consultation to understand your specific needs and goals</p>
                 </li>
                 
                 <li className="flex items-start">
-                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-neon-turquoise text-background rounded-full flex items-center justify-center mr-3 sm:mr-4 mt-0.5 flex-shrink-0 font-mono font-bold text-xs sm:text-sm">2</div>
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-primary/10 text-foreground rounded-full flex items-center justify-center mr-3 sm:mr-4 mt-0.5 flex-shrink-0 font-mono font-bold text-xs sm:text-sm">2</div>
                   <p className="text-foreground font-medium text-sm sm:text-base">Research and strategic planning to determine the most effective solution</p>
                 </li>
                 
                 <li className="flex items-start">
-                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-neon-turquoise text-background rounded-full flex items-center justify-center mr-3 sm:mr-4 mt-0.5 flex-shrink-0 font-mono font-bold text-xs sm:text-sm">3</div>
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-primary/10 text-foreground rounded-full flex items-center justify-center mr-3 sm:mr-4 mt-0.5 flex-shrink-0 font-mono font-bold text-xs sm:text-sm">3</div>
                   <p className="text-foreground font-medium text-sm sm:text-base">Iterative development with continuous feedback and improvements</p>
                 </li>
                 
                 <li className="flex items-start">
-                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-neon-turquoise text-background rounded-full flex items-center justify-center mr-3 sm:mr-4 mt-0.5 flex-shrink-0 font-mono font-bold text-xs sm:text-sm">4</div>
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-primary/10 text-foreground rounded-full flex items-center justify-center mr-3 sm:mr-4 mt-0.5 flex-shrink-0 font-mono font-bold text-xs sm:text-sm">4</div>
                   <p className="text-foreground font-medium text-sm sm:text-base">Thorough testing and deployment with comprehensive documentation</p>
                 </li>
               </ul>
@@ -116,7 +116,7 @@ const Services = () => {
               
               <div className="space-y-4 sm:space-y-6">
                 <div className="flex gap-3 sm:gap-4 items-start">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 bg-neon-turquoise/20 text-neon-turquoise rounded-lg flex items-center justify-center">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 bg-primary/10 text-foreground rounded-lg flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="20 6 9 17 4 12"></polyline>
                     </svg>
@@ -128,7 +128,7 @@ const Services = () => {
                 </div>
                 
                 <div className="flex gap-3 sm:gap-4 items-start">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 bg-neon-turquoise/20 text-neon-turquoise rounded-lg flex items-center justify-center">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 bg-primary/10 text-foreground rounded-lg flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="20 6 9 17 4 12"></polyline>
                     </svg>
@@ -140,7 +140,7 @@ const Services = () => {
                 </div>
                 
                 <div className="flex gap-3 sm:gap-4 items-start">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 bg-neon-turquoise/20 text-neon-turquoise rounded-lg flex items-center justify-center">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 bg-primary/10 text-foreground rounded-lg flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="20 6 9 17 4 12"></polyline>
                     </svg>

@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-15T00:00:00Z",
+  "title": "Design System: Atharva.dev",
+  "extensions": {
+    "colorMeta": {
+      "void": { "role": "neutral", "displayName": "Midnight Void", "canonical": "hsl(0 0% 1%)", "tonalRamp": ["#030303", "#0D0D0D", "#1A1A1A", "#262626", "#4D4D4D", "#808080", "#B3B3B3", "#F2F2F2"] },
+      "ink": { "role": "primary", "displayName": "Ink White", "canonical": "hsl(0 0% 100%)", "tonalRamp": ["#262626", "#404040", "#666666", "#999999", "#B3B3B3", "#CCCCCC", "#E6E6E6", "#FFFFFF"] },
+      "surface": { "role": "neutral", "displayName": "Charcoal Surface", "canonical": "hsl(0 0% 5%)", "tonalRamp": ["#030303", "#0D0D0D", "#1A1A1A", "#262626", "#4D4D4D", "#808080", "#B3B3B3", "#F2F2F2"] },
+      "surface-raised": { "role": "neutral", "displayName": "Raised Graphite", "canonical": "hsl(0 0% 10%)", "tonalRamp": ["#030303", "#0D0D0D", "#1A1A1A", "#262626", "#4D4D4D", "#808080", "#B3B3B3", "#F2F2F2"] },
+      "hairline": { "role": "neutral", "displayName": "Hairline", "canonical": "hsl(0 0% 15%)", "tonalRamp": ["#030303", "#0D0D0D", "#1A1A1A", "#262626", "#4D4D4D", "#808080", "#B3B3B3", "#F2F2F2"] },
+      "ash": { "role": "neutral", "displayName": "Ash", "canonical": "hsl(0 0% 60%)", "tonalRamp": ["#1A1A1A", "#333333", "#4D4D4D", "#666666", "#808080", "#999999", "#CCCCCC", "#F2F2F2"] },
+      "hero-indigo": { "role": "tertiary", "displayName": "Pastel Indigo", "canonical": "#A5B4FC", "tonalRamp": ["#1E1B4B", "#312E81", "#3730A3", "#4F46E5", "#6366F1", "#818CF8", "#A5B4FC", "#E0E7FF"] },
+      "hero-rose": { "role": "tertiary", "displayName": "Pastel Rose", "canonical": "#FDA4AF", "tonalRamp": ["#4C0519", "#881337", "#9F1239", "#E11D48", "#F43F5E", "#FB7185", "#FDA4AF", "#FFE4E6"] },
+      "signal-red": { "role": "error", "displayName": "Signal Red", "canonical": "hsl(0 84% 60%)", "tonalRamp": ["#450A0A", "#7F1D1D", "#991B1B", "#DC2626", "#EF4343", "#F87171", "#FCA5A5", "#FEE2E2"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headline only; gradient-clipped text." },
+      "headline": { "displayName": "Headline", "purpose": "Centred section titles followed by an 80x4px white rule." },
+      "timeline-year": { "displayName": "Timeline Year", "purpose": "Sticky year labels in Ash." },
+      "title": { "displayName": "Title", "purpose": "Card and timeline entry titles." },
+      "body": { "displayName": "Body", "purpose": "Paragraphs and section intros." },
+      "body-small": { "displayName": "Body Small", "purpose": "Card descriptions, form labels, footer links." },
+      "label-mono": { "displayName": "Label Mono", "purpose": "Skill marquee chips only." },
+      "chip": { "displayName": "Chip", "purpose": "Tech tags inside timeline entries." }
+    },
+    "shadows": [
+      { "name": "glass-glow", "value": "0 8px 32px 0 rgba(255,255,255,0.1)", "purpose": "Soft white under-glow on hero glass shapes only." }
+    ],
+    "motion": [
+      { "name": "glass-enter", "value": "2.4s cubic-bezier(0.23, 0.86, 0.39, 0.96)", "purpose": "Hero glass shapes falling into place." },
+      { "name": "glass-float", "value": "12s ease-in-out infinite, translateY 0 → 15px → 0", "purpose": "Ambient bob of hero glass shapes." },
+      { "name": "fade-up", "value": "1s cubic-bezier(0.25, 0.4, 0.25, 1), +0.2s stagger", "purpose": "Hero badge, headline and subtitle entrance." },
+      { "name": "scroll-reveal", "value": "0.6s ease-out, translateY 20px → 0", "purpose": "Elements entering on scroll." },
+      { "name": "marquee", "value": "20s linear infinite", "purpose": "Two-row skill chip marquee." },
+      { "name": "state", "value": "150ms–300ms ease (Tailwind transition-colors)", "purpose": "Hover and focus colour changes." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" },
+      { "name": "2xl", "value": "1400px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single solid white action per context.",
+      "html": "<button class=\"ds-btn-primary\">Send Message</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; height: 40px; padding: 8px 16px; background: #FFFFFF; color: #030303; font: 500 14px/20px Inter, sans-serif; border: none; border-radius: 6px; cursor: pointer; transition: background-color 150ms ease; } .ds-btn-primary:hover { background: rgba(255,255,255,0.9); } .ds-btn-primary:focus-visible { outline: none; box-shadow: 0 0 0 2px #030303, 0 0 0 4px #FFFFFF; }"
+    },
+    {
+      "name": "Text Link",
+      "kind": "button",
+      "refersTo": "button-link",
+      "description": "Ash link that brightens to white on hover.",
+      "html": "<a class=\"ds-link\" href=\"#\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4\"/><path d=\"M9 18c-4.51 2-5-2-7-2\"/></svg>View All Projects on GitHub</a>",
+      "css": ".ds-link { display: inline-flex; align-items: center; gap: 8px; color: #999999; font: 400 14px/20px Inter, sans-serif; text-decoration: none; transition: color 150ms ease; } .ds-link:hover { color: #FFFFFF; } .ds-link:focus-visible { outline: 2px solid #FFFFFF; outline-offset: 2px; border-radius: 4px; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Void-filled field with a graphite hairline and white focus ring.",
+      "html": "<input class=\"ds-input\" placeholder=\"How can I help you?\" />",
+      "css": ".ds-input { width: 280px; height: 40px; padding: 8px 12px; background: #030303; color: #FFFFFF; border: 1px solid #1A1A1A; border-radius: 6px; font: 400 14px/20px Inter, sans-serif; } .ds-input::placeholder { color: #999999; } .ds-input:focus-visible { outline: none; box-shadow: 0 0 0 2px #030303, 0 0 0 4px #FFFFFF; }"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Charcoal surface, hairline border, white/10 icon tile.",
+      "html": "<div class=\"ds-card\"><div class=\"ds-card-icon\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z\"/><path d=\"M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z\"/></svg></div><h3 class=\"ds-card-title\">Brain Tumor Detection</h3><p class=\"ds-card-body\">Computer vision model that detects tumors in MRI scans.</p></div>",
+      "css": ".ds-card { max-width: 320px; padding: 24px; background: #0D0D0D; border: 1px solid #262626; border-radius: 8px; color: #FFFFFF; transition: border-color 200ms ease; } .ds-card:hover { border-color: #4D4D4D; } .ds-card-icon { display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; margin-bottom: 16px; border-radius: 8px; background: rgba(255,255,255,0.1); color: #FFFFFF; } .ds-card-title { margin: 0 0 8px; font: 600 18px/28px Inter, sans-serif; } .ds-card-body { margin: 0; color: #999999; font: 400 14px/20px Inter, sans-serif; }"
+    },
+    {
+      "name": "Tech Tag",
+      "kind": "chip",
+      "refersTo": "chip-tag",
+      "description": "Translucent white pill for tech labels in timeline entries.",
+      "html": "<span class=\"ds-tag\">Generative AI</span>",
+      "css": ".ds-tag { display: inline-block; padding: 4px 12px; background: rgba(255,255,255,0.1); color: #FFFFFF; border: 1px solid rgba(255,255,255,0.2); border-radius: 9999px; font: 400 12px/16px Inter, sans-serif; }"
+    },
+    {
+      "name": "Skill Chip",
+      "kind": "chip",
+      "refersTo": "chip-skill",
+      "description": "Mono-labelled block that scrolls in the skills marquee.",
+      "html": "<span class=\"ds-skill\">TensorFlow</span>",
+      "css": ".ds-skill { display: inline-flex; align-items: center; padding: 12px 24px; background: #0D0D0D; color: #FFFFFF; border: 1px solid #262626; border-radius: 4px; font: 500 16px/24px 'JetBrains Mono', monospace; }"
+    },
+    {
+      "name": "Hero Badge",
+      "kind": "chip",
+      "refersTo": "badge-hero",
+      "description": "Faint glass pill with a rose status dot above the hero headline.",
+      "html": "<span class=\"ds-badge\"><span class=\"ds-badge-dot\"></span>Available for projects</span>",
+      "css": ".ds-badge { display: inline-flex; align-items: center; gap: 8px; padding: 4px 12px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 9999px; color: rgba(255,255,255,0.6); font: 400 14px/20px Inter, sans-serif; letter-spacing: 0.025em; } .ds-badge-dot { width: 8px; height: 8px; border-radius: 9999px; background: rgba(244,63,94,0.8); }"
+    },
+    {
+      "name": "Glass Shape",
+      "kind": "custom",
+      "refersTo": "glass-shape",
+      "description": "Signature frosted pill that floats in the hero.",
+      "html": "<div class=\"ds-glass-stage\"><div class=\"ds-glass\"></div></div>",
+      "css": ".ds-glass-stage { position: relative; width: 360px; height: 160px; background: #030303; display: flex; align-items: center; justify-content: center; overflow: hidden; border-radius: 8px; } .ds-glass { position: relative; width: 300px; height: 80px; border-radius: 9999px; background: linear-gradient(to right, rgba(99,102,241,0.15), transparent); border: 2px solid rgba(255,255,255,0.15); backdrop-filter: blur(2px); box-shadow: 0 8px 32px 0 rgba(255,255,255,0.1); transform: rotate(-8deg); animation: ds-float 12s ease-in-out infinite; } .ds-glass::after { content: ''; position: absolute; inset: 0; border-radius: 9999px; background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.2), transparent 70%); } @keyframes ds-float { 0%, 100% { translate: 0 0; } 50% { translate: 0 15px; } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Midnight Glass",
+    "overview": "The page is a near-black void (#030303). Light catches on a few frosted, translucent shapes: long pill-shaped glass slabs tinted indigo, rose, violet, amber and cyan, which drift slowly through the hero like objects suspended in dark water. Everything else is monochrome. White type and hairline-bordered charcoal surfaces stay quiet so that the glass and the work are the only things that glow.\n\nThe UI is quiet and receding. Components use tonal steps (void → surface → surface-raised) and 1px hairlines rather than colour or shadow. White is both the text colour and the only action colour. The single sanctioned moment of chroma in the type is the hero headline's indigo-to-rose gradient; colour elsewhere is drift (see Do's and Don'ts). Density is generous: centred section headers, wide vertical rhythm, one idea per band.\n\nMotion is slow and atmospheric rather than snappy. Hero shapes fall in over 2.4s and then bob on a 12s loop, headings fade up in a staggered sequence, the timeline's spine fills as you scroll, and skill chips flow in a continuous two-row marquee.",
+    "keyCharacteristics": [
+      "Near-black void canvas with white type; no light theme.",
+      "Frosted glass pills (translucent gradient fill, white/15 border, soft white glow) as the signature ornament, confined to the hero.",
+      "Tonal layering and hairlines for depth; essentially shadowless UI.",
+      "Inter for everything readable; JetBrains Mono only for skill labels.",
+      "Slow, eased, ambient motion."
+    ],
+    "rules": [
+      { "name": "The White Is the Accent Rule", "body": "Interactive emphasis is expressed with white: a white fill, a white focus ring, or white rising from 60% to 100% opacity. No hue may stand in for \"primary\".", "section": "colors" },
+      { "name": "The Glass Stays in the Hero Rule", "body": "The tinted glass palette is ornament for the first viewport. Below the fold, colour appears only as low-opacity white.", "section": "colors" },
+      { "name": "The One Family Rule", "body": "Inter for every readable string. JetBrains Mono is reserved for skill and tech labels and never sets sentences.", "section": "typography" },
+      { "name": "The Tonal Depth Rule", "body": "To lift a surface, step it one tone up the ladder and give it a hairline. Never add a drop shadow to a card.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep the canvas at Midnight Void (#030303) everywhere; sections are bands of space, not coloured panels.",
+      "Do express emphasis with white: a solid white fill for the single primary action, and white/60 → white for hover.",
+      "Do build depth with the tonal ladder (#030303 → #0D0D0D → #1A1A1A) plus a 1px #262626 hairline.",
+      "Do reserve pills for atmosphere and tags; use 4–8px radii for content containers.",
+      "Do keep motion slow and eased (0.6–2.4s, ease-out or the hero's custom curves), and keep marquees linear."
+    ],
+    "donts": [
+      "Don't use tech-blue / tech-navy (#1034A6). This is known drift in Contact: blue links on near-black fail contrast, and the submit button sets near-black text on blue.",
+      "Don't use neon-turquoise. It is referenced in Services but never defined, so its icon tiles and numbered steps render invisible. Replace those with the white/10 icon tile.",
+      "Don't use light-theme greys (text-gray-500/600/700) or bg-white surfaces; they come from a removed light theme and break the void.",
+      "Don't let the hero's indigo/rose/glass tints spread into body sections or components.",
+      "Don't add drop shadows to cards; the glass glow belongs to the hero shapes alone.",
+      "Don't load or use VT323. The pixel font is still linked in index.html, and the \"retro dark-blue\" meta description is outdated; neither is part of the current system."
+    ]
+  }
+}

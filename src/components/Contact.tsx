@@ -89,28 +89,28 @@ const Contact = () => {
             
             <div className="space-y-6">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 flex-shrink-0 bg-tech-blue/10 text-tech-blue rounded-full flex items-center justify-center">
+                <div className="w-12 h-12 flex-shrink-0 bg-primary/10 text-foreground rounded-full flex items-center justify-center">
                   <Mail size={20} />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-500">Email</p>
-                  <a href="mailto:atharvaagaikwad04@gmail.com" className="text-tech-navy hover:text-tech-blue transition-colors">
+                  <p className="text-sm text-muted-foreground">Email</p>
+                  <a href="mailto:atharvaagaikwad04@gmail.com" className="text-foreground/80 hover:text-foreground transition-colors">
                     atharvaagaikwad04@gmail.com
                   </a>
                 </div>
               </div>
               
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 flex-shrink-0 bg-tech-blue/10 text-tech-blue rounded-full flex items-center justify-center">
+                <div className="w-12 h-12 flex-shrink-0 bg-primary/10 text-foreground rounded-full flex items-center justify-center">
                   <Linkedin size={20} />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-500">LinkedIn</p>
+                  <p className="text-sm text-muted-foreground">LinkedIn</p>
                   <a 
                     href="https://www.linkedin.com/in/atharva-gaikwad-72ba25295/" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="text-tech-navy hover:text-tech-blue transition-colors flex items-center gap-1"
+                    className="text-foreground/80 hover:text-foreground transition-colors flex items-center gap-1"
                   >
                     Atharva Gaikwad
                     <ExternalLink size={14} />
@@ -119,16 +119,16 @@ const Contact = () => {
               </div>
               
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 flex-shrink-0 bg-tech-blue/10 text-tech-blue rounded-full flex items-center justify-center">
+                <div className="w-12 h-12 flex-shrink-0 bg-primary/10 text-foreground rounded-full flex items-center justify-center">
                   <Github size={20} />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-500">GitHub</p>
+                  <p className="text-sm text-muted-foreground">GitHub</p>
                   <a 
                     href="https://github.com/Atharva1399" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="text-tech-navy hover:text-tech-blue transition-colors flex items-center gap-1"
+                    className="text-foreground/80 hover:text-foreground transition-colors flex items-center gap-1"
                   >
                     atharva-gaikwad
                     <ExternalLink size={14} />
@@ -138,10 +138,10 @@ const Contact = () => {
             </div>
             
             <div className="mt-10">
-              <h4 className="font-semibold text-tech-navy mb-4">
+              <h4 className="font-semibold text-foreground mb-4">
                 Connect With Me
               </h4>
-              <p className="text-gray-600 mb-6">
+              <p className="text-muted-foreground mb-6">
                 I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.
               </p>
             </div>
@@ -155,7 +155,7 @@ const Contact = () => {
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-sm font-medium text-gray-700">Your Name</FormLabel>
+                      <FormLabel className="text-sm font-medium text-foreground">Your Name</FormLabel>
                       <FormControl>
                         <Input placeholder="John Doe" className="w-full" {...field} />
                       </FormControl>
@@ -169,7 +169,7 @@ const Contact = () => {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-sm font-medium text-gray-700">Email Address</FormLabel>
+                      <FormLabel className="text-sm font-medium text-foreground">Email Address</FormLabel>
                       <FormControl>
                         <Input type="email" placeholder="john@example.com" className="w-full" {...field} />
                       </FormControl>
@@ -183,7 +183,7 @@ const Contact = () => {
                   name="subject"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-sm font-medium text-gray-700">Subject</FormLabel>
+                      <FormLabel className="text-sm font-medium text-foreground">Subject</FormLabel>
                       <FormControl>
                         <Input placeholder="How can I help you?" className="w-full" {...field} />
                       </FormControl>
@@ -197,7 +197,7 @@ const Contact = () => {
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-sm font-medium text-gray-700">Message</FormLabel>
+                      <FormLabel className="text-sm font-medium text-foreground">Message</FormLabel>
                       <FormControl>
                         <Textarea 
                           placeholder="Your message here..." 
@@ -212,7 +212,7 @@ const Contact = () => {
                 
                 <Button
                   type="submit" 
-                  className="w-full bg-tech-blue hover:bg-tech-blue/90"
+                  className="w-full"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (
