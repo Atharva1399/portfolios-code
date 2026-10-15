@@ -1,91 +1,37 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    /* Dark elegant background */
-    --background: 0 0% 1%;
-    --foreground: 0 0% 100%;
+    /* Binder blue world: committed blue, grid paper, navy ink */
+    --blue: 221 100% 50%;          /* #0052FE, matches the hero photo ground */
+    --blue-deep: 224 100% 36%;     /* #0035B8 */
+    --blue-soft: 221 100% 94%;     /* #E0EAFF */
+    --paper: 220 33% 97%;          /* #F3F5F9 */
+    --ink: 230 67% 12%;            /* #0A1033 */
+    --ink-soft: 228 22% 36%;       /* #48506F */
 
-    --card: 0 0% 5%;
-    --card-foreground: 0 0% 100%;
-
-    --popover: 0 0% 5%;
-    --popover-foreground: 0 0% 100%;
-
-    --primary: 0 0% 100%;
-    --primary-foreground: 0 0% 1%;
-
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 0 0% 100%;
-
-    --muted: 0 0% 10%;
-    --muted-foreground: 0 0% 60%;
-
-    --accent: 0 0% 100%;
-    --accent-foreground: 0 0% 1%;
-
-    --destructive: 0 84% 60%;
+    --background: var(--paper);
+    --foreground: var(--ink);
+    --card: 0 0% 100%;
+    --card-foreground: var(--ink);
+    --popover: 0 0% 100%;
+    --popover-foreground: var(--ink);
+    --primary: var(--blue);
+    --primary-foreground: 0 0% 100%;
+    --secondary: var(--blue-soft);
+    --secondary-foreground: var(--ink);
+    --muted: var(--blue-soft);
+    --muted-foreground: var(--ink-soft);
+    --accent: var(--blue);
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 78% 46%;
     --destructive-foreground: 0 0% 100%;
-
-    --border: 0 0% 15%;
-    --input: 0 0% 10%;
-    --ring: 0 0% 100%;
-
-    --radius: 0.5rem;
-
-    /* Sidebar tokens */
-    --sidebar-background: 0 0% 1%;
-    --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 0 0% 100%;
-    --sidebar-primary-foreground: 0 0% 1%;
-    --sidebar-accent: 0 0% 100%;
-    --sidebar-accent-foreground: 0 0% 1%;
-    --sidebar-border: 0 0% 15%;
-    --sidebar-ring: 0 0% 100%;
-  }
-
-  .dark {
-    --background: 0 0% 1%;
-    --foreground: 0 0% 100%;
-
-    --card: 0 0% 5%;
-    --card-foreground: 0 0% 100%;
-
-    --popover: 0 0% 5%;
-    --popover-foreground: 0 0% 100%;
-
-    --primary: 0 0% 100%;
-    --primary-foreground: 0 0% 1%;
-
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 0 0% 100%;
-
-    --muted: 0 0% 10%;
-    --muted-foreground: 0 0% 60%;
-
-    --accent: 0 0% 100%;
-    --accent-foreground: 0 0% 1%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 0 0% 15%;
-    --input: 0 0% 10%;
-    --ring: 0 0% 100%;
-
-    --sidebar-background: 0 0% 1%;
-    --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 0 0% 100%;
-    --sidebar-primary-foreground: 0 0% 1%;
-    --sidebar-accent: 0 0% 100%;
-    --sidebar-accent-foreground: 0 0% 1%;
-    --sidebar-border: 0 0% 15%;
-    --sidebar-ring: 0 0% 100%;
+    --border: 225 30% 84%;
+    --input: 225 30% 80%;
+    --ring: var(--blue);
+    --radius: 0.375rem;
   }
 }
 
@@ -96,47 +42,79 @@
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 4rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground font-body antialiased;
+    overflow-x: clip;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-sans font-bold;
+  ::selection {
+    background: hsl(var(--blue));
+    color: #fff;
   }
 
-  .section-padding {
-    @apply py-16 md:py-24;
-  }
-  
-  .container {
-    @apply px-4 sm:px-6 lg:px-8;
+  :focus-visible {
+    outline: 3px solid hsl(var(--blue));
+    outline-offset: 3px;
   }
 
-  .skill-bar {
-    @apply h-2 bg-tech-gray rounded overflow-hidden;
+  .on-blue :focus-visible {
+    outline-color: #fff;
   }
-  
-  .skill-progress {
-    height: 100%;
-    @apply bg-primary;
+
+  html {
+    scrollbar-color: hsl(var(--blue)) hsl(var(--paper));
   }
-  
-  .animate-on-scroll {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+@layer components {
+  /* Grid paper: faint blue rules every 28px */
+  .grid-paper {
+    background-color: hsl(var(--paper));
+    background-image:
+      linear-gradient(hsl(var(--blue) / 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--blue) / 0.07) 1px, transparent 1px);
+    background-size: 28px 28px;
   }
-  
-  .animate-on-scroll.animate {
-    opacity: 1;
-    transform: translateY(0);
+
+  /* Expanded black display cut */
+  .display {
+    @apply font-display;
+    font-stretch: 125%;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 0.88;
+    text-transform: uppercase;
   }
-  
-  /* Parallax effect styles */
-  .parallax-element {
-    transition: transform 0.2s ease-out;
-    will-change: transform;
+
+  .type-label {
+    @apply font-type text-sm;
+    letter-spacing: 0.02em;
+  }
+
+  /* Folder tab: a trapezoid lip on top of a sheet */
+  .folder-tab {
+    clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
+  }
+
+  .tape {
+    @apply font-display uppercase;
+    font-stretch: 125%;
+    font-weight: 800;
   }
 }

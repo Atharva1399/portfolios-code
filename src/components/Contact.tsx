@@ -1,232 +1,175 @@
-
-import React, { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Mail, Linkedin, Github, ExternalLink, Loader2 } from 'lucide-react';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import emailjs from 'emailjs-com';
+import { ArrowUpRight, Loader2 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { profile } from '@/data/portfolio';
+import { motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
+import { useParallax } from '@/hooks/use-parallax';
 
 const formSchema = z.object({
-  name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
-  email: z.string().email({ message: 'Please enter a valid email address.' }),
-  subject: z.string().min(5, { message: 'Subject must be at least 5 characters.' }),
-  message: z.string().min(10, { message: 'Message must be at least 10 characters.' }),
+  name: z.string().min(2, { message: 'Add your name (at least 2 characters).' }),
+  email: z.string().email({ message: 'That email doesn’t look right. Check for typos.' }),
+  subject: z.string().min(5, { message: 'Give the subject at least 5 characters.' }),
+  message: z.string().min(10, { message: 'Say a little more: at least 10 characters.' }),
 });
+
+type FormValues = z.infer<typeof formSchema>;
+
+const fields: { name: keyof FormValues; label: string; placeholder: string; type?: string }[] = [
+  { name: 'name', label: 'Your name', placeholder: 'Ada Lovelace' },
+  { name: 'email', label: 'Email', placeholder: 'you@domain.dev', type: 'email' },
+  { name: 'subject', label: 'Subject', placeholder: 'Let’s build a RAG pipeline' },
+];
+
+const inputCls =
+  'w-full rounded-md border-2 border-ink/15 bg-paper px-4 py-3 text-ink placeholder:text-ink-soft/80 transition-colors focus:border-blue focus:outline-none';
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [headRef, headX] = useParallax<HTMLHeadingElement>(-70);
   const { toast } = useToast();
-  
-  const form = useForm<z.infer<typeof formSchema>>({
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<FormValues>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: '',
-      email: '',
-      subject: '',
-      message: '',
-    },
+    defaultValues: { name: '', email: '', subject: '', message: '' },
   });
 
-  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+  const onSubmit = async (values: FormValues) => {
     setIsSubmitting(true);
-    
     try {
-      const templateParams = {
-        from_name: values.name,
-        from_email: values.email,
-        subject: values.subject,
-        message: values.message,
-      };
-      
       await emailjs.send(
         'service_lm5nh8s',
         'template_x620kes',
-        templateParams,
-        'kauws2DH9dLWoxt6b'
+        {
+          from_name: values.name,
+          from_email: values.email,
+          subject: values.subject,
+          message: values.message,
+        },
+        'kauws2DH9dLWoxt6b',
       );
-      
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon!",
-      });
-      
-      form.reset();
+      toast({ title: 'Message sent', description: 'Thanks! I’ll get back to you soon.' });
+      reset();
     } catch (error) {
-      console.error("Error sending email:", error);
+      console.error('Error sending email:', error);
       toast({
-        variant: "destructive",
-        title: "Something went wrong",
-        description: "Failed to send your message. Please try again later.",
+        variant: 'destructive',
+        title: 'Message didn’t send',
+        description: `Try again in a minute, or email me directly at ${profile.email}.`,
       });
     } finally {
       setIsSubmitting(false);
     }
   };
 
+  const links = [
+    { label: 'Email', value: profile.email, href: `mailto:${profile.email}` },
+    { label: 'GitHub', value: 'Atharva1399', href: profile.github },
+    { label: 'LinkedIn', value: 'Atharva Gaikwad', href: profile.linkedin },
+    ...(profile.medium ? [{ label: 'Medium', value: 'Writing on AI & blockchain', href: profile.medium }] : []),
+  ];
+
   return (
-    <section id="contact" className="section-padding bg-background">
-      <div className="container mx-auto">
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Get In Touch
-          </h2>
-          <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
-          <p className="text-muted-foreground">
-            Interested in working together? Feel free to reach out for collaborations or just a friendly chat.
-          </p>
-        </div>
-        
-        <div className="grid md:grid-cols-2 gap-12">
+    <section id="contact" className="on-blue overflow-x-clip bg-blue pt-20 text-white md:pt-28">
+      <div className="mx-auto max-w-[1300px] px-4 sm:px-6 lg:px-10">
+        <motion.h2 ref={headRef} style={{ x: headX }} className="display text-[clamp(2.4rem,10.5vw,9.5rem)]">
+          Let’s build
+          <br />
+          something
+        </motion.h2>
+
+        <div className="mt-14 grid gap-12 pb-20 lg:grid-cols-[1fr_1.15fr] lg:gap-20">
           <div>
-            <h3 className="text-2xl font-semibold text-foreground mb-6">
-              Contact Information
-            </h3>
-            
-            <div className="space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 flex-shrink-0 bg-tech-blue/10 text-tech-blue rounded-full flex items-center justify-center">
-                  <Mail size={20} />
-                </div>
-                <div>
-                  <p className="text-sm text-gray-500">Email</p>
-                  <a href="mailto:atharvaagaikwad04@gmail.com" className="text-tech-navy hover:text-tech-blue transition-colors">
-                    atharvaagaikwad04@gmail.com
-                  </a>
-                </div>
-              </div>
-              
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 flex-shrink-0 bg-tech-blue/10 text-tech-blue rounded-full flex items-center justify-center">
-                  <Linkedin size={20} />
-                </div>
-                <div>
-                  <p className="text-sm text-gray-500">LinkedIn</p>
-                  <a 
-                    href="https://www.linkedin.com/in/atharva-gaikwad-72ba25295/" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="text-tech-navy hover:text-tech-blue transition-colors flex items-center gap-1"
+            <p className="max-w-[44ch] text-xl leading-relaxed">
+              Working on something with LLMs, agents or RAG? Need a hackathon teammate, or a workshop for your
+              community? My inbox is open.
+            </p>
+            <ul className="mt-10 border-t-2 border-white">
+              {links.map((l) => (
+                <li key={l.label} className="border-b border-white/40">
+                  <a
+                    href={l.href}
+                    target={l.href.startsWith('mailto') ? undefined : '_blank'}
+                    rel="noopener noreferrer"
+                    className="group flex items-center justify-between gap-4 py-4"
                   >
-                    Atharva Gaikwad
-                    <ExternalLink size={14} />
+                    <span>
+                      <span className="type-label block text-blue-soft">{l.label}</span>
+                      <span className="mt-1 block break-all text-lg font-semibold sm:text-xl">{l.value}</span>
+                    </span>
+                    <ArrowUpRight
+                      aria-hidden
+                      className="shrink-0 transition-transform duration-200 group-hover:-translate-y-1 group-hover:translate-x-1"
+                    />
                   </a>
-                </div>
-              </div>
-              
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 flex-shrink-0 bg-tech-blue/10 text-tech-blue rounded-full flex items-center justify-center">
-                  <Github size={20} />
-                </div>
-                <div>
-                  <p className="text-sm text-gray-500">GitHub</p>
-                  <a 
-                    href="https://github.com/Atharva1399" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="text-tech-navy hover:text-tech-blue transition-colors flex items-center gap-1"
-                  >
-                    atharva-gaikwad
-                    <ExternalLink size={14} />
-                  </a>
-                </div>
-              </div>
-            </div>
-            
-            <div className="mt-10">
-              <h4 className="font-semibold text-tech-navy mb-4">
-                Connect With Me
-              </h4>
-              <p className="text-gray-600 mb-6">
-                I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.
-              </p>
-            </div>
+                </li>
+              ))}
+            </ul>
           </div>
-          
-          <div>
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
-                <FormField
-                  control={form.control}
-                  name="name"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-sm font-medium text-gray-700">Your Name</FormLabel>
-                      <FormControl>
-                        <Input placeholder="John Doe" className="w-full" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
+
+          {/* The form sits on a white sheet with a sticker edge */}
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            noValidate
+            className="rounded-xl bg-white p-6 text-ink shadow-[0_0_0_6px_hsl(var(--blue-deep)),0_24px_50px_-20px_rgba(0,0,0,0.5)] sm:p-8"
+          >
+            <div className="grid gap-5 sm:grid-cols-2">
+              {fields.map((f) => (
+                <label key={f.name} className={cn('block', f.name === 'subject' && 'sm:col-span-2')}>
+                  <span className="mb-1.5 block text-sm font-semibold">{f.label}</span>
+                  <input
+                    type={f.type ?? 'text'}
+                    placeholder={f.placeholder}
+                    aria-invalid={!!errors[f.name]}
+                    className={cn(inputCls, errors[f.name] && 'border-destructive')}
+                    {...register(f.name)}
+                  />
+                  {errors[f.name] && (
+                    <span role="alert" className="mt-1.5 block text-sm text-destructive">
+                      {errors[f.name]?.message}
+                    </span>
                   )}
+                </label>
+              ))}
+              <label className="block sm:col-span-2">
+                <span className="mb-1.5 block text-sm font-semibold">Message</span>
+                <textarea
+                  rows={5}
+                  placeholder="What are you building?"
+                  aria-invalid={!!errors.message}
+                  className={cn(inputCls, 'resize-y', errors.message && 'border-destructive')}
+                  {...register('message')}
                 />
-                
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-sm font-medium text-gray-700">Email Address</FormLabel>
-                      <FormControl>
-                        <Input type="email" placeholder="john@example.com" className="w-full" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                
-                <FormField
-                  control={form.control}
-                  name="subject"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-sm font-medium text-gray-700">Subject</FormLabel>
-                      <FormControl>
-                        <Input placeholder="How can I help you?" className="w-full" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                
-                <FormField
-                  control={form.control}
-                  name="message"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-sm font-medium text-gray-700">Message</FormLabel>
-                      <FormControl>
-                        <Textarea 
-                          placeholder="Your message here..." 
-                          className="w-full min-h-[150px]" 
-                          {...field} 
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                
-                <Button
-                  type="submit" 
-                  className="w-full bg-tech-blue hover:bg-tech-blue/90"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? (
-                    <>
-                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                      Sending...
-                    </>
-                  ) : (
-                    "Send Message"
-                  )}
-                </Button>
-              </form>
-            </Form>
-          </div>
+                {errors.message && (
+                  <span role="alert" className="mt-1.5 block text-sm text-destructive">
+                    {errors.message.message}
+                  </span>
+                )}
+              </label>
+            </div>
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-md bg-blue py-3.5 font-semibold text-white transition-colors duration-200 hover:bg-blue-deep disabled:cursor-wait disabled:opacity-70"
+            >
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="h-4 w-4 animate-spin" aria-hidden />
+                  Sending…
+                </>
+              ) : (
+                'Send message'
+              )}
+            </button>
+          </form>
         </div>
       </div>
     </section>

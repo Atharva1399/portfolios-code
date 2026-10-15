@@ -1,79 +1,72 @@
+import { useState, type CSSProperties } from 'react';
+import { skills } from '@/data/portfolio';
+import { motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
+import { useParallax } from '@/hooks/use-parallax';
 
-import React from 'react';
+// Spine sizes on the desktop shelf, so the row reads as real binders.
+const spineHeight = ['22rem', '19rem', '21rem', '18rem', '16.5rem'];
+const spineWidth = ['6rem', '5rem', '5.5rem', '5rem', '4rem'];
 
+/** A shelf of binder spines; pulling one out opens its contents. */
 const Skills = () => {
-  const skills = [
-    'Python', 'Machine Learning', 'React.js', 'Solidity', 'TensorFlow', 
-    'PyTorch', 'JavaScript', 'Blockchain', 'Computer Vision', 'Web3.js', 
-    'Git', 'Docker', 'Ethereum', 'Django', 'AI Development', 'DevRel',
-    'Node.js', 'TypeScript', 'Data Science', 'Smart Contracts'
-  ];
+  const [open, setOpen] = useState(0);
+  const group = skills[open];
+  const [headRef, headX] = useParallax<HTMLHeadingElement>(60);
 
   return (
-    <section id="skills" className="section-padding bg-background">
-      <div className="container mx-auto">
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Skills & Expertise
-          </h2>
-          <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
-          <p className="text-muted-foreground">
-            Specialized technical skills built through education, hands-on projects, and professional experience.
-          </p>
-        </div>
-        
-        {/* Horizontal Flowing Skills Animation */}
-        <div className="relative overflow-hidden">
-          <div className="flex animate-scroll-left whitespace-nowrap">
-            {[...skills, ...skills].map((skill, index) => (
-              <div
-                key={index}
-                className="inline-flex items-center px-6 py-3 mx-3 bg-card border border-border rounded text-card-foreground font-mono font-medium"
-              >
-                {skill}
-              </div>
-            ))}
-          </div>
-        </div>
+    <section id="stack" className="on-blue overflow-x-clip bg-blue py-20 text-white md:py-28">
+      <div className="mx-auto max-w-[1300px] px-4 sm:px-6 lg:px-10">
+        <motion.h2 ref={headRef} style={{ x: headX }} className="display text-[clamp(2.75rem,9vw,7.5rem)]">
+          The stack
+        </motion.h2>
 
-        {/* Second row flowing in opposite direction */}
-        <div className="relative overflow-hidden mt-6">
-          <div className="flex animate-scroll-right whitespace-nowrap">
-            {[...skills.reverse(), ...skills].map((skill, index) => (
-              <div
-                key={index}
-                className="inline-flex items-center px-6 py-3 mx-3 bg-secondary border border-border rounded text-secondary-foreground font-mono font-medium"
-              >
-                {skill}
-              </div>
-            ))}
+        <div className="mt-14 grid gap-12 lg:grid-cols-[auto_1fr] lg:items-end lg:gap-20">
+          {/* Spines (desktop) / rows (mobile) */}
+          <div
+            role="tablist"
+            aria-label="Skill groups"
+            className="flex flex-col gap-2 lg:flex-row lg:items-end lg:gap-2.5 lg:border-b-4 lg:border-white lg:pb-0"
+          >
+            {skills.map((s, i) => {
+              const isOpen = i === open;
+              return (
+                <button
+                  key={s.name}
+                  role="tab"
+                  aria-selected={isOpen}
+                  aria-controls="shelf-panel"
+                  onClick={() => setOpen(i)}
+                  onMouseEnter={() => setOpen(i)}
+                  className={cn(
+                    'group relative flex items-center justify-between rounded-sm border-2 border-white px-5 py-4 text-left transition-[transform,background-color,color] duration-300 ease-out',
+                    'lg:flex-col lg:justify-between lg:px-0 lg:py-5',
+                    'h-auto w-full lg:h-[var(--h)] lg:w-[var(--w)]',
+                    isOpen ? 'bg-white text-blue lg:-translate-y-6' : 'bg-blue text-white hover:bg-blue-deep',
+                  )}
+                  style={{ '--h': spineHeight[i], '--w': spineWidth[i] } as CSSProperties}
+                >
+                  <span className="font-type text-xs lg:order-2">{String(i + 1).padStart(2, '0')}</span>
+                  <span className="font-display text-xl font-black uppercase leading-none [font-stretch:125%] lg:order-1 lg:text-lg lg:[writing-mode:vertical-rl] lg:rotate-180">
+                    {s.spine}
+                  </span>
+                </button>
+              );
+            })}
           </div>
-        </div>
 
-        {/* Services Section */}
-        <div className="max-w-4xl mx-auto mt-16">
-          <div className="bg-card p-8 rounded border border-border">
-            <h3 className="text-2xl font-bold text-card-foreground mb-6 text-center">
-              Services Offered
-            </h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="flex items-start">
-                <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3"></div>
-                <span className="text-card-foreground">AI Agent Development & Integration</span>
-              </div>
-              <div className="flex items-start">
-                <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3"></div>
-                <span className="text-card-foreground">Developer Relations Consulting</span>
-              </div>
-              <div className="flex items-start">
-                <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3"></div>
-                <span className="text-card-foreground">Machine Learning Model Development</span>
-              </div>
-              <div className="flex items-start">
-                <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3"></div>
-                <span className="text-card-foreground">Web3 & Blockchain Integration</span>
-              </div>
-            </div>
+          <div id="shelf-panel" role="tabpanel" aria-live="polite" className="lg:pb-6">
+            <h3 className="display text-[clamp(2rem,5vw,4rem)]">{group.name}</h3>
+            <ul className="mt-8 flex flex-wrap gap-2.5">
+              {group.items.map((item) => (
+                <li
+                  key={item}
+                  className="rounded-sm border-2 border-white px-3.5 py-2 font-type text-base transition-colors hover:bg-white hover:text-blue"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

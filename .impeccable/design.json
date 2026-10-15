@@ -1,0 +1,432 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-15T00:00:00Z",
+  "title": "Design System: Atharva Gaikwad",
+  "extensions": {
+    "colorMeta": {
+      "binder-blue": {
+        "role": "primary",
+        "displayName": "Binder Blue",
+        "canonical": "hsl(221 100% 50%)",
+        "tonalRamp": [
+          "#001A57",
+          "#00267F",
+          "#0035B8",
+          "#0052FE",
+          "#3D7BFF",
+          "#7AA4FF",
+          "#B3CAFF",
+          "#E0EAFF"
+        ]
+      },
+      "binder-blue-deep": {
+        "role": "primary",
+        "displayName": "Binder Blue Deep",
+        "canonical": "hsl(224 100% 36%)",
+        "tonalRamp": [
+          "#000F3D",
+          "#001A66",
+          "#00258F",
+          "#0035B8",
+          "#2E5FE0",
+          "#6E8FEB",
+          "#ADC0F5",
+          "#E2E9FC"
+        ]
+      },
+      "blue-wash": {
+        "role": "primary",
+        "displayName": "Blue Wash",
+        "canonical": "hsl(221 100% 94%)",
+        "tonalRamp": [
+          "#001A57",
+          "#00338F",
+          "#0052FE",
+          "#5C8FFF",
+          "#99BAFF",
+          "#C2D6FF",
+          "#E0EAFF",
+          "#F2F6FF"
+        ]
+      },
+      "grid-paper": {
+        "role": "neutral",
+        "displayName": "Grid Paper",
+        "canonical": "hsl(220 33% 97%)",
+        "tonalRamp": [
+          "#1E2433",
+          "#3A4256",
+          "#5B6479",
+          "#858DA0",
+          "#B0B7C6",
+          "#D6DBE5",
+          "#E9ECF2",
+          "#F3F5F9"
+        ]
+      },
+      "sheet-white": {
+        "role": "neutral",
+        "displayName": "Sheet White",
+        "canonical": "hsl(0 0% 100%)",
+        "tonalRamp": [
+          "#262626",
+          "#474747",
+          "#6B6B6B",
+          "#929292",
+          "#B8B8B8",
+          "#DADADA",
+          "#F0F0F0",
+          "#FFFFFF"
+        ]
+      },
+      "navy-ink": {
+        "role": "neutral",
+        "displayName": "Navy Ink",
+        "canonical": "hsl(230 67% 12%)",
+        "tonalRamp": [
+          "#05081A",
+          "#0A1033",
+          "#1A2459",
+          "#2F3B80",
+          "#5560A6",
+          "#8890C7",
+          "#BCC1E3",
+          "#E8EAF7"
+        ]
+      },
+      "slate-ink": {
+        "role": "neutral",
+        "displayName": "Slate Ink",
+        "canonical": "hsl(228 22% 36%)",
+        "tonalRamp": [
+          "#1C2030",
+          "#2F3550",
+          "#48506F",
+          "#636B8A",
+          "#848BA6",
+          "#A8AEC2",
+          "#CDD1DD",
+          "#EEF0F4"
+        ]
+      },
+      "rule-line": {
+        "role": "neutral",
+        "displayName": "Rule Line",
+        "canonical": "hsl(225 30% 84%)",
+        "tonalRamp": [
+          "#1F2433",
+          "#383F57",
+          "#56607D",
+          "#7882A0",
+          "#9DA6C0",
+          "#CAD0E2",
+          "#E1E5F0",
+          "#F3F5FA"
+        ]
+      },
+      "field-stroke": {
+        "role": "neutral",
+        "displayName": "Field Stroke",
+        "canonical": "hsl(225 30% 80%)",
+        "tonalRamp": [
+          "#1F2433",
+          "#383F57",
+          "#56607D",
+          "#7882A0",
+          "#9DA6C0",
+          "#BDC4DB",
+          "#DCE0EC",
+          "#F1F3F8"
+        ]
+      },
+      "alert-red": {
+        "role": "error",
+        "displayName": "Alert Red",
+        "canonical": "hsl(0 78% 46%)",
+        "tonalRamp": [
+          "#3D0808",
+          "#6B0E0E",
+          "#9E1414",
+          "#D11A1A",
+          "#E85050",
+          "#F08A8A",
+          "#F7C0C0",
+          "#FCE8E8"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The hero name and the 404 headline. Archivo width 125, weight 900, uppercase."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles and the contact close; project sheet titles step down to clamp(2.25rem, 5.6vw, 4.75rem)."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Timeline roles, sticker and print titles at width 110 to 115."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Hero introduction and contact invitation."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Paragraphs and bullet points, 56 to 60ch."
+      },
+      "label": {
+        "displayName": "Typewriter Label",
+        "purpose": "Every tab, chip, date, field key, caption and meta line, in Courier Prime, sentence case."
+      },
+      "tape": {
+        "displayName": "Tape",
+        "purpose": "Uppercase marquee words on tape strips."
+      }
+    },
+    "shadows": [
+      {
+        "name": "sticker-edge",
+        "value": "0 0 0 5px #fff, 0 14px 28px -14px hsl(var(--ink) / 0.5)",
+        "purpose": "Award stickers: white die-cut margin around a blue keyline."
+      },
+      {
+        "name": "form-sheet-edge",
+        "value": "0 0 0 6px hsl(var(--blue-deep)), 0 24px 50px -20px rgba(0,0,0,0.5)",
+        "purpose": "Contact form sheet lying on the blue close."
+      },
+      {
+        "name": "print-drop",
+        "value": "0 10px 24px -14px hsl(var(--ink) / 0.45)",
+        "purpose": "Clothesline prints."
+      },
+      {
+        "name": "badge-drop",
+        "value": "0 18px 40px -12px hsl(var(--blue-deep) / 0.55)",
+        "purpose": "Lanyard ID badge."
+      },
+      {
+        "name": "tape-lift",
+        "value": "0 8px 18px -10px hsl(var(--ink) / 0.5)",
+        "purpose": "Front tape strip at the hero seam."
+      },
+      {
+        "name": "cutout-drop",
+        "value": "drop-shadow(0 24px 40px rgba(0,20,90,0.35))",
+        "purpose": "Hero portrait cutout (filter, not box-shadow)."
+      },
+      {
+        "name": "clip-lip",
+        "value": "0 2px 0 hsl(var(--blue-deep))",
+        "purpose": "Printed underside of a clothesline clip."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-binder",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Sheet changes and the cutout entrance."
+      },
+      {
+        "name": "duration-state",
+        "value": "200ms",
+        "purpose": "Tab, button and link state changes."
+      },
+      {
+        "name": "duration-object",
+        "value": "300ms",
+        "purpose": "Spine pull, print straighten, nav fill on scroll."
+      },
+      {
+        "name": "duration-sheet",
+        "value": "350ms",
+        "purpose": "Binder sheet slide (40px with fade)."
+      },
+      {
+        "name": "duration-badge",
+        "value": "500ms ease-out",
+        "purpose": "Badge swing on hover."
+      },
+      {
+        "name": "duration-entrance",
+        "value": "1100ms",
+        "purpose": "Hero cutout rises 80px and unrotates from 5 degrees."
+      },
+      {
+        "name": "tape-marquee",
+        "value": "40s linear infinite",
+        "purpose": "Tape strip scroll, opposite directions front and back."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "durations 0.01ms; smooth scroll off",
+        "purpose": "Global prefers-reduced-motion override."
+      },
+      {
+        "name": "parallax-heading",
+        "value": "useParallax: ±50–70px x across a section's pass, scaled by viewport/1024, spring stiffness 120 damping 30",
+        "purpose": "Section headings drift sideways as they cross the viewport."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "container-max",
+        "value": "1300px"
+      },
+      {
+        "name": "hero-max",
+        "value": "1400px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button on Blue",
+      "kind": "button",
+      "refersTo": "button-primary-on-blue",
+      "description": "White button with blue text for the main action inside blue sections.",
+      "html": "<div class=\"ds-blue-ground\"><a href=\"#\" class=\"ds-btn-white\">Open the work <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 5v14\"/><path d=\"m19 12-7 7-7-7\"/></svg></a></div>",
+      "css": ".ds-blue-ground { background: hsl(var(--blue, 221 100% 50%)); padding: 32px; } .ds-btn-white { display: inline-flex; align-items: center; gap: 8px; height: 48px; padding: 0 24px; border-radius: 4px; background: #fff; color: hsl(var(--blue, 221 100% 50%)); font-family: Archivo, system-ui, sans-serif; font-weight: 600; text-decoration: none; transition: transform 200ms; } .ds-btn-white:hover { transform: translateY(-2px); } .ds-btn-white:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }"
+    },
+    {
+      "name": "Outline Button on Blue",
+      "kind": "button",
+      "refersTo": "button-outline-on-blue",
+      "description": "Secondary action on blue; fills white on hover.",
+      "html": "<div class=\"ds-blue-ground-2\"><a href=\"#\" class=\"ds-btn-outline\">GitHub</a></div>",
+      "css": ".ds-blue-ground-2 { background: hsl(var(--blue, 221 100% 50%)); padding: 32px; } .ds-btn-outline { display: inline-flex; align-items: center; height: 48px; padding: 0 24px; border: 2px solid #fff; border-radius: 4px; color: #fff; font-family: Archivo, system-ui, sans-serif; font-weight: 600; text-decoration: none; transition: background-color 200ms, color 200ms; } .ds-btn-outline:hover { background: #fff; color: hsl(var(--blue, 221 100% 50%)); } .ds-btn-outline:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }"
+    },
+    {
+      "name": "Primary Button on White",
+      "kind": "button",
+      "refersTo": "button-primary-on-white",
+      "description": "Blue submit button on white sheets.",
+      "html": "<button class=\"ds-btn-blue\">Send message</button>",
+      "css": ".ds-btn-blue { display: inline-flex; justify-content: center; width: 100%; padding: 14px 24px; border: 0; border-radius: 4px; background: hsl(var(--blue, 221 100% 50%)); color: #fff; font-family: Archivo, system-ui, sans-serif; font-weight: 600; cursor: pointer; transition: background-color 200ms; } .ds-btn-blue:hover { background: hsl(var(--blue-deep, 224 100% 36%)); } .ds-btn-blue:focus-visible { outline: 3px solid hsl(var(--blue, 221 100% 50%)); outline-offset: 3px; } .ds-btn-blue:disabled { opacity: 0.7; cursor: wait; }"
+    },
+    {
+      "name": "Folder-Tab Navigation",
+      "kind": "nav",
+      "refersTo": "folder-tab-nav",
+      "description": "Fixed row of trapezoid folder tabs; the active tab becomes the paper page below.",
+      "html": "<header class=\"ds-nav\"><span class=\"ds-nav-logo\">Atharva<span>.dev</span></span><nav><a href=\"#\" class=\"ds-tab\">About</a><a href=\"#\" class=\"ds-tab ds-tab-active\" aria-current=\"true\">Work</a><a href=\"#\" class=\"ds-tab\">Stack</a><a href=\"#\" class=\"ds-tab\">Contact</a></nav></header>",
+      "css": ".ds-nav { display: flex; align-items: flex-end; justify-content: space-between; height: 56px; padding: 0 24px; background: hsl(var(--blue, 221 100% 50%)); } .ds-nav-logo { margin-bottom: 12px; font-family: Archivo, sans-serif; font-stretch: 125%; font-weight: 900; font-size: 18px; line-height: 1; text-transform: uppercase; color: #fff; } .ds-nav-logo span { color: hsl(var(--blue-soft, 221 100% 94%)); } .ds-nav nav { display: flex; align-items: flex-end; gap: 4px; } .ds-tab { display: block; padding: 10px 20px 8px; clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 100%, 0 100%); background: rgba(255,255,255,0.15); color: #fff; font-family: 'Courier Prime', 'Courier New', monospace; font-size: 14px; text-decoration: none; transition: background-color 200ms, color 200ms, padding 200ms; } .ds-tab:hover { background: rgba(255,255,255,0.3); } .ds-tab:focus-visible { outline: 3px solid #fff; outline-offset: 3px; } .ds-tab-active { padding-top: 12px; background: hsl(var(--paper, 220 33% 97%)); color: hsl(var(--blue, 221 100% 50%)); }"
+    },
+    {
+      "name": "Folder-Tab Binder",
+      "kind": "custom",
+      "refersTo": "binder-sheet",
+      "description": "Signature project dividers: trapezoid tabs over one blue sheet.",
+      "html": "<div class=\"ds-binder\"><div class=\"ds-binder-tabs\" role=\"tablist\"><button class=\"ds-btab ds-btab-active\" role=\"tab\" aria-selected=\"true\">Support Desk</button><button class=\"ds-btab\" role=\"tab\" aria-selected=\"false\">Email Analyzer</button><button class=\"ds-btab\" role=\"tab\" aria-selected=\"false\">Tumor Detection</button></div><div class=\"ds-bsheet\" role=\"tabpanel\"><h3>AI Support Desk</h3><p class=\"ds-blabel\">Multi-agent RAG system</p><ul class=\"ds-bchips\"><li>Python</li><li>React</li><li>Firebase</li></ul></div></div>",
+      "css": ".ds-binder { background: #F3F5F9; padding: 24px; } .ds-binder-tabs { display: flex; align-items: flex-end; gap: 4px; padding: 0 16px; } .ds-btab { border: 0; padding: 10px 28px; clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 100%, 0 100%); background: hsl(var(--blue-soft, 221 100% 94%)); color: hsl(var(--blue, 221 100% 50%)); font-family: 'Courier Prime', 'Courier New', monospace; font-size: 16px; cursor: pointer; transition: padding 200ms, background-color 200ms, color 200ms; } .ds-btab:hover { background: #fff; } .ds-btab:focus-visible { outline: 3px solid hsl(var(--blue, 221 100% 50%)); outline-offset: 3px; } .ds-btab-active, .ds-btab-active:hover { padding: 16px 28px 12px; background: hsl(var(--blue, 221 100% 50%)); color: #fff; } .ds-bsheet { border-radius: 0 12px 12px 12px; background: hsl(var(--blue, 221 100% 50%)); color: #fff; padding: 40px; } .ds-bsheet h3 { margin: 0; font-family: Archivo, sans-serif; font-stretch: 125%; font-weight: 900; font-size: 48px; line-height: 0.88; letter-spacing: -0.02em; text-transform: uppercase; } .ds-blabel { margin: 16px 0 0; font-family: 'Courier Prime', monospace; font-size: 14px; letter-spacing: 0.02em; color: hsl(var(--blue-soft, 221 100% 94%)); } .ds-bchips { display: flex; gap: 8px; margin: 24px 0 0; padding: 0; list-style: none; } .ds-bchips li { border-radius: 2px; background: #fff; color: hsl(var(--blue, 221 100% 50%)); padding: 4px 10px; font-family: 'Courier Prime', monospace; font-size: 14px; }"
+    },
+    {
+      "name": "Skill Chip",
+      "kind": "chip",
+      "refersTo": "skill-chip-outline",
+      "description": "Outlined typewriter chip on blue; fills white on hover.",
+      "html": "<ul class=\"ds-chips\"><li class=\"ds-chip\">Generative AI</li><li class=\"ds-chip\">RAG pipelines</li><li class=\"ds-chip\">PyTorch</li></ul>",
+      "css": ".ds-chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; padding: 32px; list-style: none; background: hsl(var(--blue, 221 100% 50%)); } .ds-chip { border: 2px solid #fff; border-radius: 2px; padding: 8px 14px; color: #fff; font-family: 'Courier Prime', 'Courier New', monospace; font-size: 16px; transition: background-color 150ms, color 150ms; } .ds-chip:hover { background: #fff; color: hsl(var(--blue, 221 100% 50%)); }"
+    },
+    {
+      "name": "Die-Cut Award Sticker",
+      "kind": "card",
+      "refersTo": "award-sticker",
+      "description": "White sticker with a blue keyline inside a white die-cut margin, slightly rotated.",
+      "html": "<div class=\"ds-paper\"><div class=\"ds-sticker\"><svg width=\"36\" height=\"36\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.25\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M6 9H4.5a2.5 2.5 0 0 1 0-5H6\"/><path d=\"M18 9h1.5a2.5 2.5 0 0 0 0-5H18\"/><path d=\"M4 22h16\"/><path d=\"M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22\"/><path d=\"M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22\"/><path d=\"M18 2H6v7a6 6 0 0 0 12 0V2Z\"/></svg><span><strong>VOIS 2026 Innovation Hackathon</strong><em>Top 10 grand finalist</em></span></div></div>",
+      "css": ".ds-paper { background-color: #F3F5F9; background-image: linear-gradient(hsl(221 100% 50% / 0.07) 1px, transparent 1px), linear-gradient(90deg, hsl(221 100% 50% / 0.07) 1px, transparent 1px); background-size: 28px 28px; padding: 40px; } .ds-sticker { display: flex; align-items: center; gap: 16px; max-width: 380px; transform: rotate(-1.5deg); border: 3px solid hsl(var(--blue, 221 100% 50%)); border-radius: 16px; background: #fff; padding: 16px 20px; color: hsl(var(--blue, 221 100% 50%)); box-shadow: 0 0 0 5px #fff, 0 14px 28px -14px hsl(230 67% 12% / 0.5); } .ds-sticker strong { display: block; font-family: Archivo, sans-serif; font-stretch: 110%; font-weight: 900; font-size: 18px; line-height: 1.25; text-transform: uppercase; color: #0A1033; } .ds-sticker em { display: block; margin-top: 4px; font-style: normal; font-family: 'Courier Prime', monospace; font-size: 14px; letter-spacing: 0.02em; }"
+    },
+    {
+      "name": "Clothesline Print",
+      "kind": "card",
+      "refersTo": "clothesline-print",
+      "description": "Secondary build hung by a blue clip; straightens and rises on hover.",
+      "html": "<div class=\"ds-line\"><a href=\"#\" class=\"ds-print\"><span class=\"ds-clip\" aria-hidden=\"true\"></span><span class=\"ds-print-title\">EkMat</span><span class=\"ds-print-kind\">ZK voting</span><span class=\"ds-print-note\">Privacy-preserving e-voting on Ethereum with ZK-SNARKs.</span></a></div>",
+      "css": ".ds-line { position: relative; padding: 32px; background: #F3F5F9; } .ds-line::before { content: ''; position: absolute; left: 0; right: 0; top: 44px; height: 4px; border-radius: 9999px; background: hsl(230 67% 12% / 0.7); } .ds-print { position: relative; display: block; width: 200px; margin-top: 12px; padding: 32px 20px 24px; border: 1px solid #CAD0E2; background: #fff; color: #0A1033; text-decoration: none; transform: rotate(-1.5deg); box-shadow: 0 10px 24px -14px hsl(230 67% 12% / 0.45); transition: transform 300ms; } .ds-print:hover { transform: rotate(0) translateY(-4px); } .ds-print:focus-visible { outline: 3px solid hsl(221 100% 50%); outline-offset: 3px; } .ds-clip { position: absolute; top: -12px; left: 50%; width: 16px; height: 36px; transform: translateX(-50%); border-radius: 2px; background: hsl(221 100% 50%); box-shadow: 0 2px 0 hsl(224 100% 36%); } .ds-print-title { display: block; font-family: Archivo, sans-serif; font-stretch: 115%; font-weight: 900; font-size: 20.8px; line-height: 0.95; text-transform: uppercase; } .ds-print-kind { display: block; margin-top: 8px; font-family: 'Courier Prime', monospace; font-size: 14px; color: hsl(221 100% 50%); } .ds-print-note { display: block; margin-top: 16px; font-size: 14px; line-height: 1.625; color: #48506F; }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Paper-filled field on the white form sheet; stroke turns blue on focus.",
+      "html": "<label class=\"ds-field\"><span>Your name</span><input type=\"text\" placeholder=\"Ada Lovelace\" /></label>",
+      "css": ".ds-field { display: block; max-width: 320px; padding: 24px; background: #fff; color: #0A1033; font-family: Archivo, system-ui, sans-serif; } .ds-field span { display: block; margin-bottom: 6px; font-size: 14px; font-weight: 600; } .ds-field input { width: 100%; border: 2px solid hsl(230 67% 12% / 0.15); border-radius: 4px; background: #F3F5F9; padding: 12px 16px; color: #0A1033; font: inherit; transition: border-color 150ms; } .ds-field input::placeholder { color: hsl(228 22% 36% / 0.8); } .ds-field input:focus { border-color: hsl(221 100% 50%); outline: none; } .ds-field input[aria-invalid=\"true\"] { border-color: #D11A1A; }"
+    },
+    {
+      "name": "Tape Strip",
+      "kind": "custom",
+      "refersTo": "tape",
+      "description": "Rotated full-bleed tape of expanded uppercase words separated by diamonds.",
+      "html": "<div class=\"ds-tape-wrap\"><div class=\"ds-tape\"><span>Generative AI</span><i></i><span>RAG pipelines</span><i></i><span>Multi-agent systems</span><i></i><span>LLM apps</span></div></div>",
+      "css": ".ds-tape-wrap { overflow: hidden; padding: 32px 0; background: hsl(221 100% 50%); } .ds-tape { display: flex; align-items: center; gap: 40px; margin: 0 -5%; padding: 10px 20px; transform: rotate(-2deg); border-top: 2px solid hsl(221 100% 50%); border-bottom: 2px solid hsl(221 100% 50%); background: #fff; color: hsl(221 100% 50%); white-space: nowrap; box-shadow: 0 8px 18px -10px hsl(230 67% 12% / 0.5); } .ds-tape span { font-family: Archivo, sans-serif; font-stretch: 125%; font-weight: 800; font-size: 16px; text-transform: uppercase; } .ds-tape i { display: inline-block; width: 8px; height: 8px; transform: rotate(45deg); background: hsl(221 100% 50%); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Blue Binder",
+    "overview": "The site is a physical project binder rendered flat. Committed binder blue owns the loud moments (the hero, the open binder sheet, the stack shelf, the close), and pale grid paper with faint blue rules lies between them like the pages the binder holds. Everything that organises content is a stationery object: folder tabs for navigation and project switching, an ID badge on a lanyard, die-cut stickers for awards, clips on a clothesline for side builds, binder spines on a shelf for skill groups, and printed tape strips that cross section seams.\n\nThe palette is one hue at full commitment, fused from two references the user pinned: a blue folder, badge, tape, spine and clothesline system, and a sticker-cutout, grid-paper, tab-divider system. Blue sits against white, never against another accent. The portrait is a keyed cutout laid over the name like collage, its ground matching the blue exactly so the photo and the field read as one sheet. Type is loud and stamped: Archivo stretched to its widest and heaviest cut for display, plain Archivo for reading, Courier Prime typewriter for every label, as if typed onto an index card.\n\nThe world is tactile and committed but strictly flat graphic. It rejects glass, blur, glow and gradients; the only linear-gradient in the system draws the grid-paper rules, and the lanyard stripe uses hard stops, which reads as print rather than a fade.",
+    "keyCharacteristics": [
+      "Two grounds only: full-bleed binder blue and grid paper, alternating section by section.",
+      "White on blue and blue on white; outlines invert with the ground (white sticker edges on blue, blue keylines on paper).",
+      "Expanded black uppercase display, Courier Prime typewriter labels.",
+      "Stationery objects carry structure: folder tabs, spines, stickers, clips, tape, badge.",
+      "Slight hand-placed rotation (1.5 to 6 degrees) on stickers, prints, tapes and the badge; content sheets stay square."
+    ],
+    "rules": [
+      {
+        "name": "The One Blue Rule",
+        "body": "Binder blue is the only chromatic hue. Depth comes from blue-deep and blue-wash, never from a second accent.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Grounds Rule",
+        "body": "Every section sits on either full-bleed binder blue or grid paper. Blue sections take white text and white outlines; paper sections take blue display, navy body and blue keylines.",
+        "section": "colors"
+      },
+      {
+        "name": "The Stamp and Typewriter Rule",
+        "body": "Archivo Expanded Black is for names and headings only; Courier Prime is for labels only. Running prose stays in plain Archivo.",
+        "section": "typography"
+      },
+      {
+        "name": "The Wide Means Wide Rule",
+        "body": "Display type always uses the variable width axis at 110 to 125. A normal-width heavy weight is not the display face.",
+        "section": "typography"
+      },
+      {
+        "name": "The Objects Lift, Sheets Lie Flat Rule",
+        "body": "Only loose stationery objects cast shadows. Containers that hold content stay flat.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** alternate full-bleed binder blue and grid paper sections, and invert text and outline colour with the ground.",
+      "**Do** keep binder blue exactly matched to the photo ground (#0052FE).",
+      "**Do** use Archivo at width 125, weight 900, uppercase, 0.88 line height for every display heading.",
+      "**Do** set every label, tab, chip, date and meta line in Courier Prime, sentence case.",
+      "**Do** carry structure with stationery objects: folder tabs, spines, stickers, clips, tapes, the badge.",
+      "**Do** ease motion with cubic-bezier(0.16, 1, 0.3, 1) and honour prefers-reduced-motion.",
+      "Do give every element a response: hover, press, drag or focus. Parallax is layered by depth: section headings drift sideways, loose objects (badge, stickers, hero photo and tag) drift vertically, and the hero photo leans toward the cursor."
+    ],
+    "donts": [
+      "**Don't** use glass, backdrop blur, glow, or colour gradients; the grid-paper rules and hard-stop lanyard stripes are the only gradient-built textures.",
+      "**Don't** introduce a second accent hue; vary with blue-deep and blue-wash instead.",
+      "**Don't** use pure black; navy ink is the darkest value.",
+      "**Don't** set display type at normal width, or labels in uppercase.",
+      "**Don't** shadow content containers; only loose objects lift.",
+      "Don't bring back the \"Atharva.dev\" wordmark; the monogram \"AG\" and the full name are the only marks."
+    ]
+  }
+}
