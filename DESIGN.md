@@ -5,7 +5,7 @@ colors:
   binder-blue: "#0052FE"
   binder-blue-deep: "#0035B8"
   blue-wash: "#E0EAFF"
-  grid-paper: "#F3F5F9"
+  grid-paper: "#FAFBFC"
   sheet-white: "#FFFFFF"
   navy-ink: "#0A1033"
   slate-ink: "#48506F"
@@ -147,6 +147,8 @@ components:
 
 ## Overview
 
+> **Palette change (Nov 2026, Atharva's request):** the full-bleed blue grounds were too bright. White and grid paper are now the main colour on every section, and binder blue is the accent: the active nav and binder tab, buttons, headings, keylines, metric values, the open skill spine, and two objects (the hero photo panel and the ID badge). Where this file still describes a section as sitting on full-bleed blue, read it as white with blue keylines; the paragraphs below record the original binder world and its components.
+
 **Creative North Star: "The Blue Binder"**
 
 The site is a physical project binder rendered flat. Committed binder blue owns the loud moments (the hero, the open binder sheet, the stack shelf, the close), and pale grid paper with faint blue rules lies between them like the pages the binder holds. Everything that organises content is a stationery object: folder tabs for navigation and project switching, an ID badge on a lanyard, die-cut stickers for awards, clips on a clothesline for side builds, binder spines on a shelf for skill groups, and printed tape strips that cross section seams.
@@ -181,9 +183,9 @@ One committed blue with its deep and washed shades, white, cool paper, and navy 
 - **Alert Red** (alert-red): form validation errors and the failure toast only.
 
 ### Named Rules
-**The One Blue Rule.** Binder blue is the only chromatic hue. Depth comes from blue-deep and blue-wash, never from a second accent.
+**The One Blue Rule.** Binder blue is the only chromatic hue. Depth comes from blue-deep and blue-wash, never from a second accent. The only exceptions are functional: alert red for errors and amber for Warning admonitions.
 
-**The Two Grounds Rule.** Every section sits on either full-bleed binder blue or grid paper. Blue sections take white text and white outlines; paper sections take blue display, navy body and blue keylines.
+**The White Ground Rule.** Every section sits on white or grid paper (#FAFBFC with 5% blue rules). Blue never fills a section; it marks what matters: the active tab, the primary action, headings, keylines and numbers. Blue fills are limited to small objects (buttons, the active tab, the photo panel, the ID badge).
 
 ## Typography
 
@@ -201,6 +203,15 @@ One committed blue with its deep and washed shades, white, cool paper, and navy 
 - **Body** (400, 1.125rem, 1.625): paragraphs and bullet points, held to 56 to 60ch.
 - **Label** (400, 0.875rem, 0.02em): Courier Prime for every tab, chip, date, field key, caption and meta line. Sentence case, never uppercase.
 - **Tape** (800, width 125, 0.875 to 1rem): uppercase marquee words on tape strips.
+
+### Reading ramp (Writing, Docs, Projects pages)
+Long-form pages trade the poster scale for comfortable reading, set in `.doc-prose`:
+- **Measure:** text columns are held to 68ch.
+- **Body** (400, 1.0625rem, 1.7): every paragraph, list and case-study block.
+- **Section heading** (900, width 112, 1.65rem, 1.15, binder blue, sentence case): docs h2. Space above is about four times the space below.
+- **Subheading** (800, 1.2rem, 1.3, navy ink): docs h3.
+- **Small** (0.95rem): sidebar topics, inline code and tables.
+- **Metric** (900, width 120, 2.1 to 2.4rem, real case so units like "s" stay lower case): case-study results.
 
 ### Named Rules
 **The Stamp and Typewriter Rule.** Archivo Expanded Black is for names and headings only; Courier Prime is for labels only. Running prose stays in plain Archivo.
@@ -261,7 +272,7 @@ Solid, rectangular, plain-spoken.
 - **Error:** stroke and message in alert red, message announced as an alert.
 
 ### Navigation
-A row of folder tabs riding the top edge, Courier Prime at 12 to 14px. Resting tabs are 15% white on blue (30% on hover); the active section's tab turns grid paper with blue text and grows 2px taller, as though it is the divider of the page beneath. Transparent over the hero, solid blue after scroll.
+A row of folder tabs riding the top edge, Courier Prime at 12 to 14px: About, Writing, Projects, Stack, Experience, Contact. Writing and Projects are pages (Writing also stays active on docs pages); the rest are homepage sections. A "Skip to content" link appears on focus. On phones the row scrolls sideways under a fade at its right edge. Resting tabs are 15% white on blue (30% on hover); the active section's tab turns grid paper with blue text and grows 2px taller, as though it is the divider of the page beneath. Transparent over the hero, solid blue after scroll.
 
 ### Folder-Tab Binder (signature)
 Project dividers: a row of trapezoid tabs over one blue sheet. Resting tabs are blue-wash with blue text, turning white on hover; the active tab is binder blue, taller, and continuous with the sheet. Arrow keys move between tabs. Sheets slide 40px with a fade on change.
@@ -278,21 +289,35 @@ Upright 2px-outlined spines of varied height with vertical expanded titles and a
 ### Tape Strip
 Full-bleed strips with 2px edges, rotated 2 to 3 degrees, scrolling expanded uppercase words separated by diamonds on a 40s linear loop: white tape with blue type in front, blue-deep tape with white type behind.
 
+### Docs Layout
+Three columns on wide screens: a topic sidebar grouped by Task, Concept and Reference (the current topic is a solid blue pill), the article on a white sheet with a hairline border, and an "On this page" rail of h2/h3 anchors. Below 1280px the rail folds into a disclosure at the top of the article; below 1024px the sidebar does too. Every page ends with "Edit on GitHub" and its source path. Pages render from Markdown files in `/docs`; frontmatter holds `title`, `description`, `type` and `order`.
+
+### Admonition
+A 2px-bordered box with a typewriter label and icon, written as GitHub-style `> [!NOTE]`, `> [!TIP]` or `> [!WARNING]` blockquotes. Note: binder blue on blue wash. Tip: blue-deep on white. Warning: functional amber (#B45309 on #FEF3E2), the one sanctioned non-blue hue, because a caution has to read as different. No thick side stripe.
+
+### Code Block
+Navy ink panel with a hairline header showing the language and a Copy button (Copy, then Copied for 1.6s). Courier Prime, horizontally scrollable, never wrapped.
+
+### Placeholder Slot
+Copy that Atharva still has to write renders as a dashed blue-wash `<mark>` in Courier Prime, starting with `[WRITE: …]` or `[ADD: …]`, so an unfilled slot can't pass for finished text. `npm run build` lists how many remain per file.
+
 ### ID Badge
 A blue-and-blue-deep striped lanyard, a paper clip slot, then a blue card with a 4px white photo window, expanded name and typewriter role, hung at -4 degrees, swinging to 2 degrees on hover. It can be dragged and springs back on its lanyard, and it drifts against the scroll as a parallax layer.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** alternate full-bleed binder blue and grid paper sections, and invert text and outline colour with the ground.
+- **Do** keep every section on white or grid paper and use binder blue as an accent: active states, primary buttons, headings, keylines and metric values.
 - **Do** keep binder blue exactly matched to the photo ground (#0052FE).
 - **Do** use Archivo at width 125, weight 900, uppercase, 0.88 line height for every display heading.
 - **Do** set every label, tab, chip, date and meta line in Courier Prime, sentence case.
 - **Do** carry structure with stationery objects: folder tabs, spines, stickers, clips, tapes, the badge.
 - **Do** ease motion with cubic-bezier(0.16, 1, 0.3, 1) and honour prefers-reduced-motion (parallax and drag switch off).
+- **Do** keep writing, docs and case-study pages calm: no parallax or drag, only hover and focus responses, and text held to 68ch.
 - **Do** give every element a response: hover, press, drag or focus. Parallax is layered by depth: section headings drift sideways, loose objects (badge, stickers, hero photo and tag) drift vertically, and the hero photo leans toward the cursor.
 
 ### Don't:
+- **Don't** fill whole sections with binder blue; it reads as too bright. Keep blue fills to small objects.
 - **Don't** use glass, backdrop blur, glow, or colour gradients; the grid-paper rules and hard-stop lanyard stripes are the only gradient-built textures.
 - **Don't** introduce a second accent hue; vary with blue-deep and blue-wash instead.
 - **Don't** use pure black; navy ink is the darkest value.

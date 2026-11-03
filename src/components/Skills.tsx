@@ -15,9 +15,9 @@ const Skills = () => {
   const [headRef, headX] = useParallax<HTMLHeadingElement>(60);
 
   return (
-    <section id="stack" className="on-blue overflow-x-clip bg-blue py-20 text-white md:py-28">
+    <section id="stack" className="overflow-x-clip bg-white py-20 text-ink md:py-28">
       <div className="mx-auto max-w-[1300px] px-4 sm:px-6 lg:px-10">
-        <motion.h2 ref={headRef} style={{ x: headX }} className="display text-[clamp(2.75rem,9vw,7.5rem)]">
+        <motion.h2 ref={headRef} style={{ x: headX }} className="display text-[clamp(2.75rem,9vw,7.5rem)] text-blue">
           The stack
         </motion.h2>
 
@@ -26,7 +26,7 @@ const Skills = () => {
           <div
             role="tablist"
             aria-label="Skill groups"
-            className="flex flex-col gap-2 lg:flex-row lg:items-end lg:gap-2.5 lg:border-b-4 lg:border-white lg:pb-0"
+            className="flex flex-col gap-2 lg:flex-row lg:items-end lg:gap-2.5 lg:border-b-4 lg:border-blue lg:pb-0"
           >
             {skills.map((s, i) => {
               const isOpen = i === open;
@@ -39,10 +39,10 @@ const Skills = () => {
                   onClick={() => setOpen(i)}
                   onMouseEnter={() => setOpen(i)}
                   className={cn(
-                    'group relative flex items-center justify-between rounded-sm border-2 border-white px-5 py-4 text-left transition-[transform,background-color,color] duration-300 ease-out',
+                    'group relative flex items-center justify-between rounded-sm border-2 border-blue px-5 py-4 text-left transition-[transform,background-color,color] duration-300 ease-out',
                     'lg:flex-col lg:justify-between lg:px-0 lg:py-5',
                     'h-auto w-full lg:h-[var(--h)] lg:w-[var(--w)]',
-                    isOpen ? 'bg-white text-blue lg:-translate-y-6' : 'bg-blue text-white hover:bg-blue-deep',
+                    isOpen ? 'bg-blue text-white lg:-translate-y-6' : 'bg-white text-blue hover:bg-blue-soft',
                   )}
                   style={{ '--h': spineHeight[i], '--w': spineWidth[i] } as CSSProperties}
                 >
@@ -56,12 +56,12 @@ const Skills = () => {
           </div>
 
           <div id="shelf-panel" role="tabpanel" aria-live="polite" className="lg:pb-6">
-            <h3 className="display text-[clamp(2rem,5vw,4rem)]">{group.name}</h3>
+            <h3 className="display text-[clamp(2rem,5vw,4rem)] text-ink">{group.name}</h3>
             <ul className="mt-8 flex flex-wrap gap-2.5">
               {group.items.map((item) => (
                 <li
                   key={item}
-                  className="rounded-sm border-2 border-white px-3.5 py-2 font-type text-base transition-colors hover:bg-white hover:text-blue"
+                  className="rounded-sm border-2 border-blue/30 px-3.5 py-2 font-type text-base text-ink transition-colors hover:border-blue hover:bg-blue hover:text-white"
                 >
                   {item}
                 </li>

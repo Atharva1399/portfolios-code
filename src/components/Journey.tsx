@@ -2,15 +2,16 @@ import { motion } from 'framer-motion';
 import { Trophy } from 'lucide-react';
 import { useParallax } from '@/hooks/use-parallax';
 import { certifications, clubs, journey, wins } from '@/data/portfolio';
+import { Copy } from '@/lib/placeholder';
 
 const Journey = () => {
   const [headRef, headX] = useParallax<HTMLHeadingElement>(-50);
   const [stickRef, stickY] = useParallax<HTMLUListElement>(36);
   return (
-    <section id="journey" className="grid-paper overflow-x-clip py-20 md:py-28">
+    <section id="experience" className="grid-paper overflow-x-clip py-20 md:py-28">
       <div className="mx-auto max-w-[1300px] px-4 sm:px-6 lg:px-10">
         <motion.h2 ref={headRef} style={{ x: headX }} className="display text-[clamp(2.75rem,9vw,7.5rem)] text-blue">
-          The journey
+          Experience
         </motion.h2>
 
         <div className="mt-14 grid gap-16 lg:grid-cols-[1.4fr_1fr] lg:gap-20">
@@ -21,16 +22,26 @@ const Journey = () => {
                   aria-hidden
                   className="absolute -left-[11px] top-1.5 h-[18px] w-[18px] rotate-45 border-4 border-blue bg-paper transition-[background-color,transform] duration-300 group-hover:rotate-[135deg] group-hover:bg-blue"
                 />
-                <p className="type-label text-blue">{j.when}</p>
+                <p className="type-label text-blue">
+                  <Copy value={j.when} />
+                </p>
                 <h3 className="mt-2 font-display text-[clamp(1.5rem,3vw,2.25rem)] font-black uppercase leading-[0.95] transition-colors duration-200 [font-stretch:115%] group-hover:text-blue">
                   {j.title}
                 </h3>
                 <p className="mt-1 text-lg font-medium text-ink-soft">{j.org}</p>
                 <ul className="mt-4 max-w-[56ch] space-y-2 leading-relaxed">
                   {j.points.map((p) => (
-                    <li key={p}>{p}</li>
+                    <li key={p}>
+                      <Copy value={p} />
+                    </li>
                   ))}
                 </ul>
+                {j.writing && (
+                  <p className="mt-4 max-w-[56ch] leading-relaxed">
+                    <span className="type-label mr-2 text-blue">Writing I did:</span>
+                    <Copy value={j.writing} />
+                  </p>
+                )}
               </li>
             ))}
           </ol>

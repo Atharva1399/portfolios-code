@@ -8,111 +8,149 @@ export const profile = {
   github: 'https://github.com/Atharva1399',
   linkedin: 'https://www.linkedin.com/in/atharva-gaikwad-72ba25295/',
   // Set this to the Medium profile URL to show the Medium link.
-  medium: '',
+  medium: 'https://medium.com/@athguy.dev',
+  // Source repo, used for the docs' "Edit on GitHub" links.
+  repo: 'https://github.com/Atharva1399/portfolios-code',
 };
 
-export type Project = {
+export type Metric = { value: string; label: string };
+export type CaseLink = { label: string; href: string };
+
+/** Case studies: narrative fields are Atharva's to write; metrics are real. */
+export type CaseStudy = {
   id: string;
   tab: string;
   title: string;
   kind: string;
   stack: string[];
-  points: string[];
-  /** Architecture sketch, drawn as labelled steps. */
+  problem: string;
+  built: string;
+  role: string;
+  learned: string;
+  metrics: Metric[];
+  /** Pipeline sketch, drawn as labelled steps. */
   flow?: string[];
-  link?: { href: string; label: string };
+  /** An empty href renders as an [ADD] slot until the link exists. */
+  links: CaseLink[];
 };
 
-export const aiProjects: Project[] = [
+export const caseStudies: CaseStudy[] = [
+  {
+    id: 'auralis',
+    tab: 'Auralis',
+    title: 'Auralis',
+    kind: 'Multilingual voice AI · voice-consent safeguard',
+    stack: ['CUDA', '[ADD: stack]'],
+    problem: '[WRITE: the problem Auralis solves, and for whom]',
+    built: '[WRITE: what you built]',
+    role: '[WRITE: your role and what you owned]',
+    learned: '[WRITE: what you learned]',
+    metrics: [
+      { value: '22', label: 'Indian languages' },
+      { value: '2.06 s', label: 'median time to first audio, RTX 3050 Ti (4 GB)' },
+      { value: '0.08%', label: 'EER across 2,080 speaker-verification trials' },
+      { value: '4', label: 'merged commits' },
+    ],
+    links: [
+      { label: 'GitHub', href: '' },
+      { label: 'Docs: run on Windows with an NVIDIA GPU', href: '/docs/run-auralis-windows-nvidia' },
+      { label: 'Release notes', href: '/docs/auralis-release-notes' },
+      { label: 'Research paper', href: '/writing#research' },
+    ],
+  },
+  {
+    id: 'hybrid-search',
+    tab: 'Hybrid Search',
+    title: 'LLM-Assisted Hybrid Search',
+    kind: 'Retrieval · semantic + keyword search',
+    stack: ['[ADD: stack]'],
+    problem: '[WRITE: the problem]',
+    built: '[WRITE: what you built]',
+    role: '[WRITE: your role]',
+    learned: '[WRITE: what you learned]',
+    metrics: [
+      { value: '46%', label: 'lower median latency (5.4 s → 2.9 s)' },
+      { value: '22%', label: 'fewer irrelevant top-10 results' },
+    ],
+    links: [
+      { label: 'GitHub', href: '' },
+      { label: 'Docs: how hybrid search ranks results', href: '/docs/how-hybrid-search-ranks-results' },
+    ],
+  },
+  {
+    id: 'email-to-report',
+    tab: 'Email-to-Report',
+    title: 'Email-to-Report Generator',
+    kind: 'LLM document automation',
+    stack: ['Python', 'React', 'LLM APIs'],
+    problem: '[WRITE: the problem]',
+    built: '[WRITE: what you built]',
+    role: '[WRITE: your role]',
+    learned: '[WRITE: what you learned]',
+    metrics: [{ value: '[ADD: metric]', label: '[ADD: what it measures]' }],
+    flow: ['Inbox', 'Parser', 'LLM', '.docx · .xlsx · .pptx'],
+    links: [
+      { label: 'GitHub', href: '' },
+      { label: 'Demo', href: '' },
+    ],
+  },
   {
     id: 'support-desk',
     tab: 'Support Desk',
     title: 'AI Support Desk',
     kind: 'Multi-agent RAG system',
     stack: ['Python', 'React', 'Express', 'Firebase'],
-    points: [
-      'Multi-agent architecture that classifies customer support queries and routes each to the agent for its category.',
-      'RAG pipelines generate context-aware responses, cutting the manual effort of resolving tickets.',
-    ],
+    problem: '[WRITE: the problem]',
+    built: '[WRITE: what you built]',
+    role: '[WRITE: your role]',
+    learned: '[WRITE: what you learned]',
+    metrics: [{ value: '[ADD: metric]', label: '[ADD: what it measures]' }],
     flow: ['Query', 'Classifier agent', 'Retriever', 'Resolver agent', 'Reply'],
-    link: { href: 'https://github.com/Atharva1399', label: 'On GitHub' },
-  },
-  {
-    id: 'email-analyzer',
-    tab: 'Email Analyzer',
-    title: 'Email Analyzer & Report Generator',
-    kind: 'LLM document automation',
-    stack: ['Python', 'React', 'LLM APIs'],
-    points: [
-      'Turns raw email content into structured Word, Excel and PowerPoint reports.',
-      'Prompt-engineering and content-parsing workflows that automate the report end to end.',
+    links: [
+      { label: 'GitHub', href: '' },
+      { label: 'Demo', href: '' },
     ],
-    flow: ['Inbox', 'Parser', 'LLM', '.docx · .xlsx · .pptx'],
-    link: { href: 'https://github.com/Atharva1399', label: 'On GitHub' },
-  },
-  {
-    id: 'brain-tumor',
-    tab: 'Tumor Detection',
-    title: 'Brain Tumor Detection',
-    kind: 'Computer vision · YOLOv8',
-    stack: ['Python', 'PyTorch', 'YOLOv8'],
-    points: [
-      'Trained YOLOv8 models on MRI datasets to detect tumors automatically.',
-      'Preprocessing and augmentation to make detections more reliable.',
-    ],
-    flow: ['MRI scan', 'Preprocess', 'YOLOv8', 'Bounding boxes'],
-    link: { href: 'https://github.com/Atharva1399/brain-tumor-detector', label: 'brain-tumor-detector' },
-  },
-  {
-    id: 'daclean',
-    tab: 'DaClean',
-    title: 'DaClean',
-    kind: 'Python package · data cleaning',
-    stack: ['Python'],
-    points: [
-      'An extensible package that automates data-cleaning workflows.',
-      'Prepares high-quality datasets with transparent, repeatable steps.',
-    ],
-    link: { href: 'https://github.com/Atharva1399/DaClean', label: 'DaClean' },
-  },
-  {
-    id: 'autoviron',
-    tab: 'AutoViron',
-    title: 'AutoViron',
-    kind: 'Python package · dev tooling',
-    stack: ['Python'],
-    points: [
-      "Detects a project's dependencies and creates its virtual environment automatically.",
-      'Streamlines setting up new Python projects.',
-    ],
-    link: { href: 'https://github.com/Atharva1399/autoviron', label: 'autoviron' },
   },
 ];
 
-export type SideBuild = { title: string; kind: string; note: string; href?: string };
+export type MoreProject = { title: string; kind: string; note: string; href?: string };
 
-export const sideBuilds: SideBuild[] = [
+/** Earlier builds, listed compactly under the case studies. */
+export const moreProjects: MoreProject[] = [
+  {
+    title: 'Brain Tumor Detection',
+    kind: 'Computer vision · YOLOv8',
+    note: 'YOLOv8 models trained on MRI datasets to detect tumors.',
+    href: 'https://github.com/Atharva1399/brain-tumor-detector',
+  },
+  {
+    title: 'DaClean',
+    kind: 'Python package',
+    note: 'Automates data-cleaning workflows with repeatable steps.',
+    href: 'https://github.com/Atharva1399/DaClean',
+  },
+  {
+    title: 'AutoViron',
+    kind: 'Python package',
+    note: "Detects a project's dependencies and creates its virtual environment.",
+    href: 'https://github.com/Atharva1399/autoviron',
+  },
   {
     title: 'EkMat',
-    kind: 'ZK voting',
-    note: 'Privacy-preserving e-voting on Ethereum with ZK-SNARKs; contracts stop double voting.',
+    kind: 'Web3 · ZK voting',
+    note: 'Privacy-preserving e-voting on Ethereum with ZK-SNARKs.',
   },
   {
     title: 'Fundora',
-    kind: 'Invoice DeFi',
-    note: 'Tokenises unpaid SME invoices as NFTs and links them to liquidity pools on Base.',
+    kind: 'Web3 · invoice DeFi',
+    note: 'Tokenises unpaid SME invoices as NFTs for liquidity on Base.',
     href: 'https://github.com/FundoraInvoice/Fundora-Invoices',
   },
-  { title: 'VestaFi', kind: 'DeFi staking', note: 'A DeFi staking platform.' },
+  { title: 'VestaFi', kind: 'Web3 · DeFi staking', note: 'A DeFi staking platform.' },
   {
-    title: 'Herb Trace­ability',
-    kind: 'Polygon + IPFS',
-    note: 'Traces Ayurvedic herbs from farm to shelf on Polygon, with records on IPFS.',
-  },
-  {
-    title: 'Agent Learning Env',
-    kind: 'AI agents',
-    note: 'An AI agent-based learning environment.',
+    title: 'Herb Traceability',
+    kind: 'Web3 · Polygon + IPFS',
+    note: 'Traces Ayurvedic herbs from farm to shelf on Polygon.',
   },
 ];
 
@@ -156,7 +194,14 @@ export const skills: SkillGroup[] = [
   },
 ];
 
-export type JourneyEntry = { when: string; title: string; org: string; points: string[] };
+export type JourneyEntry = {
+  when: string;
+  title: string;
+  org: string;
+  points: string[];
+  /** DevRel roles: the writing this role produced. */
+  writing?: string;
+};
 
 export const journey: JourneyEntry[] = [
   {
@@ -167,6 +212,7 @@ export const journey: JourneyEntry[] = [
       'Co-founded a developer community for collaborating on emerging tech.',
       'Ran workshops and discussion sessions on GenAI and Web3.',
     ],
+    writing: '[WRITE: writing you did: event announcements, session material, posts]',
   },
   {
     when: 'May – Jun 2025',
@@ -176,6 +222,13 @@ export const journey: JourneyEntry[] = [
       'Implemented GenAI use cases for intent classification.',
       'Automated workflows that triage large-scale text data.',
     ],
+  },
+  {
+    when: '[ADD: dates]',
+    title: 'DevRel',
+    org: 'ActualOne · Web3 events company',
+    points: ['[WRITE: what you did in this role]'],
+    writing: '[WRITE: writing you did: event announcements, session material, posts]',
   },
   {
     when: '2023 – 2027',

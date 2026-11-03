@@ -52,7 +52,7 @@
       "grid-paper": {
         "role": "neutral",
         "displayName": "Grid Paper",
-        "canonical": "hsl(220 33% 97%)",
+        "canonical": "hsl(220 30% 98.5%)",
         "tonalRamp": [
           "#1E2433",
           "#3A4256",
@@ -372,6 +372,14 @@
       "description": "Rotated full-bleed tape of expanded uppercase words separated by diamonds.",
       "html": "<div class=\"ds-tape-wrap\"><div class=\"ds-tape\"><span>Generative AI</span><i></i><span>RAG pipelines</span><i></i><span>Multi-agent systems</span><i></i><span>LLM apps</span></div></div>",
       "css": ".ds-tape-wrap { overflow: hidden; padding: 32px 0; background: hsl(221 100% 50%); } .ds-tape { display: flex; align-items: center; gap: 40px; margin: 0 -5%; padding: 10px 20px; transform: rotate(-2deg); border-top: 2px solid hsl(221 100% 50%); border-bottom: 2px solid hsl(221 100% 50%); background: #fff; color: hsl(221 100% 50%); white-space: nowrap; box-shadow: 0 8px 18px -10px hsl(230 67% 12% / 0.5); } .ds-tape span { font-family: Archivo, sans-serif; font-stretch: 125%; font-weight: 800; font-size: 16px; text-transform: uppercase; } .ds-tape i { display: inline-block; width: 8px; height: 8px; transform: rotate(45deg); background: hsl(221 100% 50%); }"
+    },
+    {
+      "name": "Admonition (Warning)",
+      "kind": "custom",
+      "refersTo": "admonition-warning",
+      "description": "GitHub-style > [!WARNING] callout in docs; functional amber, 2px border, typewriter label.",
+      "html": "<aside class=\"ds-adm\"><p class=\"ds-adm-label\">Warning</p><p>bfloat16 needs a GPU that supports it.</p></aside>",
+      "css": ".ds-adm { border: 2px solid #B45309; background: #FEF3E2; color: #0A1033; border-radius: 6px; padding: 16px 20px; font: 400 17px/1.6 Archivo, system-ui, sans-serif; max-width: 60ch; } .ds-adm-label { margin: 0 0 4px; font: 700 14px/1.4 'Courier Prime', monospace; } .ds-adm p:last-child { margin: 0; }"
     }
   ],
   "narrative": {
@@ -412,6 +420,8 @@
       }
     ],
     "dos": [
+      "Do keep every section on white or grid paper and use binder blue as an accent: active states, primary buttons, headings, keylines and metric values.",
+      "Do keep writing, docs and case-study pages calm: no parallax or drag, only hover and focus responses, and text held to 68ch.",
       "**Do** alternate full-bleed binder blue and grid paper sections, and invert text and outline colour with the ground.",
       "**Do** keep binder blue exactly matched to the photo ground (#0052FE).",
       "**Do** use Archivo at width 125, weight 900, uppercase, 0.88 line height for every display heading.",
@@ -421,6 +431,7 @@
       "Do give every element a response: hover, press, drag or focus. Parallax is layered by depth: section headings drift sideways, loose objects (badge, stickers, hero photo and tag) drift vertically, and the hero photo leans toward the cursor."
     ],
     "donts": [
+      "Don't fill whole sections with binder blue; it reads as too bright. Keep blue fills to small objects.",
       "**Don't** use glass, backdrop blur, glow, or colour gradients; the grid-paper rules and hard-stop lanyard stripes are the only gradient-built textures.",
       "**Don't** introduce a second accent hue; vary with blue-deep and blue-wash instead.",
       "**Don't** use pure black; navy ink is the darkest value.",

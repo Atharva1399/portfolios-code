@@ -78,9 +78,9 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="on-blue overflow-x-clip bg-blue pt-20 text-white md:pt-28">
+    <section id="contact" className="grid-paper overflow-x-clip pt-20 text-ink md:pt-28">
       <div className="mx-auto max-w-[1300px] px-4 sm:px-6 lg:px-10">
-        <motion.h2 ref={headRef} style={{ x: headX }} className="display text-[clamp(2.4rem,10.5vw,9.5rem)]">
+        <motion.h2 ref={headRef} style={{ x: headX }} className="display text-[clamp(2.4rem,10.5vw,9.5rem)] text-blue">
           Let’s build
           <br />
           something
@@ -92,17 +92,17 @@ const Contact = () => {
               Working on something with LLMs, agents or RAG? Need a hackathon teammate, or a workshop for your
               community? My inbox is open.
             </p>
-            <ul className="mt-10 border-t-2 border-white">
+            <ul className="mt-10 border-t-2 border-blue">
               {links.map((l) => (
-                <li key={l.label} className="border-b border-white/40">
+                <li key={l.label} className="border-b border-border">
                   <a
                     href={l.href}
                     target={l.href.startsWith('mailto') ? undefined : '_blank'}
                     rel="noopener noreferrer"
-                    className="group flex items-center justify-between gap-4 py-4"
+                    className="group flex items-center justify-between gap-4 py-4 transition-colors hover:text-blue"
                   >
                     <span>
-                      <span className="type-label block text-blue-soft">{l.label}</span>
+                      <span className="type-label block text-blue">{l.label}</span>
                       <span className="mt-1 block break-all text-lg font-semibold sm:text-xl">{l.value}</span>
                     </span>
                     <ArrowUpRight
@@ -115,11 +115,11 @@ const Contact = () => {
             </ul>
           </div>
 
-          {/* The form sits on a white sheet with a sticker edge */}
+          {/* The form sits on a white sheet with a blue keyline */}
           <form
             onSubmit={handleSubmit(onSubmit)}
             noValidate
-            className="rounded-xl bg-white p-6 text-ink shadow-[0_0_0_6px_hsl(var(--blue-deep)),0_24px_50px_-20px_rgba(0,0,0,0.5)] sm:p-8"
+            className="rounded-xl border-2 border-blue bg-white p-6 text-ink shadow-[0_24px_50px_-28px_hsl(var(--blue-deep)/0.45)] sm:p-8"
           >
             <div className="grid gap-5 sm:grid-cols-2">
               {fields.map((f) => (

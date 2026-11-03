@@ -1,25 +1,27 @@
-import Navbar from '@/components/Navbar';
+import SiteLayout from '@/components/layout/SiteLayout';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
+import SelectedWriting from '@/components/SelectedWriting';
 import Projects from '@/components/Projects';
 import Skills from '@/components/Skills';
 import Journey from '@/components/Journey';
 import Contact from '@/components/Contact';
-import Footer from '@/components/Footer';
+import { pageMeta } from '@/data/seo';
+import { useSeo } from '@/hooks/use-seo';
 
-const Index = () => (
-  <div className="min-h-screen">
-    <Navbar />
-    <main>
+const Index = () => {
+  useSeo(pageMeta['/'], '/');
+  return (
+    <SiteLayout>
       <Hero />
       <About />
+      <SelectedWriting />
       <Projects />
       <Skills />
       <Journey />
       <Contact />
-    </main>
-    <Footer />
-  </div>
-);
+    </SiteLayout>
+  );
+};
 
 export default Index;

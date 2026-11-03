@@ -3,6 +3,7 @@ import { motion, useMotionValue, useReducedMotion, useScroll, useSpring, useTran
 import { ArrowDown, Github } from 'lucide-react';
 import cutout from '@/assets/atharva-cutout.png';
 import { profile } from '@/data/portfolio';
+import { Copy } from '@/lib/placeholder';
 
 const tapeWords = [
   'Generative AI',
@@ -31,12 +32,12 @@ const Tape = ({
         {words.map((w) => (
           <span
             key={w}
-            className={`tape flex items-center px-5 text-sm sm:text-base ${tone === 'white' ? 'text-blue' : 'text-white'}`}
+            className={`tape flex items-center px-5 text-sm sm:text-base ${tone === 'white' ? 'text-blue' : 'text-blue-deep'}`}
           >
             {w}
             <span
               aria-hidden
-              className={`ml-10 inline-block h-2 w-2 rotate-45 ${tone === 'white' ? 'bg-blue' : 'bg-white'}`}
+              className={`ml-10 inline-block h-2 w-2 rotate-45 ${tone === 'white' ? 'bg-blue' : 'bg-blue-deep'}`}
             />
           </span>
         ))}
@@ -52,7 +53,7 @@ const Word = ({ text }: { text: string }) => (
       <span
         key={i}
         aria-hidden
-        className="inline-block transition-transform duration-200 ease-out hover:-translate-y-[0.12em] hover:text-blue-soft"
+        className="inline-block transition-transform duration-200 ease-out hover:-translate-y-[0.12em] hover:text-blue"
       >
         {ch}
       </span>
@@ -101,7 +102,7 @@ const Hero = () => {
         ref={sectionRef}
         onPointerMove={onPointerMove}
         onPointerLeave={onPointerLeave}
-        className="on-blue relative isolate flex min-h-[100svh] flex-col overflow-hidden bg-blue text-white"
+        className="grid-paper relative isolate flex min-h-[100svh] flex-col overflow-hidden text-ink"
       >
         <div className="relative mx-auto flex w-full max-w-[1400px] flex-1 flex-col px-4 pt-24 sm:px-6 lg:px-10 lg:pt-28">
           <motion.h1
@@ -113,24 +114,28 @@ const Hero = () => {
           </motion.h1>
 
           <div className="relative z-10 mt-8 max-w-[34rem] lg:mt-10">
-            <p className="type-label text-blue-soft">GenAI engineer · {profile.location}</p>
+            <p className="type-label text-blue">
+              Engineer who writes about and builds GenAI systems · {profile.location}
+            </p>
             <p className="mt-3 text-xl font-medium leading-snug sm:text-2xl">
-              Hey, I'm Atharva, your friendly neighborhood tech guy. I build multi-agent RAG systems and LLM tools that
-              do real work.
+              <Copy
+                value="[WRITE: your intro, presenting you as an engineer who writes about and builds GenAI systems]"
+                className="text-blue-deep"
+              />
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3 pb-6">
               <a
-                href="#work"
-                className="inline-flex h-12 items-center gap-2 rounded-md bg-white px-6 font-semibold text-blue transition-transform duration-200 hover:-translate-y-0.5"
+                href="#writing-strip"
+                className="inline-flex h-12 items-center gap-2 rounded-md bg-blue px-6 font-semibold text-white transition-[transform,background-color] duration-200 hover:-translate-y-0.5 hover:bg-blue-deep active:translate-y-0"
               >
-                Open the work
+                Read my writing
                 <ArrowDown size={18} aria-hidden />
               </a>
               <a
                 href={profile.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-12 items-center gap-2 rounded-md border-2 border-white px-6 font-semibold transition-colors duration-200 hover:bg-white hover:text-blue"
+                className="inline-flex h-12 items-center gap-2 rounded-md border-2 border-blue px-6 font-semibold text-blue transition-colors duration-200 hover:bg-blue hover:text-white"
               >
                 <Github size={18} aria-hidden />
                 GitHub
@@ -143,6 +148,10 @@ const Hero = () => {
             style={{ y: photoY, x: photoX, rotate: photoTilt }}
             className="pointer-events-none relative z-20 mx-auto -mb-1 mt-4 w-[min(78vw,360px)] origin-bottom lg:absolute lg:bottom-0 lg:right-[6%] lg:m-0 lg:h-[88%] lg:w-auto"
           >
+            <span
+              aria-hidden
+              className="absolute inset-x-[4%] bottom-0 top-[16%] -z-10 rounded-t-[2rem] bg-blue shadow-[0_30px_60px_-30px_hsl(var(--blue-deep)/0.7)]"
+            />
             <motion.img
               src={cutout}
               alt="Atharva Gaikwad, smiling with arms crossed"
@@ -151,13 +160,13 @@ const Hero = () => {
               initial={reduce ? false : { opacity: 0, y: 80, rotate: 5 }}
               animate={{ opacity: 1, y: 0, rotate: 0 }}
               transition={{ duration: 1.1, ease }}
-              className="h-auto w-full origin-bottom drop-shadow-[0_24px_40px_rgba(0,20,90,0.35)] lg:h-full lg:w-auto"
+              className="h-auto w-full origin-bottom drop-shadow-[0_18px_28px_rgba(10,16,51,0.28)] lg:h-full lg:w-auto"
             />
           </motion.div>
 
           <motion.span
             style={{ y: tagTotalY, x: tagX }}
-            className="type-label absolute right-4 top-[46%] z-30 hidden -rotate-6 cursor-default bg-white px-3 py-1.5 text-blue shadow-[0_6px_18px_rgba(0,0,0,0.18)] transition-[rotate] duration-300 hover:rotate-3 lg:right-[3%] lg:block"
+            className="type-label absolute right-4 top-[46%] z-30 hidden -rotate-6 cursor-default bg-blue px-3 py-1.5 text-white shadow-[0_6px_18px_-6px_hsl(var(--blue-deep)/0.6)] transition-[rotate] duration-300 hover:rotate-3 lg:right-[3%] lg:block"
           >
             Final-year CSE · MIT ADT
           </motion.span>
@@ -166,7 +175,7 @@ const Hero = () => {
 
       {/* Crossed tapes laid over the seam between the hero and About */}
       <div aria-hidden className="pointer-events-none relative z-30 -mb-16 h-16 -translate-y-8 overflow-x-clip">
-        <div className="group/tape pointer-events-auto absolute inset-x-[-5%] -top-9 rotate-[3deg] overflow-hidden border-y-2 border-white bg-blue-deep py-2 sm:-top-3">
+        <div className="group/tape pointer-events-auto absolute inset-x-[-5%] -top-9 rotate-[3deg] overflow-hidden border-y-2 border-blue/40 bg-blue-soft py-2 sm:-top-3">
           <Tape words={nameWords} reverse tone="blue" />
         </div>
         <div className="group/tape pointer-events-auto absolute inset-x-[-5%] top-1 -rotate-2 overflow-hidden border-y-2 border-blue bg-white py-2.5 shadow-[0_8px_18px_-10px_hsl(var(--ink)/0.5)]">
